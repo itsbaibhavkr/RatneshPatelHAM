@@ -127,36 +127,36 @@ export function GalleryView({ categories, items }: GalleryViewProps) {
             <div
               key={photo.id}
               onClick={() => setActivePhotoIndex(index)}
-              className="group relative cursor-pointer overflow-hidden rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-white)] shadow-xs transition-all hover:border-[var(--color-primary)] hover:shadow-md"
+              className="group relative cursor-pointer overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xs transition-all hover:border-[var(--color-primary)] hover:shadow-lg"
             >
-              <div className="relative aspect-4/3 w-full bg-[var(--color-light-gray)] overflow-hidden">
+              <div className="relative aspect-[16/10] w-full bg-slate-100 overflow-hidden">
                 {photo.image ? (
                   <Image
                     src={photo.image}
                     alt={photo.alt || photo.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 ) : (
-                  <div className="flex h-full w-full items-center justify-center text-[var(--color-muted-text)]">
+                  <div className="flex h-full w-full items-center justify-center text-slate-400">
                     <ImageIcon className="h-10 w-10 opacity-40" />
                   </div>
                 )}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors flex items-center justify-center opacity-0 group-hover:opacity-100">
-                  <span className="flex items-center gap-1.5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--color-dark-text)] shadow-xs">
-                    <ZoomIn className="h-3.5 w-3.5" />
+                <div className="absolute inset-0 bg-slate-900/30 backdrop-blur-[2px] transition-all flex items-center justify-center opacity-0 group-hover:opacity-100">
+                  <span className="flex items-center gap-1.5 rounded-full bg-white/95 px-4 py-2 text-xs font-bold text-slate-900 shadow-md">
+                    <ZoomIn className="h-4 w-4 text-[var(--color-primary)]" />
                     <span>View Photo</span>
                   </span>
                 </div>
               </div>
 
               <div className="p-4 space-y-1">
-                <h4 className="font-semibold text-sm text-[var(--color-dark-text)] group-hover:text-[var(--color-primary)] transition-colors line-clamp-1">
+                <h4 className="font-bold text-sm text-slate-900 group-hover:text-[var(--color-primary)] transition-colors line-clamp-1">
                   {photo.title}
                 </h4>
                 {photo.caption && (
-                  <p className="text-xs text-[var(--color-muted-text)] line-clamp-2 leading-relaxed">
+                  <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
                     {photo.caption}
                   </p>
                 )}

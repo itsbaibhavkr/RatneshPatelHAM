@@ -1,6 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
-import { ExternalLink, Mail, ArrowRight } from "lucide-react";
+import Image from "next/image";
+import { ExternalLink, Mail, ArrowRight, ShieldCheck, MapPin } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SocialLinks } from "@/components/shared/social-links";
 import { MAIN_NAV_ITEMS } from "@/lib/navigation";
@@ -9,38 +10,44 @@ export function Footer() {
   const currentYear = 2026;
 
   return (
-    <footer className="border-t border-[var(--color-border-gray)] bg-[var(--color-off-white)] text-[var(--color-dark-text)] overflow-hidden">
+    <footer className="border-t border-slate-200 bg-slate-900 text-slate-300 overflow-hidden">
       {/* Main Footer Content */}
       <div className="py-12 sm:py-16">
         <Container size="wide">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Identity Column (5 cols) */}
-            <div className="lg:col-span-5 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-[var(--color-primary)] text-white font-bold text-lg shadow-xs">
-                  RP
+            <div className="lg:col-span-5 space-y-5">
+              <div className="flex items-center gap-3.5">
+                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-[var(--color-primary)] shadow-md bg-slate-800 shrink-0">
+                  <Image
+                    src="/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp"
+                    alt="Ratnesh Patel"
+                    fill
+                    sizes="48px"
+                    className="object-cover object-top"
+                  />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg text-[var(--color-dark-text)] leading-none">
+                  <h3 className="font-extrabold text-lg text-white leading-tight">
                     Ratnesh Patel
                   </h3>
-                  <p className="mt-1 text-xs font-medium text-[var(--color-primary)]">
+                  <p className="mt-0.5 text-xs font-bold text-red-400">
                     Senior State Vice President, Bihar
                   </p>
-                  <p className="text-[11px] text-[var(--color-muted-text)] font-semibold uppercase tracking-wider">
+                  <p className="text-[11px] text-slate-400 font-semibold uppercase tracking-wider">
                     Hindustani Awam Morcha (Secular)
                   </p>
                 </div>
               </div>
 
-              <p className="text-xs sm:text-sm text-[var(--color-muted-text)] leading-relaxed max-w-md">
-                Representing leadership coordination, public representations, and community advocacy across Bihar under the banner of Hindustani Awam Morcha (Secular).
+              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
+                Dedicated to grassroots leadership, farmer prosperity, social justice, and constituent advocacy across all 38 districts of Bihar.
               </p>
 
               {/* Social Media Links */}
               <div className="pt-2">
-                <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-dark-text)] block mb-2.5">
-                  Official Channels
+                <span className="text-xs font-bold uppercase tracking-wider text-slate-300 block mb-3">
+                  Connect on Social Media
                 </span>
                 <SocialLinks variant="footer" size="md" />
               </div>
@@ -48,17 +55,17 @@ export function Footer() {
 
             {/* Navigation Column (3 cols) */}
             <div className="lg:col-span-3 space-y-3">
-              <h4 className="font-semibold text-xs uppercase tracking-wider text-[var(--color-dark-text)] border-b border-[var(--color-border-gray)] pb-2">
-                Public Navigation
+              <h4 className="font-bold text-xs uppercase tracking-wider text-white border-b border-slate-800 pb-2.5">
+                Quick Navigation
               </h4>
-              <ul className="space-y-2 text-xs sm:text-sm">
+              <ul className="space-y-2.5 text-xs sm:text-sm">
                 {MAIN_NAV_ITEMS.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-[var(--color-muted-text)] hover:text-[var(--color-primary)] transition-colors inline-flex items-center gap-1.5"
+                      className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
                     >
-                      <span className="h-1 w-1 rounded-full bg-[var(--color-border-dark)]" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
                       <span>{item.label}</span>
                     </Link>
                   </li>
@@ -68,65 +75,72 @@ export function Footer() {
 
             {/* Official Party & Contact Information (4 cols) */}
             <div className="lg:col-span-4 space-y-4">
-              <h4 className="font-semibold text-xs uppercase tracking-wider text-[var(--color-dark-text)] border-b border-[var(--color-border-gray)] pb-2">
-                Official Party &amp; Office
+              <h4 className="font-bold text-xs uppercase tracking-wider text-white border-b border-slate-800 pb-2.5">
+                Party &amp; Public Desk
               </h4>
 
               {/* HAM Official Website Link Card */}
-              <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-white)] p-4 space-y-2">
+              <div className="rounded-xl border border-slate-800 bg-slate-800/60 p-4 space-y-2">
                 <div className="flex items-center justify-between">
-                  <span className="font-semibold text-xs text-[var(--color-dark-text)]">
-                    Official HAM(S) Portal
+                  <span className="font-bold text-xs text-white">
+                    Hindustani Awam Morcha (S)
                   </span>
-                  <span className="text-[10px] text-[var(--color-primary)] font-bold uppercase tracking-wider bg-[var(--color-primary-subtle)] px-2 py-0.5 rounded">
+                  <span className="text-[10px] text-red-300 font-bold uppercase tracking-wider bg-red-950/80 border border-red-800 px-2 py-0.5 rounded">
                     Central Party
                   </span>
                 </div>
-                <p className="text-xs text-[var(--color-muted-text)] leading-relaxed">
-                  For central party announcements, policy resolutions, and official organizational notices, visit the central party website:
+                <p className="text-xs text-slate-400 leading-relaxed">
+                  For party resolutions, central announcements, and national guidelines:
                 </p>
                 <a
                   href="https://ham.org.in/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs font-semibold text-[var(--color-primary)] hover:underline pt-1"
+                  className="inline-flex items-center gap-1.5 text-xs font-bold text-red-400 hover:text-red-300 transition-colors pt-1"
                 >
                   <span>https://ham.org.in/</span>
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               </div>
 
-              {/* Office Contact Note */}
-              <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-white)] p-4 space-y-2 text-xs">
-                <div className="flex items-center gap-2 font-semibold text-[var(--color-dark-text)]">
-                  <Mail className="h-4 w-4 text-[var(--color-primary)]" />
-                  <span>Constituent Office Representation</span>
+              {/* Office Contact Desk */}
+              <div className="rounded-xl border border-slate-800 bg-slate-800/60 p-4 space-y-2 text-xs">
+                <div className="flex items-center gap-2 font-bold text-white">
+                  <Mail className="h-4 w-4 text-red-400" />
+                  <span>जन संवाद / Constituent Desk</span>
                 </div>
-                <p className="text-[var(--color-muted-text)] leading-relaxed">
-                  Submit formal representations, queries, and district representations via the official communication desk.
+                <p className="text-slate-400 leading-relaxed">
+                  Submit public representations and development issues directly to the state office.
                 </p>
                 <Link
                   href="/contact"
-                  className="inline-flex items-center gap-1 text-xs font-medium text-[var(--color-primary)] hover:underline pt-1"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-red-400 hover:text-red-300 transition-colors pt-1"
                 >
-                  <span>Submit Public Representation</span>
-                  <ArrowRight className="h-3 w-3" />
+                  <span>Submit Representation</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Bottom Copyright & Legal Strip */}
-          <div className="mt-12 pt-6 border-t border-[var(--color-border-gray)] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--color-muted-text)]">
+          {/* Bottom Copyright Strip */}
+          <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
             <p>
-              &copy; {currentYear} Ratnesh Patel. All rights reserved.
+              &copy; {currentYear} Ratnesh Patel &bull; Senior State Vice President, Bihar. All rights reserved.
             </p>
             <div className="flex items-center gap-4 text-[11px]">
               <Link
                 href="/ham"
-                className="hover:text-[var(--color-primary)] transition-colors"
+                className="hover:text-white transition-colors"
               >
                 HAM (Secular) Role
+              </Link>
+              <span>&bull;</span>
+              <Link
+                href="/contact"
+                className="hover:text-white transition-colors"
+              >
+                जन संवाद Desk
               </Link>
             </div>
           </div>
