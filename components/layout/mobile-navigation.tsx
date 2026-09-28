@@ -58,7 +58,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
         {/* Drawer Header */}
         <div className="flex items-center justify-between border-b border-[var(--color-border-gray)] p-4">
           <div className="flex items-center gap-2.5">
-            <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-[var(--color-primary)] shadow-xs bg-white shrink-0 p-0.5">
+            <div className="relative h-10 w-10 shrink-0">
               <img
                 src="/HAMLogo.png"
                 alt="Hindustani Awam Morcha (Secular) Logo"

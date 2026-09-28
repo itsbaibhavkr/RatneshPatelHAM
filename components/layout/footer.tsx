@@ -1,7 +1,7 @@
 import * as React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ExternalLink, Mail, ArrowRight, ShieldCheck, MapPin } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SocialLinks } from "@/components/shared/social-links";
 import { MAIN_NAV_ITEMS } from "@/lib/navigation";
@@ -18,13 +18,14 @@ export function Footer() {
             {/* Identity Column (5 cols) */}
             <div className="lg:col-span-5 space-y-5">
               <div className="flex items-center gap-3.5">
-                <div className="relative h-12 w-12 overflow-hidden rounded-full border-2 border-[var(--color-primary)] shadow-md bg-slate-800 shrink-0">
+                {/* Party logo without red circle */}
+                <div className="relative h-12 w-12 shrink-0">
                   <Image
-                    src="/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp"
-                    alt="Ratnesh Patel"
+                    src="/HAMLogo.png"
+                    alt="Hindustani Awam Morcha (Secular) Party Logo"
                     fill
                     sizes="48px"
-                    className="object-cover object-top"
+                    className="object-contain"
                   />
                 </div>
                 <div>
@@ -73,7 +74,7 @@ export function Footer() {
               </ul>
             </div>
 
-            {/* Official Party & Contact Information (4 cols) */}
+            {/* Official Party Information (4 cols) */}
             <div className="lg:col-span-4 space-y-4">
               <h4 className="font-bold text-xs uppercase tracking-wider text-white border-b border-slate-800 pb-2.5">
                 Party &amp; Public Desk
@@ -102,47 +103,14 @@ export function Footer() {
                   <ExternalLink className="h-3.5 w-3.5" />
                 </a>
               </div>
-
-              {/* Office Contact Desk */}
-              <div className="rounded-xl border border-slate-800 bg-slate-800/60 p-4 space-y-2 text-xs">
-                <div className="flex items-center gap-2 font-bold text-white">
-                  <Mail className="h-4 w-4 text-red-400" />
-                  <span>जन संवाद / Constituent Desk</span>
-                </div>
-                <p className="text-slate-400 leading-relaxed">
-                  Submit public representations and development issues directly to the state office.
-                </p>
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-red-400 hover:text-red-300 transition-colors pt-1"
-                >
-                  <span>Submit Representation</span>
-                  <ArrowRight className="h-3.5 w-3.5" />
-                </Link>
-              </div>
             </div>
           </div>
 
-          {/* Bottom Copyright Strip */}
-          <div className="mt-12 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+          {/* Bottom Copyright Strip - Centered */}
+          <div className="mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-400">
             <p>
               &copy; {currentYear} Ratnesh Patel &bull; Senior State Vice President, Bihar. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-[11px]">
-              <Link
-                href="/ham"
-                className="hover:text-white transition-colors"
-              >
-                HAM (Secular) Role
-              </Link>
-              <span>&bull;</span>
-              <Link
-                href="/contact"
-                className="hover:text-white transition-colors"
-              >
-                जन संवाद Desk
-              </Link>
-            </div>
           </div>
         </Container>
       </div>

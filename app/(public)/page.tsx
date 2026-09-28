@@ -10,23 +10,20 @@ import {
   Wheat,
   GraduationCap,
   Scale,
-  ShieldCheck,
   Building2,
   Sparkles,
   PhoneCall,
   ExternalLink,
-  CheckCircle2,
   ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/ui/container";
-import { Section } from "@/components/ui/section";
 import { SocialLinks } from "@/components/shared/social-links";
 import { PoliticalTimeline } from "@/components/sections/political-timeline";
+import { HeroImageSlider } from "@/components/sections/hero-image-slider";
+import { SocialMomentsSection } from "@/components/sections/social-moments-section";
 import { profile } from "@/data/profile";
 import { politicalJourneyItems } from "@/data/political-journey";
-import { galleryItems } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
@@ -96,7 +93,7 @@ export default function HomePage() {
                 <Link href="/contact">
                   <Button
                     size="lg"
-                    className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold shadow-sm hover:shadow-md px-6 py-3 rounded-xl gap-2 transition-all"
+                    className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold shadow-sm hover:shadow-md px-6 py-3 rounded-xl gap-2 transition-all cursor-pointer"
                   >
                     <span>जन संवाद / Connect Desk</span>
                     <ArrowRight className="h-4 w-4" />
@@ -106,7 +103,7 @@ export default function HomePage() {
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-slate-300 hover:border-slate-400 text-slate-800 hover:bg-slate-50 font-semibold px-5 py-3 rounded-xl gap-1.5 transition-all"
+                    className="border-slate-300 hover:border-slate-400 text-slate-800 hover:bg-slate-50 font-semibold px-5 py-3 rounded-xl gap-1.5 transition-all cursor-pointer"
                   >
                     <span>Political History</span>
                     <ChevronDown className="h-4 w-4 text-slate-500" />
@@ -115,42 +112,9 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Hero Portrait Presentation */}
+            {/* Right Column: Hero Multi-Image Showcase (4-5 Images Slider) */}
             <div className="lg:col-span-5 flex justify-center">
-              <div className="relative w-full max-w-md">
-                {/* Decorative border frame */}
-                <div className="relative rounded-2xl border-2 border-white bg-white p-3 shadow-xl overflow-hidden ring-1 ring-slate-200">
-                  <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100">
-                    <Image
-                      src="/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp"
-                      alt="Ratnesh Patel - Senior State Vice President, Bihar"
-                      fill
-                      priority
-                      sizes="(max-width: 768px) 90vw, 400px"
-                      className="object-cover object-top hover:scale-102 transition-transform duration-500"
-                    />
-                  </div>
-
-                  {/* Identification Card at Bottom of Frame */}
-                  <div className="mt-3.5 px-2 pb-1 space-y-1">
-                    <div className="flex items-center justify-between">
-                      <h2 className="text-lg font-bold text-slate-900 leading-tight">
-                        {profile.name}
-                      </h2>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded">
-                        <ShieldCheck className="h-3 w-3" />
-                        <span>State Leadership</span>
-                      </span>
-                    </div>
-                    <p className="text-xs font-semibold text-[var(--color-primary-dark)]">
-                      {profile.designation}
-                    </p>
-                    <p className="text-[11px] text-slate-500 font-medium">
-                      Hindustani Awam Morcha (Secular), Bihar
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <HeroImageSlider />
             </div>
           </div>
         </Container>
@@ -314,19 +278,6 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-
-              {/* Jump to Journey CTA */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
-                <a href="#journey">
-                  <Button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold rounded-xl gap-2 shadow-xs">
-                    <span>View Political Journey / कार्य काल</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </a>
-                <Link href="/contact" className="text-xs font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">
-                  Submit a Representation &rarr;
-                </Link>
-              </div>
             </div>
           </div>
         </Container>
@@ -358,111 +309,73 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 5. PARTY IDEOLOGY & LEADERSHIP (HAM Secular Authentic Mission) */}
+      {/* 5. PARTY IDEOLOGY & LEADERSHIP (HAM Secular Official Showcase with Prominent Party Logo) */}
       <section id="ham" className="scroll-mt-20 bg-slate-900 border-b border-slate-800 py-16 sm:py-20 text-white">
         <Container size="wide">
           <div className="rounded-2xl bg-gradient-to-r from-red-950 via-red-900 to-slate-900 p-8 sm:p-12 lg:p-14 shadow-2xl overflow-hidden relative border border-red-900/50">
-            {/* Background watermark */}
-            <div className="absolute -right-20 -bottom-20 opacity-10 pointer-events-none">
-              <Image
-                src="/images/ham/logo/ham-logo.svg"
-                alt="HAM Logo Watermark"
-                width={400}
-                height={400}
-              />
-            </div>
-
-            <div className="relative z-10 max-w-3xl space-y-6">
-              <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-red-200 border border-white/10">
-                <span>पार्टी विचारधारा एवं नेतृत्व</span>
-              </div>
-
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
-                Hindustani Awam Morcha (Secular)
-              </h2>
-
-              <p className="text-sm sm:text-base text-red-100/90 leading-relaxed">
-                Founded under the visionary leadership of <strong>Shri Jitan Ram Manjhi</strong> (Former Chief Minister of Bihar) and led by National President <strong>Dr. Santosh Kumar Suman</strong>, HAM(S) is dedicated to social harmony, uplifting the underprivileged, and building an empowered, self-reliant Bihar.
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4 pt-2">
-                <Link href="/ham">
-                  <Button size="lg" className="bg-white hover:bg-slate-100 text-red-950 font-bold shadow-md rounded-xl">
-                    <span>Party Role &amp; Mandate</span>
-                    <ArrowRight className="h-4 w-4 ml-1.5" />
-                  </Button>
-                </Link>
-                <a
-                  href="https://ham.org.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white/90 hover:text-white hover:underline transition-colors py-2 px-3"
-                >
-                  <span>Visit Central Party Portal (ham.org.in)</span>
-                  <ExternalLink className="h-3.5 w-3.5" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* 6. PHOTO GALLERY & MOMENTS */}
-      <section id="gallery" className="scroll-mt-20 bg-white border-b border-slate-200 py-16 sm:py-20">
-        <Container size="wide">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1">
-                <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
-                <span className="text-xs font-bold text-[var(--color-primary-dark)]">
-                  तस्वीरें एवं मीडिया &bull; Moments
-                </span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Media &amp; Public Moments
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600">
-                Photographic moments from party conventions, public delegations, and state leadership events.
-              </p>
-            </div>
-            <Link href="/gallery" className="shrink-0">
-              <Button variant="outline" size="sm" className="font-semibold gap-1.5 rounded-lg border-slate-300">
-                <span>View Full Gallery</span>
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Button>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {galleryItems.slice(0, 3).map((photo) => (
-              <div
-                key={photo.id}
-                className="group rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-xs hover:border-[var(--color-primary)] hover:shadow-lg transition-all"
-              >
-                <div className="relative aspect-[16/9] w-full bg-slate-100 overflow-hidden">
-                  <Image
-                    src={photo.image}
-                    alt={photo.alt || photo.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, 33vw"
-                    className="object-cover group-hover:scale-105 transition-transform duration-500"
-                  />
+            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+              {/* Left Column: Narrative & Leadership Info */}
+              <div className="lg:col-span-8 space-y-6">
+                <div className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-red-200 border border-white/10">
+                  <span>पार्टी विचारधारा एवं नेतृत्व</span>
                 </div>
-                <div className="p-4 space-y-1">
-                  <h3 className="font-bold text-sm text-slate-900 leading-snug">
-                    {photo.title}
-                  </h3>
-                  {photo.caption && (
-                    <p className="text-xs text-slate-500 line-clamp-2 leading-relaxed">
-                      {photo.caption}
+
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight">
+                  Hindustani Awam Morcha (Secular)
+                </h2>
+
+                <p className="text-sm sm:text-base text-red-100/90 leading-relaxed">
+                  Founded under the visionary leadership of <strong>Shri Jitan Ram Manjhi</strong> (Former Chief Minister of Bihar) and led by National President <strong>Dr. Santosh Kumar Suman</strong>, HAM(S) is dedicated to social harmony, uplifting the underprivileged, and building an empowered, self-reliant Bihar.
+                </p>
+
+                <div className="flex flex-wrap items-center gap-4 pt-2">
+                  <Link href="/ham">
+                    <Button size="lg" className="bg-white hover:bg-slate-100 text-red-950 font-bold shadow-md rounded-xl cursor-pointer">
+                      <span>Party Role &amp; Mandate</span>
+                      <ArrowRight className="h-4 w-4 ml-1.5" />
+                    </Button>
+                  </Link>
+                  <a
+                    href="https://ham.org.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-white/90 hover:text-white hover:underline transition-colors py-2 px-3"
+                  >
+                    <span>Visit Central Party Portal (ham.org.in)</span>
+                    <ExternalLink className="h-3.5 w-3.5" />
+                  </a>
+                </div>
+              </div>
+
+              {/* Right Column: Prominently Showcase HAM Party Logo */}
+              <div className="lg:col-span-4 flex justify-center">
+                <div className="rounded-2xl bg-white/10 backdrop-blur-md p-6 sm:p-8 border border-white/15 shadow-xl flex flex-col items-center text-center space-y-4 max-w-xs w-full">
+                  <div className="relative h-32 w-32 sm:h-40 sm:w-40 shrink-0 drop-shadow-lg">
+                    <Image
+                      src="/HAMLogo.png"
+                      alt="Hindustani Awam Morcha (Secular) Official Logo"
+                      fill
+                      sizes="160px"
+                      className="object-contain"
+                    />
+                  </div>
+                  <div>
+                    <h3 className="font-extrabold text-sm sm:text-base text-white tracking-wide">
+                      Hindustani Awam Morcha
+                    </h3>
+                    <p className="text-xs text-red-200 font-semibold tracking-wider uppercase mt-0.5">
+                      Secular &bull; Bihar
                     </p>
-                  )}
+                  </div>
                 </div>
               </div>
-            ))}
+            </div>
           </div>
         </Container>
       </section>
+
+      {/* 6. SOCIAL MEDIA & PUBLIC MOMENTS (Live FB & Instagram Feeds) */}
+      <SocialMomentsSection />
 
       {/* 7. DIRECT CONSTITUENT CONNECT (जन संवाद केंद्र) */}
       <section id="contact" className="scroll-mt-20 py-16 sm:py-20 bg-slate-50/60">
@@ -485,7 +398,7 @@ export default function HomePage() {
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold shadow-sm hover:shadow-md px-6 py-3 rounded-xl gap-2 transition-all"
+                  className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold shadow-sm hover:shadow-md px-6 py-3 rounded-xl gap-2 transition-all cursor-pointer"
                 >
                   <span>Submit Representation / आवेदन भेजें</span>
                   <ArrowRight className="h-4 w-4" />
