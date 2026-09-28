@@ -16,6 +16,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
+import { SectionHeading } from "@/components/ui/section-heading";
 import { ImagePlaceholder } from "@/components/shared/image-placeholder";
 
 export const metadata: Metadata = {
@@ -194,17 +195,11 @@ export default function HomePage() {
       {/* Core Public Architecture Sections */}
       <Section variant="surface">
         <Container>
-          <div className="text-center max-w-2xl mx-auto mb-12 space-y-2">
-            <Badge variant="outline" className="text-xs uppercase tracking-wider">
-              Portal Structure
-            </Badge>
-            <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-[var(--color-dark-text)]">
-              Public Portal Architecture
-            </h2>
-            <p className="text-sm text-[var(--color-muted-text)] leading-relaxed">
-              Explore the dedicated sections designed to provide organized, authentic information on leadership, public initiatives, and constituent engagement.
-            </p>
-          </div>
+          <SectionHeading
+            badge="Portal Structure"
+            title="Public Portal Architecture"
+            description="Explore the dedicated sections designed to provide organized, authentic information on leadership, public initiatives, and constituent engagement."
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {ARCHITECTURE_SECTIONS.map((section) => {
