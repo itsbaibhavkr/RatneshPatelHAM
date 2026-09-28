@@ -7,7 +7,7 @@ import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { getPoliticalJourney } from "@/lib/supabase/queries";
+import { politicalJourneyItems } from "@/data/political-journey";
 
 export const metadata: Metadata = {
   title: "Political Journey",
@@ -20,9 +20,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PoliticalJourneyPage() {
-  const journeyItems = await getPoliticalJourney();
-
+export default function PoliticalJourneyPage() {
   return (
     <div>
       {/* Header */}
@@ -55,7 +53,7 @@ export default async function PoliticalJourneyPage() {
       {/* Main Vertical Timeline Section */}
       <Section variant="default">
         <Container size="wide">
-          {journeyItems.length > 0 ? (
+          {politicalJourneyItems.length > 0 ? (
             <div className="max-w-3xl mx-auto relative">
               {/* Vertical line through timeline */}
               <div
@@ -64,7 +62,7 @@ export default async function PoliticalJourneyPage() {
               />
 
               <div className="space-y-8 sm:space-y-10">
-                {journeyItems.map((item, index) => (
+                {politicalJourneyItems.map((item, index) => (
                   <div key={item.id} className="relative flex items-start gap-6 sm:gap-8 group">
                     {/* Timeline Node Icon */}
                     <div className="flex h-9 w-9 sm:h-12 sm:w-12 shrink-0 items-center justify-center rounded-full border-2 border-[var(--color-primary)] bg-[var(--color-white)] text-[var(--color-primary)] shadow-xs z-10 group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
@@ -78,7 +76,7 @@ export default async function PoliticalJourneyPage() {
                           <Badge variant="subtle" className="font-bold text-xs py-0.5">
                             {item.year}
                           </Badge>
-                          {index === 0 && (
+                          {(item.is_current || index === 0) && (
                             <Badge variant="default" className="text-[10px]">
                               Current Office
                             </Badge>
@@ -132,9 +130,6 @@ export default async function PoliticalJourneyPage() {
                 <CardContent className="p-6 pt-0 text-xs sm:text-sm text-[var(--color-muted-text)] leading-relaxed space-y-2">
                   <p>
                     Ratnesh Patel currently holds the official mandate of Senior State Vice President for the State of Bihar, overseeing organizational outreach, district committee engagement, and public advocacy.
-                  </p>
-                  <p className="text-[11px] text-[var(--color-muted-text)] pt-2 border-t border-[var(--color-border-gray)]">
-                    Historical organizational appointments will populate here as official party records are synchronized with the database.
                   </p>
                 </CardContent>
               </Card>

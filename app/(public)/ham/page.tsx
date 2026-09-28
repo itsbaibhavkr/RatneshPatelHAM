@@ -1,6 +1,7 @@
 import * as React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { ExternalLink, ShieldCheck, ShieldAlert, Building2, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
@@ -80,8 +81,13 @@ export default function HamPage() {
             <div className="rounded-xl border border-[var(--color-border-gray)] bg-[var(--color-white)] p-6 sm:p-10 space-y-6 shadow-xs">
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 pb-6 border-b border-[var(--color-border-gray)]">
                 <div className="flex items-center gap-4">
-                  <div className="flex h-14 w-14 items-center justify-center rounded-lg bg-[var(--color-primary)] text-white font-bold text-xl shadow-xs">
-                    HAM
+                  <div className="relative h-16 w-16 overflow-hidden rounded-xl border border-[var(--color-border-gray)] shadow-xs shrink-0">
+                    <Image
+                      src="/images/ham/logo/ham-logo.svg"
+                      alt="Hindustani Awam Morcha (Secular) Official Emblem"
+                      fill
+                      className="object-contain"
+                    />
                   </div>
                   <div>
                     <h2 className="text-xl sm:text-2xl font-bold text-[var(--color-dark-text)]">
@@ -133,6 +139,26 @@ export default function HamPage() {
                   </div>
                   <p className="text-xs text-[var(--color-muted-text)] leading-relaxed">
                     Facilitating communication between grassroots community workers and state executive leadership across districts.
+                  </p>
+                </div>
+              </div>
+
+              {/* Party Flag Banner */}
+              <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-off-white)] p-4 flex flex-col sm:flex-row items-center gap-4">
+                <div className="relative h-14 w-24 shrink-0 overflow-hidden rounded-md border border-[var(--color-border-gray)] shadow-2xs">
+                  <Image
+                    src="/images/ham/flag/ham-flag.svg"
+                    alt="Hindustani Awam Morcha (Secular) Party Flag"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <div className="text-xs text-[var(--color-muted-text)] space-y-0.5 text-center sm:text-left">
+                  <strong className="text-[var(--color-dark-text)] font-semibold block">
+                    Party Colors &amp; Identity
+                  </strong>
+                  <p>
+                    Deep Red and White represent organizational discipline, constituent empowerment, and social justice across Bihar.
                   </p>
                 </div>
               </div>

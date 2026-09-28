@@ -8,7 +8,7 @@ import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ImagePlaceholder } from "@/components/shared/image-placeholder";
-import { getProfile } from "@/lib/supabase/queries";
+import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
   title: "About Ratnesh Patel",
@@ -21,9 +21,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function AboutPage() {
-  const profile = await getProfile();
-
+export default function AboutPage() {
   return (
     <div className="space-y-0">
       {/* Editorial Profile Header */}
@@ -63,10 +61,10 @@ export default async function AboutPage() {
             {/* Left: Official Portrait Frame */}
             <div className="lg:col-span-5">
               <div className="sticky top-24 rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-white)] p-4 shadow-xs">
-                {profile.profile_image_url ? (
+                {profile.profile_image ? (
                   <div className="relative aspect-3/4 w-full overflow-hidden rounded-md">
                     <Image
-                      src={profile.profile_image_url}
+                      src={profile.profile_image}
                       alt={`Portrait of ${profile.name}`}
                       fill
                       priority
@@ -110,8 +108,7 @@ export default async function AboutPage() {
                 </p>
 
                 <p className="text-[var(--color-dark-text)]/90 leading-relaxed">
-                  {profile.biography ||
-                    "In his organizational mandate, he works actively on state-level coordination, public delegation representation, and constituent advocacy. His public service focuses on bridging grassroots constituent representations with party leadership and state administration across Bihar."}
+                  {profile.biography}
                 </p>
 
                 <p className="text-[var(--color-dark-text)]/90 leading-relaxed">

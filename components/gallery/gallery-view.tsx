@@ -3,16 +3,13 @@
 import * as React from "react";
 import Image from "next/image";
 import { X, ChevronLeft, ChevronRight, Image as ImageIcon, ZoomIn } from "lucide-react";
-import type { Database } from "@/types/database";
+import type { GalleryItem, GalleryCategory } from "@/types/gallery";
 import { EmptyState } from "@/components/ui/empty-state";
 import { cn } from "@/lib/utils";
 
-type GalleryRow = Database["public"]["Tables"]["gallery"]["Row"];
-type CategoryRow = Database["public"]["Tables"]["gallery_categories"]["Row"];
-
 interface GalleryViewProps {
-  categories: CategoryRow[];
-  items: GalleryRow[];
+  categories: GalleryCategory[];
+  items: GalleryItem[];
 }
 
 export function GalleryView({ categories, items }: GalleryViewProps) {
@@ -22,7 +19,11 @@ export function GalleryView({ categories, items }: GalleryViewProps) {
   // Filter items based on selected category
   const filteredItems = React.useMemo(() => {
     if (selectedCategory === "all") return items;
-    return items.filter((item) => item.category_id === selectedCategory);
+    return items.filter(
+      (item) =>
+        item.category === selectedCategory ||
+        item.category.toLowerCase() === selectedCategory.toLowerCase()
+    );
   }, [items, selectedCategory]);
 
   // Lightbox keyboard controls
@@ -74,16 +75,22 @@ export function GalleryView({ categories, items }: GalleryViewProps) {
           </button>
 
           {categories.map((cat) => {
-            const count = items.filter((i) => i.category_id === cat.id).length;
+            if (cat.id === "all") return null;
+            const count = items.filter(
+              (i) =>
+                i.category === cat.id ||
+                i.category === cat.slug ||
+                i.category.toLowerCase() === cat.name.toLowerCase()
+            ).length;
             if (count === 0) return null;
             return (
               <button
                 key={cat.id}
                 type="button"
-                onClick={() => setSelectedCategory(cat.id)}
+                onClick={() => setSelectedCategory(cat.slug || cat.id)}
                 className={cn(
                   "px-4 py-1.5 rounded-full text-xs font-medium transition-all cursor-pointer",
-                  selectedCategory === cat.id
+                  selectedCategory === (cat.slug || cat.id)
                     ? "bg-[var(--color-primary)] text-white shadow-xs"
                     : "bg-[var(--color-white)] text-[var(--color-dark-text)] border border-[var(--color-border-gray)] hover:bg-[var(--color-light-gray)]"
                 )}
@@ -102,7 +109,7 @@ export function GalleryView({ categories, items }: GalleryViewProps) {
           title="No Published Photographs Found"
           description={
             selectedCategory === "all"
-              ? "Official event photographs and public meeting albums will appear here once verified and published through the portal administration."
+              ? "Official event photographs and public meeting albums will appear here as they are placed in /public/images/ratnesh-patel/gallery/."
               : "No photographs currently found under this category filter."
           }
           action={
@@ -123,10 +130,10 @@ export function GalleryView({ categories, items }: GalleryViewProps) {
               className="group relative cursor-pointer overflow-hidden rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-white)] shadow-xs transition-all hover:border-[var(--color-primary)] hover:shadow-md"
             >
               <div className="relative aspect-4/3 w-full bg-[var(--color-light-gray)] overflow-hidden">
-                {photo.image_url ? (
+                {photo.image ? (
                   <Image
-                    src={photo.thumbnail_url || photo.image_url}
-                    alt={photo.alt_text || photo.title}
+                    src={photo.image}
+                    alt={photo.alt || photo.title}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover transition-transform duration-300 group-hover:scale-105"
@@ -217,10 +224,10 @@ export function GalleryView({ categories, items }: GalleryViewProps) {
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative h-[60vh] sm:h-[70vh] w-full">
-              {activePhoto.image_url ? (
+              {activePhoto.image ? (
                 <Image
-                  src={activePhoto.image_url}
-                  alt={activePhoto.alt_text || activePhoto.title}
+                  src={activePhoto.image}
+                  alt={activePhoto.alt || activePhoto.title}
                   fill
                   sizes="100vw"
                   className="object-contain"

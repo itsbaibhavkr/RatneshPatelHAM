@@ -8,7 +8,7 @@ import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { EmptyState } from "@/components/ui/empty-state";
-import { getPublicWork } from "@/lib/supabase/queries";
+import { publicWorkItems } from "@/data/public-work";
 
 export const metadata: Metadata = {
   title: "Public Work & Initiatives",
@@ -21,9 +21,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function PublicWorkPage() {
-  const publicWorkItems = await getPublicWork();
-
+export default function PublicWorkPage() {
   return (
     <div>
       {/* Header */}
@@ -63,10 +61,10 @@ export default async function PublicWorkPage() {
                   key={item.id}
                   className="flex flex-col justify-between overflow-hidden hover:border-[var(--color-primary)] transition-all hover:shadow-xs"
                 >
-                  {item.featured_image_url && (
+                  {item.image && (
                     <div className="relative aspect-video w-full bg-[var(--color-light-gray)] overflow-hidden">
                       <Image
-                        src={item.featured_image_url}
+                        src={item.image}
                         alt={item.title}
                         fill
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"

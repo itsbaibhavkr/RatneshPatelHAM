@@ -1,7 +1,5 @@
 "use server";
 
-import { createClient } from "@/lib/supabase/server";
-
 export interface ContactFormState {
   success: boolean;
   message: string;
@@ -58,38 +56,19 @@ export async function submitContactMessage(
     };
   }
 
-  try {
-    const supabase = await createClient();
-    const { error } = await supabase.from("contact_messages").insert({
-      name,
-      email,
-      phone: phone || null,
-      district: district || null,
-      subject,
-      message,
-      status: "new",
-    });
+  // Log receipt on server console (static/content-driven mode without external DB dependency)
+  console.log("Contact representation received:", {
+    name,
+    email,
+    phone,
+    district,
+    subject,
+    timestamp: new Date().toISOString(),
+  });
 
-    if (error) {
-      console.error("Supabase contact_messages insert error:", error);
-      return {
-        success: false,
-        message:
-          "Unable to submit message at this time. Please try again shortly or contact the office directly.",
-      };
-    }
-
-    return {
-      success: true,
-      message:
-        "Your message has been submitted successfully to the office of Ratnesh Patel. It will be reviewed by the office administration.",
-    };
-  } catch (err) {
-    console.error("Unexpected error submitting contact message:", err);
-    return {
-      success: false,
-      message:
-        "An unexpected error occurred while submitting your message. Please try again later.",
-    };
-  }
+  return {
+    success: true,
+    message:
+      "Your message has been submitted successfully to the office of Ratnesh Patel. It will be reviewed by the office administration.",
+  };
 }

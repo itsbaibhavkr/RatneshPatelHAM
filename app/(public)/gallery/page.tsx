@@ -5,7 +5,7 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { GalleryView } from "@/components/gallery/gallery-view";
-import { getGalleryCategories, getGalleryItems } from "@/lib/supabase/queries";
+import { galleryCategories, galleryItems } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Media & Gallery",
@@ -18,12 +18,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function GalleryPage() {
-  const [categories, items] = await Promise.all([
-    getGalleryCategories(),
-    getGalleryItems(),
-  ]);
-
+export default function GalleryPage() {
   return (
     <div>
       {/* Header */}
@@ -56,7 +51,7 @@ export default async function GalleryPage() {
       {/* Gallery View Section */}
       <Section variant="default">
         <Container size="wide">
-          <GalleryView categories={categories} items={items} />
+          <GalleryView categories={galleryCategories} items={galleryItems} />
         </Container>
       </Section>
     </div>

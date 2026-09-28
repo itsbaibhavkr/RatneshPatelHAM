@@ -21,12 +21,10 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { EmptyState } from "@/components/ui/empty-state";
 import { ImagePlaceholder } from "@/components/shared/image-placeholder";
 import { SocialLinks } from "@/components/shared/social-links";
-import {
-  getProfile,
-  getPoliticalJourney,
-  getPublicWork,
-  getGalleryItems,
-} from "@/lib/supabase/queries";
+import { profile } from "@/data/profile";
+import { politicalJourneyItems } from "@/data/political-journey";
+import { publicWorkItems } from "@/data/public-work";
+import { galleryItems } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
@@ -39,15 +37,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function HomePage() {
-  const [profile, journeyItems, publicWorkItems, galleryItems] =
-    await Promise.all([
-      getProfile(),
-      getPoliticalJourney(),
-      getPublicWork(),
-      getGalleryItems(),
-    ]);
-
+export default function HomePage() {
   return (
     <>
       {/* 1. HERO SECTION (Editorial Split Layout) */}
@@ -78,8 +68,7 @@ export default async function HomePage() {
               </div>
 
               <p className="text-base text-[var(--color-dark-text)]/80 leading-relaxed max-w-2xl">
-                {profile.biography ||
-                  "Welcome to the official personal communication and public documentation portal of Ratnesh Patel. Dedicated to transparent public service, constituent coordination, and organizational responsibilities across Bihar."}
+                {profile.biography}
               </p>
 
               {/* Action Buttons */}
@@ -118,10 +107,10 @@ export default async function HomePage() {
             <div className="lg:col-span-5">
               <div className="relative mx-auto max-w-md">
                 <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-white)] p-4 shadow-xs">
-                  {profile.profile_image_url ? (
+                  {profile.profile_image ? (
                     <div className="relative aspect-4/3 w-full overflow-hidden rounded-md">
                       <Image
-                        src={profile.profile_image_url}
+                        src={profile.profile_image}
                         alt={`Official portrait of ${profile.name}`}
                         fill
                         priority
@@ -156,12 +145,23 @@ export default async function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             <div className="lg:col-span-5">
               <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-white)] p-3 shadow-xs">
-                <ImagePlaceholder
-                  category="profile"
-                  aspectRatio="3:4"
-                  title="Ratnesh Patel"
-                  description="Senior State Vice President, Bihar | Hindustani Awam Morcha (Secular)"
-                />
+                {profile.profile_image ? (
+                  <div className="relative aspect-3/4 w-full overflow-hidden rounded-md">
+                    <Image
+                      src={profile.profile_image}
+                      alt={`Ratnesh Patel`}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                ) : (
+                  <ImagePlaceholder
+                    category="profile"
+                    aspectRatio="3:4"
+                    title="Ratnesh Patel"
+                    description="Senior State Vice President, Bihar | Hindustani Awam Morcha (Secular)"
+                  />
+                )}
               </div>
             </div>
 
@@ -200,9 +200,9 @@ export default async function HomePage() {
             description="Documented milestones of organizational service and public responsibilities across Bihar."
           />
 
-          {journeyItems.length > 0 ? (
+          {politicalJourneyItems.length > 0 ? (
             <div className="max-w-3xl mx-auto space-y-6">
-              {journeyItems.slice(0, 3).map((item) => (
+              {politicalJourneyItems.slice(0, 3).map((item) => (
                 <div
                   key={item.id}
                   className="relative pl-8 before:absolute before:left-3 before:top-2 before:bottom-0 before:w-0.5 before:bg-[var(--color-border-gray)]"
@@ -247,7 +247,7 @@ export default async function HomePage() {
                   Active Designation: Senior State Vice President, Bihar
                 </h4>
                 <p className="text-xs text-[var(--color-muted-text)] leading-relaxed">
-                  Additional chronological journey milestones will be displayed here as official party records are synchronized with the database.
+                  Additional chronological journey milestones will be displayed here as official party records are added to the static data repository.
                 </p>
               </Card>
             </div>
@@ -306,7 +306,7 @@ export default async function HomePage() {
             <EmptyState
               icon={Briefcase}
               title="No Public Work Items Published Yet"
-              description="Documented constituent activities and civic projects will appear here as they are published via the portal administration."
+              description="Documented constituent activities and civic projects will appear here as verified entries are added to the static dataset."
               action={{
                 label: "Visit Public Work Section",
                 href: "/public-work",
@@ -344,10 +344,10 @@ export default async function HomePage() {
                   className="rounded-lg border border-[var(--color-border-gray)] bg-white overflow-hidden shadow-xs hover:border-[var(--color-primary)] transition-all"
                 >
                   <div className="relative aspect-4/3 bg-[var(--color-light-gray)]">
-                    {photo.image_url ? (
+                    {photo.image ? (
                       <Image
-                        src={photo.thumbnail_url || photo.image_url}
-                        alt={photo.alt_text || photo.title}
+                        src={photo.image}
+                        alt={photo.alt || photo.title}
                         fill
                         sizes="(max-width: 640px) 100vw, 25vw"
                         className="object-cover"
@@ -381,7 +381,7 @@ export default async function HomePage() {
                     category="gallery"
                     aspectRatio="16:9"
                     title={title}
-                    description="Official photography slot."
+                    description="Official photography slot in /public/images/ratnesh-patel/gallery/."
                     className="w-full"
                   />
                   <div className="mt-2 text-xs font-medium text-[var(--color-dark-text)] text-center">
@@ -435,8 +435,13 @@ export default async function HomePage() {
           <div className="rounded-xl border border-[var(--color-primary-border)] bg-[var(--color-primary-subtle)] p-8 sm:p-12 space-y-6">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-6 pb-6 border-b border-[var(--color-primary-border)]">
               <div className="flex items-center gap-3.5">
-                <div className="h-12 w-12 rounded-lg bg-[var(--color-primary)] text-white flex items-center justify-center font-bold text-lg shadow-sm">
-                  HAM
+                <div className="relative h-12 w-12 overflow-hidden rounded-lg border border-[var(--color-primary-border)] shadow-xs shrink-0">
+                  <Image
+                    src="/images/ham/logo/ham-logo.svg"
+                    alt="HAM(S) Official Logo"
+                    fill
+                    className="object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl sm:text-2xl font-bold text-[var(--color-dark-text)]">
