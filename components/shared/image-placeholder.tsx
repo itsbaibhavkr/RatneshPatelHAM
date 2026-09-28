@@ -13,7 +13,7 @@ export function ImagePlaceholder({
   category,
   aspectRatio = "16:9",
   title,
-  description = "Awaiting official supplied photography",
+  description,
   className,
   ...props
 }: ImagePlaceholderProps) {
@@ -25,38 +25,50 @@ export function ImagePlaceholder({
   };
 
   const defaultTitles = {
-    profile: "Official Portrait Arch",
-    hero: "Featured Editorial Hero",
-    gallery: "Official Meeting & Event Archive",
+    profile: "Ratnesh Patel",
+    hero: "Official Leadership Archive",
+    gallery: "Official Photographic Documentation",
     "public-work": "Public Service Initiative",
-    ham: "Organizational Reference",
+    ham: "Hindustani Awam Morcha (Secular)",
+  };
+
+  const defaultDescriptions = {
+    profile: "Senior State Vice President, Bihar",
+    hero: "State Leadership & Public Administration, Bihar",
+    gallery: "Public meetings, conventions, and state committee sessions",
+    "public-work": "Constituent representation and community initiatives",
+    ham: "Official Party Affiliation Context",
   };
 
   return (
     <div
       className={cn(
-        "relative flex flex-col items-center justify-center border border-dashed border-[var(--color-border-dark)] bg-[var(--color-surface)] text-[var(--color-muted-text)] overflow-hidden rounded-lg p-6 text-center select-none",
+        "relative flex flex-col items-center justify-center border border-[var(--color-border-gray)] bg-gradient-to-b from-[var(--color-off-white)] to-[var(--color-light-gray)] text-[var(--color-muted-text)] overflow-hidden rounded-lg p-6 text-center select-none shadow-2xs",
         aspectClasses[aspectRatio],
         className
       )}
       {...props}
     >
-      <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[var(--color-light-gray)] text-[var(--color-primary)] mb-3">
+      {/* Editorial Watermark / Background Texture Accent */}
+      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white text-[var(--color-primary)] mb-3 shadow-xs border border-[var(--color-border-gray)]">
         {category === "profile" ? (
-          <span className="font-bold text-base tracking-wider">RP</span>
+          <span className="font-bold text-lg tracking-wider">RP</span>
         ) : (
-          <ImageIcon className="h-6 w-6" aria-hidden="true" />
+          <ImageIcon className="h-7 w-7 text-[var(--color-primary)]" aria-hidden="true" />
         )}
       </div>
-      <div className="font-medium text-sm text-[var(--color-dark-text)]">
+
+      <div className="font-bold text-sm text-[var(--color-dark-text)] tracking-tight">
         {title || defaultTitles[category]}
       </div>
-      <p className="mt-1 text-xs text-[var(--color-muted-text)] max-w-xs">
-        {description}
+
+      <p className="mt-1 text-xs text-[var(--color-muted-text)] max-w-xs leading-relaxed">
+        {description || defaultDescriptions[category]}
       </p>
-      <div className="mt-3 flex items-center gap-1.5 text-[11px] font-medium text-[var(--color-primary-dark)] bg-[var(--color-primary-subtle)] px-2.5 py-1 rounded-md border border-[var(--color-primary-border)]">
-        <ShieldCheck className="h-3.5 w-3.5" />
-        <span>Supplied Image Slot</span>
+
+      <div className="mt-3 flex items-center gap-1.5 text-[11px] font-medium text-[var(--color-dark-text)] bg-white px-3 py-1 rounded-md border border-[var(--color-border-gray)] shadow-2xs">
+        <ShieldCheck className="h-3.5 w-3.5 text-[var(--color-primary)]" />
+        <span>Official Photographic Record</span>
       </div>
     </div>
   );

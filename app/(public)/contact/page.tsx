@@ -11,7 +11,12 @@ import { SocialLinks } from "@/components/shared/social-links";
 export const metadata: Metadata = {
   title: "Contact Office",
   description:
-    "Official constituent communication portal for Ratnesh Patel, Senior State Vice President, Bihar.",
+    "Official constituent communication portal for submitting representations and public inquiries to Ratnesh Patel, Senior State Vice President, Bihar.",
+  openGraph: {
+    title: "Contact Office | Ratnesh Patel",
+    description:
+      "Official constituent communication portal for submitting representations and public inquiries to Ratnesh Patel, Senior State Vice President, Bihar.",
+  },
 };
 
 export default function ContactPage() {

@@ -157,13 +157,6 @@ export function Footer() {
               >
                 HAM (Secular) Role
               </Link>
-              <span>&bull;</span>
-              <Link
-                href="/admin/login"
-                className="hover:text-[var(--color-primary)] transition-colors"
-              >
-                Admin Console
-              </Link>
             </div>
           </div>
         </Container>

@@ -3,7 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { X, ArrowRight, ArrowUpRight } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { SocialLinks } from "@/components/shared/social-links";
@@ -100,6 +100,7 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
+                aria-current={isActive ? "page" : undefined}
                 className={cn(
                   "flex items-center justify-between rounded-md px-3 py-2.5 text-sm font-medium transition-colors",
                   isActive
@@ -125,17 +126,11 @@ export function MobileNavigation({ isOpen, onClose }: MobileNavigationProps) {
             <SocialLinks variant="minimal" size="md" />
           </div>
 
-          <div className="space-y-2 pt-2 border-t border-[var(--color-border-gray)]">
+          <div className="pt-2 border-t border-[var(--color-border-gray)]">
             <Link href="/contact" onClick={onClose} className="block w-full">
               <Button size="sm" variant="default" className="w-full justify-between">
                 <span>Contact Office</span>
                 <ArrowRight className="h-3.5 w-3.5" />
-              </Button>
-            </Link>
-            <Link href="/admin/login" onClick={onClose} className="block w-full">
-              <Button size="sm" variant="outline" className="w-full text-xs justify-between">
-                <span>Admin Console</span>
-                <ArrowUpRight className="h-3 w-3" />
               </Button>
             </Link>
           </div>

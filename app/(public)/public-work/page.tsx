@@ -14,6 +14,11 @@ export const metadata: Metadata = {
   title: "Public Work & Initiatives",
   description:
     "Constituent representation, civic outreach programs, and community initiatives of Ratnesh Patel across Bihar.",
+  openGraph: {
+    title: "Public Work & Initiatives | Ratnesh Patel",
+    description:
+      "Constituent representation, civic outreach programs, and community initiatives of Ratnesh Patel across Bihar.",
+  },
 };
 
 export default async function PublicWorkPage() {

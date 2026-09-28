@@ -32,6 +32,11 @@ export const metadata: Metadata = {
   title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
   description:
     "Official personal profile and public communication portal of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+  openGraph: {
+    title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
+    description:
+      "Official personal profile and public communication portal of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+  },
 };
 
 export default async function HomePage() {
@@ -79,20 +84,15 @@ export default async function HomePage() {
 
               {/* Action Buttons */}
               <div className="flex flex-wrap items-center gap-3 pt-2">
-                <Link href="/contact">
-                  <Button size="lg" variant="default" className="font-medium">
-                    <span>Contact Office</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
                 <Link href="/about">
-                  <Button size="lg" variant="outline" className="font-medium">
-                    Profile Overview
+                  <Button size="lg" variant="default" className="font-semibold shadow-xs">
+                    <span>About Ratnesh Patel</span>
+                    <ArrowRight className="h-4 w-4 ml-1" />
                   </Button>
                 </Link>
                 <Link href="/political-journey">
-                  <Button size="lg" variant="secondary" className="font-medium">
-                    Political Journey
+                  <Button size="lg" variant="outline" className="font-semibold">
+                    <span>Political Journey</span>
                   </Button>
                 </Link>
               </div>

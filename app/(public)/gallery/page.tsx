@@ -10,7 +10,12 @@ import { getGalleryCategories, getGalleryItems } from "@/lib/supabase/queries";
 export const metadata: Metadata = {
   title: "Media & Gallery",
   description:
-    "Official photographic archive, public meetings, and organizational events of Ratnesh Patel.",
+    "Official photographic archive, public meetings, and organizational events of Ratnesh Patel, Senior State Vice President, Bihar.",
+  openGraph: {
+    title: "Media & Gallery | Ratnesh Patel",
+    description:
+      "Official photographic archive, public meetings, and organizational events of Ratnesh Patel, Senior State Vice President, Bihar.",
+  },
 };
 
 export default async function GalleryPage() {

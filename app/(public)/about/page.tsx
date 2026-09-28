@@ -11,9 +11,14 @@ import { ImagePlaceholder } from "@/components/shared/image-placeholder";
 import { getProfile } from "@/lib/supabase/queries";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About Ratnesh Patel",
   description:
-    "Official leadership profile of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+    "Official leadership profile, organizational responsibilities, and public advocacy record of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+  openGraph: {
+    title: "About Ratnesh Patel | Senior State Vice President, Bihar",
+    description:
+      "Official leadership profile, organizational responsibilities, and public advocacy record of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+  },
 };
 
 export default async function AboutPage() {

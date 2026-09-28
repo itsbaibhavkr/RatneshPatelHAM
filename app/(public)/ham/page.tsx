@@ -8,9 +8,14 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
 export const metadata: Metadata = {
-  title: "HAM (Secular) | Party Association",
+  title: "HAM (Secular) Association",
   description:
     "Party affiliation context of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+  openGraph: {
+    title: "HAM (Secular) Association | Ratnesh Patel",
+    description:
+      "Party affiliation context of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+  },
 };
 
 export default function HamPage() {

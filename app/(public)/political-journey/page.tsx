@@ -12,7 +12,12 @@ import { getPoliticalJourney } from "@/lib/supabase/queries";
 export const metadata: Metadata = {
   title: "Political Journey",
   description:
-    "Documented political journey and service milestones of Ratnesh Patel, Senior State Vice President, Bihar.",
+    "Documented political journey and chronological organizational service milestones of Ratnesh Patel across Bihar under Hindustani Awam Morcha (Secular).",
+  openGraph: {
+    title: "Political Journey | Ratnesh Patel",
+    description:
+      "Documented political journey and chronological organizational service milestones of Ratnesh Patel across Bihar under Hindustani Awam Morcha (Secular).",
+  },
 };
 
 export default async function PoliticalJourneyPage() {
