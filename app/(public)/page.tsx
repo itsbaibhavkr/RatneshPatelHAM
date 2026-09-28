@@ -9,7 +9,6 @@ import {
   Image as ImageIcon,
   ExternalLink,
   Mail,
-  CheckCircle2,
   Share2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -46,15 +45,6 @@ export default function HomePage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Left Content Column */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2">
-                <Badge variant="subtle" className="text-xs uppercase tracking-wider py-1 px-3">
-                  Official Public Profile
-                </Badge>
-                <span className="text-xs text-[var(--color-muted-text)] font-medium">
-                  State of Bihar
-                </span>
-              </div>
-
               <div className="space-y-2">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--color-dark-text)] leading-tight">
                   {profile.name}
@@ -84,22 +74,6 @@ export default function HomePage() {
                     <span>Political Journey</span>
                   </Button>
                 </Link>
-              </div>
-
-              {/* Factual Trust Indicators */}
-              <div className="pt-6 border-t border-[var(--color-border-gray)] grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs">
-                <div className="flex items-center gap-2 text-[var(--color-dark-text)]">
-                  <CheckCircle2 className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
-                  <span>Verified Public Portal</span>
-                </div>
-                <div className="flex items-center gap-2 text-[var(--color-dark-text)]">
-                  <CheckCircle2 className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
-                  <span>State Leadership, Bihar</span>
-                </div>
-                <div className="flex items-center gap-2 text-[var(--color-dark-text)]">
-                  <CheckCircle2 className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
-                  <span>Constituent Office</span>
-                </div>
               </div>
             </div>
 
@@ -464,27 +438,10 @@ export default function HomePage() {
               </a>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs sm:text-sm text-[var(--color-dark-text)] leading-relaxed">
+            <div className="text-xs sm:text-sm text-[var(--color-dark-text)] leading-relaxed max-w-2xl">
               <p>
                 Ratnesh Patel represents the party across Bihar as Senior State Vice President. His work connects grassroots constituent priorities with state-level organizational advocacy.
               </p>
-              <div className="rounded-md bg-white p-4 border border-[var(--color-primary-border)] space-y-1 text-xs">
-                <strong className="text-[var(--color-primary-dark)] font-semibold block">
-                  Important Distinction:
-                </strong>
-                <p className="text-[var(--color-muted-text)]">
-                  This website is the official personal portal of Ratnesh Patel. Central party resolutions and national announcements are published at{" "}
-                  <a
-                    href="https://ham.org.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[var(--color-primary)] font-semibold underline"
-                  >
-                    ham.org.in
-                  </a>
-                  .
-                </p>
-              </div>
             </div>
 
             <div className="pt-2">

@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "next/link";
-import { ShieldAlert, ExternalLink, Mail, ArrowRight } from "lucide-react";
+import { ExternalLink, Mail, ArrowRight } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { SocialLinks } from "@/components/shared/social-links";
 import { MAIN_NAV_ITEMS } from "@/lib/navigation";
@@ -10,33 +10,6 @@ export function Footer() {
 
   return (
     <footer className="border-t border-[var(--color-border-gray)] bg-[var(--color-off-white)] text-[var(--color-dark-text)] overflow-hidden">
-      {/* Official Disclaimer Banner */}
-      <div className="border-b border-[var(--color-border-gray)] bg-[var(--color-white)] py-5">
-        <Container size="wide">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 rounded-lg border border-[var(--color-primary-border)] bg-[var(--color-primary-subtle)] p-4 text-xs">
-            <ShieldAlert className="h-5 w-5 text-[var(--color-primary)] shrink-0 mt-0.5 sm:mt-0" />
-            <div className="text-[var(--color-dark-text)] leading-relaxed flex-1">
-              <strong className="font-semibold text-[var(--color-primary-dark)]">
-                Important Disclaimer:
-              </strong>{" "}
-              This is the official personal and public-profile website of{" "}
-              <strong>Ratnesh Patel</strong>, Senior State Vice President, Bihar,
-              Hindustani Awam Morcha (Secular). This website serves as a personal public
-              archive and direct communication portal. It is <strong>NOT</strong> the official central website of the Hindustani Awam Morcha (Secular) political party.
-            </div>
-            <a
-              href="https://ham.org.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md bg-[var(--color-primary)] text-white font-medium text-xs hover:bg-[var(--color-primary-dark)] transition-colors shrink-0"
-            >
-              <span>ham.org.in</span>
-              <ExternalLink className="h-3.5 w-3.5" />
-            </a>
-          </div>
-        </Container>
-      </div>
-
       {/* Main Footer Content */}
       <div className="py-12 sm:py-16">
         <Container size="wide">
@@ -149,8 +122,6 @@ export function Footer() {
               &copy; {currentYear} Ratnesh Patel. All rights reserved.
             </p>
             <div className="flex items-center gap-4 text-[11px]">
-              <span>Official Public Profile</span>
-              <span>&bull;</span>
               <Link
                 href="/ham"
                 className="hover:text-[var(--color-primary)] transition-colors"

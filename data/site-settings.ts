@@ -10,8 +10,7 @@ export const siteSettings: SiteSettings = {
     "Official personal profile and public communication portal of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
   party_name: "Hindustani Awam Morcha (Secular)",
   party_website: "https://ham.org.in/",
-  disclaimer:
-    "This is the official personal and public-profile website of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). This website serves as a personal public archive and direct communication portal. It is NOT the official central website of the Hindustani Awam Morcha (Secular) political party.",
+  disclaimer: "",
   footer_text:
     "Official personal profile portal of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). Not the official party website.",
   contact_note:

@@ -16,43 +16,6 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 w-full border-b border-[var(--color-border-gray)] bg-[var(--color-white)]/95 backdrop-blur-xs shadow-2xs">
-      {/* Top Utility & Branding Strip (Desktop & Tablet) */}
-      <div className="border-b border-[var(--color-border-gray)] bg-[var(--color-off-white)] py-1.5 text-xs text-[var(--color-muted-text)]">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-          {/* HAM(S) Official Affiliation Context */}
-          <div className="flex items-center gap-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-[var(--color-primary)]" />
-            <span className="font-semibold text-[var(--color-dark-text)] text-[11px] sm:text-xs">
-              Hindustani Awam Morcha (Secular)
-            </span>
-            <span className="hidden sm:inline text-[var(--color-border-dark)]">|</span>
-            <span className="hidden sm:inline text-[11px] text-[var(--color-muted-text)]">
-              Senior State Vice President, Bihar
-            </span>
-          </div>
-
-          {/* Social Icons & External Link */}
-          <div className="flex items-center gap-3">
-            <div className="hidden md:flex items-center gap-2">
-              <span className="text-[11px] text-[var(--color-muted-text)]">
-                Official Channels:
-              </span>
-              <SocialLinks variant="minimal" size="sm" />
-            </div>
-            <span className="hidden md:inline text-[var(--color-border-dark)]">|</span>
-            <a
-              href="https://ham.org.in/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] font-medium text-[var(--color-muted-text)] hover:text-[var(--color-primary)] transition-colors inline-flex items-center gap-1"
-            >
-              <span>ham.org.in</span>
-              <span className="text-[9px] text-[var(--color-primary)] font-semibold uppercase">Party Site &rarr;</span>
-            </a>
-          </div>
-        </div>
-      </div>
-
       {/* Main Navigation Header */}
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand & Identity Area */}

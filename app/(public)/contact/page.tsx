@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ShieldAlert } from "lucide-react";
+import { ShieldCheck } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
@@ -102,11 +102,11 @@ export default function ContactPage() {
                 {/* Privacy Assurance Box */}
                 <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-off-white)] p-4 text-xs space-y-2">
                   <div className="flex items-center gap-2 font-semibold text-[var(--color-dark-text)]">
-                    <ShieldAlert className="h-4 w-4 text-[var(--color-primary)]" />
+                    <ShieldCheck className="h-4 w-4 text-[var(--color-primary)]" />
                     <span>Constituent Privacy Assurance</span>
                   </div>
                   <p className="text-[var(--color-muted-text)] leading-relaxed">
-                    Personal contact details and representation texts submitted through this form are protected by Row Level Security (RLS) policies. Public users cannot read submitted messages.
+                    Personal contact details and representation texts submitted through this form are kept confidential for constituent correspondence. Public users cannot read submitted messages.
                   </p>
                 </div>
 
