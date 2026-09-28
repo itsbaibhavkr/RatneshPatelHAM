@@ -150,7 +150,7 @@ export default function HamPage() {
 
               {/* Action Links */}
               <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-slate-200">
-                <Link href="/about">
+                <Link href="/#about">
                   <Button variant="outline" size="sm" className="rounded-lg border-slate-300 font-semibold">
                     &larr; About Ratnesh Patel
                   </Button>

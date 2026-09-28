@@ -5,9 +5,7 @@ import type { Metadata } from "next";
 import {
   ArrowRight,
   Calendar,
-  Briefcase,
   MapPin,
-  Share2,
   Users,
   Wheat,
   GraduationCap,
@@ -17,21 +15,24 @@ import {
   Sparkles,
   PhoneCall,
   ExternalLink,
+  Award,
+  CheckCircle2,
+  ChevronDown,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SocialLinks } from "@/components/shared/social-links";
+import { PoliticalTimeline } from "@/components/sections/political-timeline";
 import { profile } from "@/data/profile";
 import { politicalJourneyItems } from "@/data/political-journey";
-import { publicWorkItems } from "@/data/public-work";
 import { galleryItems } from "@/data/gallery";
 
 export const metadata: Metadata = {
   title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
   description:
-    "Official leadership website of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). Dedicated to grassroots service, farmer welfare, and social justice.",
+    "Official leadership website of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). 30+ years of grassroots service, farmer welfare, and social justice.",
   openGraph: {
     title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
     description:
@@ -70,7 +71,7 @@ export default function HomePage() {
                   को समर्पित
                 </h1>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl pt-1">
-                  <strong>Ratnesh Patel</strong> is dedicated to grassroots empowerment, farmer prosperity, youth welfare, and strengthening democratic representation across all 38 districts of Bihar under the leadership of Hindustani Awam Morcha (Secular).
+                  <strong>Ratnesh Patel</strong> brings over 30 years of dedicated political leadership - from grassroots organizational building in Muzaffarpur to serving as State Vice President of Hindustani Awam Morcha (Secular) and NDA Election Incharge for the 2024 Lok Sabha Elections.
                 </p>
               </div>
 
@@ -92,7 +93,7 @@ export default function HomePage() {
               </div>
 
               {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-4 pt-2">
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
                 <Link href="/contact">
                   <Button
                     size="lg"
@@ -102,18 +103,26 @@ export default function HomePage() {
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
-                <Link href="/political-journey">
+                <a href="#about">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="border-slate-300 hover:border-slate-400 text-slate-800 hover:bg-slate-50 font-semibold px-6 py-3 rounded-xl transition-all"
+                    className="border-slate-300 hover:border-slate-400 text-slate-800 hover:bg-slate-50 font-semibold px-5 py-3 rounded-xl gap-1.5 transition-all"
                   >
-                    <span>Political Journey</span>
+                    <span>About Ratnesh Patel</span>
+                    <ChevronDown className="h-4 w-4 text-slate-500" />
                   </Button>
-                </Link>
-                <Link href="/about" className="text-xs font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors underline-offset-4 hover:underline ml-1">
-                  View Full Profile &rarr;
-                </Link>
+                </a>
+                <a href="#journey">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="border-slate-300 hover:border-slate-400 text-slate-800 hover:bg-slate-50 font-semibold px-5 py-3 rounded-xl gap-1.5 transition-all"
+                  >
+                    <span>Political History</span>
+                    <ChevronDown className="h-4 w-4 text-slate-500" />
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -156,11 +165,11 @@ export default function HomePage() {
                 {/* Floating Grassroots Badge */}
                 <div className="hidden sm:flex absolute -bottom-5 -left-5 bg-white border border-slate-200 shadow-lg rounded-xl p-3 items-center gap-3">
                   <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 text-[var(--color-primary)] font-bold">
-                    <Users className="h-5 w-5" />
+                    <Award className="h-5 w-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-900">38 Districts</div>
-                    <div className="text-[11px] text-slate-500">Grassroots Cadre Outreach</div>
+                    <div className="text-xs font-bold text-slate-900">NDA 2024 Election Incharge</div>
+                    <div className="text-[11px] text-slate-500">Muzaffarpur &amp; Vaishali</div>
                   </div>
                 </div>
               </div>
@@ -169,17 +178,17 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 2. LEADERSHIP IMPACT HIGHLIGHTS (Clean Stat Bar) */}
+      {/* 2. LEADERSHIP IMPACT STATS BAR */}
       <section className="border-b border-slate-200 bg-white py-8 sm:py-10">
         <Container size="wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
             <div className="flex items-center gap-3.5 p-2">
               <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)]">
-                <ShieldCheck className="h-6 w-6" />
+                <Calendar className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-slate-900">15+ Years</div>
-                <div className="text-xs text-slate-500 font-medium">Public &amp; Social Service</div>
+                <div className="text-xl sm:text-2xl font-extrabold text-slate-900">30+ Years</div>
+                <div className="text-xs text-slate-500 font-medium">Public Career (1995&ndash;Present)</div>
               </div>
             </div>
 
@@ -189,7 +198,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-extrabold text-slate-900">38 Districts</div>
-                <div className="text-xs text-slate-500 font-medium">Statewide Bihar Reach</div>
+                <div className="text-xs text-slate-500 font-medium">Tirhut Division &amp; Bihar</div>
               </div>
             </div>
 
@@ -199,7 +208,7 @@ export default function HomePage() {
               </div>
               <div>
                 <div className="text-xl sm:text-2xl font-extrabold text-slate-900">HAM(S)</div>
-                <div className="text-xs text-slate-500 font-medium">Senior State Leadership</div>
+                <div className="text-xs text-slate-500 font-medium">State Vice President, Bihar</div>
               </div>
             </div>
 
@@ -216,102 +225,166 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 3. CORE LEADERSHIP PILLARS (सेवा और संकल्प - Authentic Political Focus) */}
-      <Section variant="surface">
+      {/* 3. ABOUT SECTION (Integrated Editorial Profile & Focus Areas) */}
+      <section id="about" className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-slate-50/60 border-b border-slate-200">
         <Container size="wide">
-          <div className="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
-            <Badge variant="subtle" className="text-xs font-bold uppercase tracking-wider">
-              सेवा एवं संकल्प &bull; Core Focus
-            </Badge>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
-              Vision &amp; Priorities for Bihar
-            </h2>
-            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-              Guided by the progressive ideals of Hindustani Awam Morcha (Secular), Ratnesh Patel actively champions the causes of everyday citizens across four foundational pillars.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Pillar 1 */}
-            <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:border-[var(--color-primary)] hover:shadow-md transition-all group flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                  <Scale className="h-6 w-6" />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
+            {/* Left Column: Portrait & Credentials */}
+            <div className="lg:col-span-5">
+              <div className="sticky top-24 rounded-2xl border-2 border-white bg-white p-3 shadow-xl ring-1 ring-slate-200 space-y-4">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100">
+                  <Image
+                    src="/images/ratnesh-patel/profile/ratnesh-patel.webp"
+                    alt="Ratnesh Patel standing in official attire"
+                    fill
+                    sizes="(max-width: 768px) 90vw, 420px"
+                    className="object-cover object-top"
+                  />
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
-                  सामाजिक न्याय एवं वंचित उत्थान
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Empowering Dalit, Mahadalit, and backward communities through equitable access to welfare schemes, education, and social dignity.
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-100 text-xs font-semibold text-[var(--color-primary)]">
-                Social Equity &rarr;
+
+                <div className="px-2 pb-2 space-y-2">
+                  <div className="flex items-center justify-between">
+                    <span className="font-extrabold text-base text-slate-900">
+                      Ratnesh Patel
+                    </span>
+                    <span className="text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">
+                      Since 1995
+                    </span>
+                  </div>
+                  <p className="text-xs font-semibold text-[var(--color-primary)]">
+                    Senior State Vice President, Bihar &bull; HAM(S)
+                  </p>
+                  <p className="text-xs text-slate-500 leading-relaxed">
+                    Rooted in Kudhani, Muzaffarpur with active executive leadership spanning the Tirhut division and the entire state of Bihar.
+                  </p>
+                </div>
               </div>
             </div>
 
-            {/* Pillar 2 */}
-            <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:border-[var(--color-primary)] hover:shadow-md transition-all group flex flex-col justify-between">
+            {/* Right Column: Narrative Biography & 4 Core Priorities */}
+            <div className="lg:col-span-7 space-y-8">
               <div className="space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                  <Wheat className="h-6 w-6" />
+                <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3.5 py-1">
+                  <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+                  <span className="text-xs font-bold text-[var(--color-primary-dark)]">
+                    About Ratnesh Patel &bull; व्यक्तित्व एवं नेतृत्व
+                  </span>
                 </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
-                  किसान कल्याण एवं सिंचाई सुविधा
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Fighting for regular canal irrigation, fair MSP realizations, prompt flood/drought compensation, and rural agricultural infrastructure.
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-100 text-xs font-semibold text-[var(--color-primary)]">
-                Rural Prosperity &rarr;
-              </div>
-            </div>
 
-            {/* Pillar 3 */}
-            <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:border-[var(--color-primary)] hover:shadow-md transition-all group flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                  <GraduationCap className="h-6 w-6" />
-                </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
-                  युवा रोज़गार एवं कौशल संवर्धन
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Advocating for transparent recruitment exams, career counseling, technical skills training, and local industrial job opportunities for youth.
-                </p>
-              </div>
-              <div className="pt-4 mt-4 border-t border-slate-100 text-xs font-semibold text-[var(--color-primary)]">
-                Youth Empowerment &rarr;
-              </div>
-            </div>
+                <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
+                  Three Decades of Grassroots Leadership &amp; Public Commitment
+                </h2>
 
-            {/* Pillar 4 */}
-            <div className="rounded-2xl border border-slate-200/90 bg-white p-6 shadow-xs hover:border-[var(--color-primary)] hover:shadow-md transition-all group flex flex-col justify-between">
-              <div className="space-y-4">
-                <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-colors">
-                  <Users className="h-6 w-6" />
-                </div>
-                <h3 className="text-base font-bold text-slate-900 leading-snug">
-                  पारदर्शी शासन एवं जनसुनवाई
-                </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                  Providing a reliable bridge between citizens and administrative bodies to resolve civic grievances, land records, and welfare delays.
+                <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
+                  <strong>Ratnesh Patel</strong> is an experienced political leader with a distinguished career in election management, organizational leadership, and grassroots mobilization across Bihar.
+                </p>
+
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                  Starting his public journey in <strong>1995 with the Samata Party</strong>, he went on to serve as Block Vice President in Kudhani and Youth District Vice President under <strong>Janata Dal (2005&ndash;2015)</strong>. Since the founding of <strong>Hindustani Awam Morcha (Secular)</strong> in 2015, he has served as State Secretary and currently as <strong>State Vice President, Bihar</strong>. In the <strong>2024 Lok Sabha Elections</strong>, he served as the Election Incharge for the NDA across the Muzaffarpur and Vaishali constituencies.
                 </p>
               </div>
-              <div className="pt-4 mt-4 border-t border-slate-100 text-xs font-semibold text-[var(--color-primary)]">
-                Public Redressal &rarr;
+
+              {/* 4 Core Pillars of Public Service */}
+              <div className="space-y-4 pt-2">
+                <h3 className="font-extrabold text-sm text-slate-900 uppercase tracking-wider">
+                  Core Pillars of Public Advocacy &bull; प्रमुख प्राथमिकताएं
+                </h3>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {/* Pillar 1 */}
+                  <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2 shadow-2xs hover:border-[var(--color-primary)] transition-all">
+                    <div className="flex items-center gap-2.5 font-bold text-sm text-slate-900">
+                      <Scale className="h-4 w-4 text-[var(--color-primary)]" />
+                      <span>सामाजिक न्याय एवं समरसता</span>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Social justice, equality, and welfare delivery for Dalit, Mahadalit, and marginalized communities.
+                    </p>
+                  </div>
+
+                  {/* Pillar 2 */}
+                  <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2 shadow-2xs hover:border-[var(--color-primary)] transition-all">
+                    <div className="flex items-center gap-2.5 font-bold text-sm text-slate-900">
+                      <Wheat className="h-4 w-4 text-[var(--color-primary)]" />
+                      <span>किसान कल्याण एवं सिंचाई</span>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Advocating for regular canal irrigation, fair crop pricing, timely compensation, and rural development.
+                    </p>
+                  </div>
+
+                  {/* Pillar 3 */}
+                  <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2 shadow-2xs hover:border-[var(--color-primary)] transition-all">
+                    <div className="flex items-center gap-2.5 font-bold text-sm text-slate-900">
+                      <GraduationCap className="h-4 w-4 text-[var(--color-primary)]" />
+                      <span>युवा रोज़गार एवं शिक्षा</span>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      Encouraging career opportunities, technical skill development, and youth mobilization across Bihar.
+                    </p>
+                  </div>
+
+                  {/* Pillar 4 */}
+                  <div className="rounded-xl border border-slate-200 bg-white p-5 space-y-2 shadow-2xs hover:border-[var(--color-primary)] transition-all">
+                    <div className="flex items-center gap-2.5 font-bold text-sm text-slate-900">
+                      <Users className="h-4 w-4 text-[var(--color-primary)]" />
+                      <span>पारदर्शी जन संवाद</span>
+                    </div>
+                    <p className="text-xs text-slate-600 leading-relaxed">
+                      An accessible bridge between everyday citizens and administrative officers for rapid grievance redressal.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Jump to Journey CTA */}
+              <div className="pt-2 flex flex-wrap items-center gap-4">
+                <a href="#journey">
+                  <Button className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold rounded-xl gap-2 shadow-xs">
+                    <span>View Political Journey / कार्य काल</span>
+                    <ArrowRight className="h-4 w-4" />
+                  </Button>
+                </a>
+                <Link href="/contact" className="text-xs font-semibold text-slate-600 hover:text-[var(--color-primary)] transition-colors">
+                  Submit a Representation &rarr;
+                </Link>
               </div>
             </div>
           </div>
         </Container>
-      </Section>
+      </section>
 
-      {/* 4. PARTY IDEOLOGY & LEADERSHIP (HAM Secular Authentic Mission) */}
-      <section className="bg-white border-y border-slate-200 py-14 sm:py-20">
+      {/* 4. POLITICAL JOURNEY / HISTORY SECTION (Professional Left-Right Timeline Tree) */}
+      <section id="journey" className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-white border-b border-slate-200">
         <Container size="wide">
-          <div className="rounded-2xl bg-gradient-to-r from-red-950 via-red-900 to-stone-900 text-white p-8 sm:p-12 lg:p-14 shadow-xl overflow-hidden relative">
-            {/* Background pattern */}
+          {/* Section Header */}
+          <div className="text-center max-w-3xl mx-auto space-y-3 mb-12 sm:mb-16">
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3.5 py-1">
+              <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+              <span className="text-xs font-bold text-[var(--color-primary-dark)]">
+                राजनीतिक यात्रा &bull; 1995 to Present
+              </span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
+              Political History &amp; Leadership Milestones
+            </h2>
+
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              A chronological progression of organizational responsibilities, grassroots leadership, and major election management roles across Bihar over the past three decades.
+            </p>
+          </div>
+
+          {/* Left-Right Alternating Tree Timeline Component */}
+          <PoliticalTimeline items={politicalJourneyItems} />
+        </Container>
+      </section>
+
+      {/* 5. PARTY IDEOLOGY & LEADERSHIP (HAM Secular Authentic Mission) */}
+      <section id="ham" className="scroll-mt-20 bg-slate-900 border-b border-slate-800 py-16 sm:py-20 text-white">
+        <Container size="wide">
+          <div className="rounded-2xl bg-gradient-to-r from-red-950 via-red-900 to-slate-900 p-8 sm:p-12 lg:p-14 shadow-2xl overflow-hidden relative border border-red-900/50">
+            {/* Background watermark */}
             <div className="absolute -right-20 -bottom-20 opacity-10 pointer-events-none">
               <Image
                 src="/images/ham/logo/ham-logo.svg"
@@ -356,79 +429,17 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 5. PUBLIC INITIATIVES & ENGAGEMENT (Real Public Works) */}
-      <Section variant="surface">
-        <Container size="wide">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10 sm:mb-12">
-            <div className="space-y-2">
-              <Badge variant="subtle" className="text-xs font-bold uppercase tracking-wider">
-                जनहित कार्य &bull; Initiatives
-              </Badge>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
-                Public Initiatives &amp; Civic Engagements
-              </h2>
-              <p className="text-xs sm:text-sm text-slate-600 max-w-xl">
-                Documented representations, district conventions, and welfare advocacy drives led by Ratnesh Patel.
-              </p>
-            </div>
-            <Link href="/public-work" className="shrink-0">
-              <Button variant="outline" size="sm" className="font-semibold gap-1.5 rounded-lg border-slate-300">
-                <span>View All Initiatives</span>
-                <ArrowRight className="h-3.5 w-3.5" />
-              </Button>
-            </Link>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {publicWorkItems.slice(0, 3).map((work) => (
-              <div
-                key={work.id}
-                className="rounded-2xl border border-slate-200 bg-white p-6 shadow-xs hover:border-[var(--color-primary)] hover:shadow-md transition-all flex flex-col justify-between"
-              >
-                <div className="space-y-3">
-                  <div className="flex items-center justify-between gap-2">
-                    <Badge variant="subtle" className="text-[11px] font-semibold">
-                      {work.category}
-                    </Badge>
-                    <span className="text-[11px] text-slate-500 font-medium">
-                      {work.date}
-                    </span>
-                  </div>
-                  <h3 className="text-base font-bold text-slate-900 leading-snug">
-                    {work.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-3 leading-relaxed">
-                    {work.short_description || work.description}
-                  </p>
-                </div>
-
-                <div className="pt-4 mt-4 border-t border-slate-100 flex items-center justify-between text-xs">
-                  <span className="text-slate-500 flex items-center gap-1">
-                    <MapPin className="h-3 w-3 text-[var(--color-primary)]" />
-                    <span>{work.location}</span>
-                  </span>
-                  <Link
-                    href="/public-work"
-                    className="font-semibold text-[var(--color-primary)] hover:underline inline-flex items-center gap-1"
-                  >
-                    <span>Read details</span>
-                    <ArrowRight className="h-3 w-3" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </Section>
-
-      {/* 6. PHOTO GALLERY & LEADERSHIP MOMENTS */}
-      <section className="bg-white border-b border-slate-200 py-14 sm:py-20">
+      {/* 6. PHOTO GALLERY & MOMENTS */}
+      <section id="gallery" className="scroll-mt-20 bg-white border-b border-slate-200 py-16 sm:py-20">
         <Container size="wide">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
             <div className="space-y-2">
-              <Badge variant="subtle" className="text-xs font-bold uppercase tracking-wider">
-                तस्वीरें एवं मीडिया &bull; Moments
-              </Badge>
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1">
+                <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+                <span className="text-xs font-bold text-[var(--color-primary-dark)]">
+                  तस्वीरें एवं मीडिया &bull; Moments
+                </span>
+              </div>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Media &amp; Public Moments
               </h2>
@@ -476,7 +487,7 @@ export default function HomePage() {
       </section>
 
       {/* 7. DIRECT CONSTITUENT CONNECT (जन संवाद केंद्र) */}
-      <Section variant="surface">
+      <section id="contact" className="scroll-mt-20 py-16 sm:py-20 bg-slate-50/60">
         <Container size="narrow">
           <div className="rounded-2xl border border-slate-200 bg-white p-8 sm:p-12 shadow-sm text-center space-y-6">
             <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 text-[var(--color-primary)] mx-auto shadow-2xs">
@@ -513,7 +524,7 @@ export default function HomePage() {
             </div>
           </div>
         </Container>
-      </Section>
+      </section>
     </>
   );
 }

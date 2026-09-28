@@ -4,6 +4,7 @@
 export interface PoliticalJourneyItem {
   id: string;
   year: string;
+  period?: string;
   title: string;
   organization: string;
   location?: string | null;

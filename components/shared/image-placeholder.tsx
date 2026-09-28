@@ -3,7 +3,7 @@ import { Image as ImageIcon, ShieldCheck } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface ImagePlaceholderProps extends React.HTMLAttributes<HTMLDivElement> {
-  category: "profile" | "hero" | "gallery" | "public-work" | "ham";
+  category: "profile" | "hero" | "gallery" | "ham";
   aspectRatio?: "1:1" | "4:3" | "16:9" | "3:4";
   title?: string;
   description?: string;
@@ -28,7 +28,6 @@ export function ImagePlaceholder({
     profile: "Ratnesh Patel",
     hero: "Official Leadership Archive",
     gallery: "Official Photographic Documentation",
-    "public-work": "Public Service Initiative",
     ham: "Hindustani Awam Morcha (Secular)",
   };
 
@@ -36,7 +35,6 @@ export function ImagePlaceholder({
     profile: "Senior State Vice President, Bihar",
     hero: "State Leadership & Public Administration, Bihar",
     gallery: "Public meetings, conventions, and state committee sessions",
-    "public-work": "Constituent representation and community initiatives",
     ham: "Official Party Affiliation Context",
   };
 
