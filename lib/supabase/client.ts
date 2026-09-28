@@ -1,7 +1,8 @@
 import { createBrowserClient } from "@supabase/ssr";
+import type { Database } from "@/types/database";
 
 /**
- * Creates a browser-side Supabase client for client components.
+ * Creates a browser-side Supabase client with strict database typing.
  * Includes graceful handling when environment variables are not yet configured.
  */
 export function createClient() {
@@ -16,7 +17,7 @@ export function createClient() {
     }
   }
 
-  return createBrowserClient(
+  return createBrowserClient<Database>(
     supabaseUrl || "https://placeholder-project.supabase.co",
     supabaseAnonKey || "placeholder-anon-key"
   );

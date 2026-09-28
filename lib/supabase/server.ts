@@ -1,9 +1,10 @@
 import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
+import type { Database } from "@/types/database";
 
 /**
- * Creates a server-side Supabase client for Server Components,
- * Server Actions, and Route Handlers.
+ * Creates a server-side Supabase client with strict database typing
+ * for Server Components, Server Actions, and Route Handlers.
  */
 export async function createClient() {
   const cookieStore = await cookies();
@@ -19,7 +20,7 @@ export async function createClient() {
     }
   }
 
-  return createServerClient(
+  return createServerClient<Database>(
     supabaseUrl || "https://placeholder-project.supabase.co",
     supabaseAnonKey || "placeholder-anon-key",
     {

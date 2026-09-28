@@ -21,7 +21,7 @@ export default function AdminProfilePage() {
           </p>
         </div>
         <Badge variant="subtle" className="text-xs">
-          Schema: profile
+          Schema: profiles
         </Badge>
       </div>
 
@@ -32,12 +32,12 @@ export default function AdminProfilePage() {
             <CardTitle className="text-base">Profile Architecture Status</CardTitle>
           </div>
           <CardDescription className="text-xs">
-            Linked to PostgreSQL table `profile` in `types/database.ts`.
+            Linked to PostgreSQL table `profiles` in `types/database.ts`.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-3 text-xs text-[var(--color-muted-text)]">
           <p>
-            Fields prepared: `name`, `designation`, `party_affiliation`, `bio`, `avatar_url`, `hero_image_url`.
+            Fields prepared: `name`, `designation`, `party`, `biography`, `profile_image_url`, `hero_image_url`, `public_email`, `public_phone`.
           </p>
           <div className="rounded-md border border-[var(--color-border-gray)] bg-[var(--color-off-white)] p-4">
             <div className="font-semibold text-[var(--color-dark-text)] mb-1">
