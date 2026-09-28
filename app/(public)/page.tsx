@@ -15,7 +15,6 @@ import {
   Sparkles,
   PhoneCall,
   ExternalLink,
-  Award,
   CheckCircle2,
   ChevronDown,
 } from "lucide-react";
@@ -103,16 +102,6 @@ export default function HomePage() {
                     <ArrowRight className="h-4 w-4" />
                   </Button>
                 </Link>
-                <a href="#about">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-slate-300 hover:border-slate-400 text-slate-800 hover:bg-slate-50 font-semibold px-5 py-3 rounded-xl gap-1.5 transition-all"
-                  >
-                    <span>About Ratnesh Patel</span>
-                    <ChevronDown className="h-4 w-4 text-slate-500" />
-                  </Button>
-                </a>
                 <a href="#journey">
                   <Button
                     size="lg"
@@ -159,17 +148,6 @@ export default function HomePage() {
                     <p className="text-[11px] text-slate-500 font-medium">
                       Hindustani Awam Morcha (Secular), Bihar
                     </p>
-                  </div>
-                </div>
-
-                {/* Floating Grassroots Badge */}
-                <div className="hidden sm:flex absolute -bottom-5 -left-5 bg-white border border-slate-200 shadow-lg rounded-xl p-3 items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-50 text-[var(--color-primary)] font-bold">
-                    <Award className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-slate-900">NDA 2024 Election Incharge</div>
-                    <div className="text-[11px] text-slate-500">Muzaffarpur &amp; Vaishali</div>
                   </div>
                 </div>
               </div>

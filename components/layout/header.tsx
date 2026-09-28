@@ -21,14 +21,14 @@ export function Header() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand & Identity Area */}
         <Link href="/" className="flex items-center gap-3 group shrink-0">
-          <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-[var(--color-primary)] shadow-xs bg-slate-100 group-hover:scale-105 transition-transform">
+          <div className="relative h-11 w-11 overflow-hidden rounded-full border-2 border-[var(--color-primary)] shadow-xs bg-white group-hover:scale-105 transition-transform p-0.5">
             <Image
-              src="/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp"
-              alt="Ratnesh Patel"
+              src="/HAMLogo.png"
+              alt="Hindustani Awam Morcha (Secular) Logo"
               fill
-              sizes="40px"
+              sizes="44px"
               priority
-              className="object-cover object-top"
+              className="object-contain"
             />
           </div>
           <div className="flex flex-col">
