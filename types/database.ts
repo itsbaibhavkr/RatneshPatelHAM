@@ -64,6 +64,7 @@ export interface Database {
           public_phone?: string | null;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       political_journey: {
@@ -111,6 +112,7 @@ export interface Database {
           is_published?: boolean;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       public_work: {
@@ -161,6 +163,7 @@ export interface Database {
           display_order?: number;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       gallery_categories: {
@@ -190,6 +193,7 @@ export interface Database {
           display_order?: number;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       gallery: {
@@ -231,6 +235,15 @@ export interface Database {
           is_published?: boolean;
           updated_at?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "gallery_category_id_fkey";
+            columns: ["category_id"];
+            isOneToOne: false;
+            referencedRelation: "gallery_categories";
+            referencedColumns: ["id"];
+          }
+        ];
       };
 
       videos: {
@@ -269,6 +282,7 @@ export interface Database {
           is_published?: boolean;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       social_links: {
@@ -301,6 +315,7 @@ export interface Database {
           is_active?: boolean;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       contact_messages: {
@@ -339,6 +354,7 @@ export interface Database {
           status?: ContactMessageStatus;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       site_settings: {
@@ -386,6 +402,7 @@ export interface Database {
           seo_description?: string | null;
           updated_at?: string;
         };
+        Relationships: [];
       };
 
       admin_profiles: {
@@ -414,13 +431,24 @@ export interface Database {
           is_active?: boolean;
           updated_at?: string;
         };
+        Relationships: [];
       };
+    };
+    Views: {
+      [_ in never]: never;
     };
     Functions: {
       is_admin: {
         Args: Record<string, never>;
         Returns: boolean;
       };
+    };
+    Enums: {
+      contact_message_status: ContactMessageStatus;
+      admin_role: AdminRole;
+    };
+    CompositeTypes: {
+      [_ in never]: never;
     };
   };
 }

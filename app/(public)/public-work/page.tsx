@@ -1,121 +1,142 @@
 import * as React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Shield } from "lucide-react";
+import Image from "next/image";
+import { Briefcase, Calendar, MapPin, Video } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { ImagePlaceholder } from "@/components/shared/image-placeholder";
+import { EmptyState } from "@/components/ui/empty-state";
+import { getPublicWork } from "@/lib/supabase/queries";
 
 export const metadata: Metadata = {
-  title: "Public Work",
+  title: "Public Work & Initiatives",
   description:
-    "Constituent representation, civic outreach, and public service activities of Ratnesh Patel.",
+    "Constituent representation, civic outreach programs, and community initiatives of Ratnesh Patel across Bihar.",
 };
 
-const WORK_CATEGORIES = [
-  {
-    title: "Constituency Grievance & Redressal",
-    category: "Constituent Outreach",
-    description:
-      "Facilitating formal constituent representations, citizen petitions, and administrative coordination.",
-  },
-  {
-    title: "Community Outreach & Public Assemblies",
-    category: "Civic Engagement",
-    description:
-      "Public meetings with grassroots communities, social workers, and district representatives in Bihar.",
-  },
-  {
-    title: "Party Organization & State Conclaves",
-    category: "Organizational Leadership",
-    description:
-      "Participating in Hindustani Awam Morcha (Secular) state-level leadership dialogues and conferences.",
-  },
-];
+export default async function PublicWorkPage() {
+  const publicWorkItems = await getPublicWork();
 
-export default function PublicWorkPage() {
   return (
-    <Section variant="default">
-      <Container>
-        <div className="max-w-5xl mx-auto space-y-8">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-[var(--color-muted-text)]">
-            <Link href="/" className="hover:text-[var(--color-primary)]">
-              Home
-            </Link>
-            <span>/</span>
-            <span className="text-[var(--color-dark-text)] font-medium">Public Work</span>
-          </div>
+    <div>
+      {/* Header */}
+      <section className="border-b border-[var(--color-border-gray)] bg-[var(--color-white)] py-12 sm:py-16">
+        <Container size="wide">
+          <div className="max-w-4xl space-y-4">
+            <div className="flex items-center gap-2 text-xs text-[var(--color-muted-text)]">
+              <Link href="/" className="hover:text-[var(--color-primary)]">
+                Home
+              </Link>
+              <span>/</span>
+              <span className="text-[var(--color-dark-text)] font-medium">Public Work</span>
+            </div>
 
-          {/* Heading */}
-          <div className="space-y-3 border-b border-[var(--color-border-gray)] pb-6">
-            <Badge variant="subtle" className="text-xs uppercase tracking-wider">
-              Service Documentation
-            </Badge>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--color-dark-text)]">
-              Public Work &amp; Engagements
-            </h1>
-            <p className="text-sm text-[var(--color-muted-text)] leading-relaxed max-w-2xl">
-              Documenting civic engagements, grassroots constituency interactions, and organizational initiatives undertaken in public service across Bihar.
-            </p>
+            <div className="space-y-2">
+              <Badge variant="subtle" className="text-xs uppercase tracking-wider">
+                Civic Initiatives &amp; Service
+              </Badge>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--color-dark-text)]">
+                Public Work &amp; Engagements
+              </h1>
+              <p className="text-sm sm:text-base text-[var(--color-muted-text)] leading-relaxed max-w-2xl">
+                Documenting constituent representations, community outreach programs, and civic service activities undertaken in Bihar.
+              </p>
+            </div>
           </div>
+        </Container>
+      </section>
 
-          {/* Category Cards Architecture */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {WORK_CATEGORIES.map((item, index) => (
-              <Card key={index} className="flex flex-col justify-between">
-                <CardHeader>
-                  <div className="mb-3">
-                    <ImagePlaceholder
-                      category="public-work"
-                      aspectRatio="16:9"
-                      title={item.category}
-                      description="Photographic slot for public service record."
-                    />
-                  </div>
-                  <Badge variant="outline" className="w-fit text-[11px] mb-2">
-                    {item.category}
-                  </Badge>
-                  <CardTitle className="text-base">{item.title}</CardTitle>
-                  <CardDescription className="text-xs">
-                    {item.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <span className="text-[11px] font-medium text-[var(--color-muted-text)]">
-                    Architecture Configured &bull; Supabase Ready
-                  </span>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      {/* Main Content Section */}
+      <Section variant="default">
+        <Container size="wide">
+          {publicWorkItems.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {publicWorkItems.map((item) => (
+                <Card
+                  key={item.id}
+                  className="flex flex-col justify-between overflow-hidden hover:border-[var(--color-primary)] transition-all hover:shadow-xs"
+                >
+                  {item.featured_image_url && (
+                    <div className="relative aspect-video w-full bg-[var(--color-light-gray)] overflow-hidden">
+                      <Image
+                        src={item.featured_image_url}
+                        alt={item.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        className="object-cover"
+                      />
+                    </div>
+                  )}
 
-          {/* Architecture Ready Notice */}
-          <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-off-white)] p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[var(--color-primary-subtle)] text-[var(--color-primary)] shrink-0">
-                <Shield className="h-5 w-5" />
-              </div>
-              <div>
-                <h4 className="font-semibold text-sm text-[var(--color-dark-text)]">
-                  Public Work Module Architecture Ready
-                </h4>
-                <p className="text-xs text-[var(--color-muted-text)]">
-                  The PostgreSQL database schema `public_work` is prepared for authenticated administration.
+                  <CardHeader className="p-5 pb-3">
+                    <div className="flex items-center justify-between gap-2 mb-2">
+                      <Badge variant="subtle" className="text-[11px]">
+                        {item.category}
+                      </Badge>
+                      {item.date && (
+                        <span className="text-xs text-[var(--color-muted-text)] flex items-center gap-1">
+                          <Calendar className="h-3 w-3" />
+                          <span>{item.date}</span>
+                        </span>
+                      )}
+                    </div>
+
+                    <CardTitle className="text-base sm:text-lg font-bold text-[var(--color-dark-text)]">
+                      {item.title}
+                    </CardTitle>
+
+                    {item.location && (
+                      <span className="text-xs text-[var(--color-muted-text)] flex items-center gap-1 pt-1">
+                        <MapPin className="h-3 w-3 text-[var(--color-primary)]" />
+                        <span>{item.location}</span>
+                      </span>
+                    )}
+
+                    <CardDescription className="text-xs text-[var(--color-dark-text)]/80 mt-2 line-clamp-3 leading-relaxed">
+                      {item.short_description || item.description}
+                    </CardDescription>
+                  </CardHeader>
+
+                  <CardContent className="p-5 pt-0">
+                    <div className="pt-3 border-t border-[var(--color-border-gray)] flex items-center justify-between text-xs text-[var(--color-primary)] font-medium">
+                      <span>Constituent Initiative</span>
+                      {item.video_url && (
+                        <span className="flex items-center gap-1 text-[var(--color-muted-text)]">
+                          <Video className="h-3.5 w-3.5" />
+                          <span>Video Available</span>
+                        </span>
+                      )}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          ) : (
+            <div className="max-w-2xl mx-auto space-y-6">
+              <EmptyState
+                icon={Briefcase}
+                title="No Public Work Items Published Yet"
+                description="Verified constituent outreach records, community representations, and civic initiatives will appear here as they are published by the office administration."
+                action={{
+                  label: "Submit a Public Representation",
+                  href: "/contact",
+                }}
+              />
+
+              <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-off-white)] p-6 space-y-2 text-center text-xs text-[var(--color-muted-text)]">
+                <span className="font-semibold text-[var(--color-dark-text)] block">
+                  Public Representation Inquiries
+                </span>
+                <p>
+                  To submit a civic concern or constituent representation from your district for review by Ratnesh Patel, use the verified contact portal.
                 </p>
               </div>
             </div>
-            <Link
-              href="/contact"
-              className="text-xs font-semibold text-[var(--color-primary)] hover:underline shrink-0"
-            >
-              Submit Constituent Matter &rarr;
-            </Link>
-          </div>
-        </div>
-      </Container>
-    </Section>
+          )}
+        </Container>
+      </Section>
+    </div>
   );
 }

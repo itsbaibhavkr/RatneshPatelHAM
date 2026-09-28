@@ -1,12 +1,12 @@
 import * as React from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Send, ShieldAlert } from "lucide-react";
+import { ShieldAlert } from "lucide-react";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
+import { ContactForm } from "@/components/forms/contact-form";
+import { SocialLinks } from "@/components/shared/social-links";
 
 export const metadata: Metadata = {
   title: "Contact Office",
@@ -16,185 +16,107 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <Section variant="default">
-      <Container>
-        <div className="max-w-4xl mx-auto space-y-8">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-2 text-xs text-[var(--color-muted-text)]">
-            <Link href="/" className="hover:text-[var(--color-primary)]">
-              Home
-            </Link>
-            <span>/</span>
-            <span className="text-[var(--color-dark-text)] font-medium">Contact</span>
-          </div>
-
-          {/* Heading */}
-          <div className="space-y-3 border-b border-[var(--color-border-gray)] pb-6">
-            <Badge variant="subtle" className="text-xs uppercase tracking-wider">
-              Constituent Correspondence
-            </Badge>
-            <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-[var(--color-dark-text)]">
-              Contact the Office of Ratnesh Patel
-            </h1>
-            <p className="text-sm text-[var(--color-muted-text)] leading-relaxed max-w-2xl">
-              Citizens, constituent delegations, and party workers may submit official representations, public grievances, and communication through this verified channel.
-            </p>
-          </div>
-
-          {/* Disclaimer Banner */}
-          <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-off-white)] p-4 text-xs text-[var(--color-muted-text)] flex items-center gap-2">
-            <ShieldAlert className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
-            <span>
-              All communications submitted through this form are logged in the secure Supabase administrative database for review by the office.
-            </span>
-          </div>
-
-          {/* Contact Form Architecture */}
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-8">
-            <div className="md:col-span-8">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-lg">Submit Representation or Inquiry</CardTitle>
-                  <CardDescription className="text-xs">
-                    Please provide accurate contact details so the office can respond effectively.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label
-                          htmlFor="name"
-                          className="block text-xs font-semibold text-[var(--color-dark-text)]"
-                        >
-                          Full Name *
-                        </label>
-                        <input
-                          id="name"
-                          name="name"
-                          type="text"
-                          required
-                          placeholder="Your full name"
-                          className="w-full rounded-md border border-[var(--color-border-gray)] bg-white px-3 py-2 text-sm text-[var(--color-dark-text)] placeholder:text-[var(--color-muted-text)] focus:border-[var(--color-primary)] focus:outline-none"
-                        />
-                      </div>
-
-                      <div className="space-y-1.5">
-                        <label
-                          htmlFor="email"
-                          className="block text-xs font-semibold text-[var(--color-dark-text)]"
-                        >
-                          Email Address *
-                        </label>
-                        <input
-                          id="email"
-                          name="email"
-                          type="email"
-                          required
-                          placeholder="name@example.com"
-                          className="w-full rounded-md border border-[var(--color-border-gray)] bg-white px-3 py-2 text-sm text-[var(--color-dark-text)] placeholder:text-[var(--color-muted-text)] focus:border-[var(--color-primary)] focus:outline-none"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                      <div className="space-y-1.5">
-                        <label
-                          htmlFor="phone"
-                          className="block text-xs font-semibold text-[var(--color-dark-text)]"
-                        >
-                          Contact Number (Optional)
-                        </label>
-                        <input
-                          id="phone"
-                          name="phone"
-                          type="tel"
-                          placeholder="+91 XXXXX XXXXX"
-                          className="w-full rounded-md border border-[var(--color-border-gray)] bg-white px-3 py-2 text-sm text-[var(--color-dark-text)] placeholder:text-[var(--color-muted-text)] focus:border-[var(--color-primary)] focus:outline-none"
-                        />
-                      </div>
-
-                      <div className="space-y-1.5">
-                        <label
-                          htmlFor="subject"
-                          className="block text-xs font-semibold text-[var(--color-dark-text)]"
-                        >
-                          Subject *
-                        </label>
-                        <input
-                          id="subject"
-                          name="subject"
-                          type="text"
-                          required
-                          placeholder="Purpose of representation"
-                          className="w-full rounded-md border border-[var(--color-border-gray)] bg-white px-3 py-2 text-sm text-[var(--color-dark-text)] placeholder:text-[var(--color-muted-text)] focus:border-[var(--color-primary)] focus:outline-none"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="space-y-1.5">
-                      <label
-                        htmlFor="message"
-                        className="block text-xs font-semibold text-[var(--color-dark-text)]"
-                      >
-                        Message / Representation *
-                      </label>
-                      <textarea
-                        id="message"
-                        name="message"
-                        rows={5}
-                        required
-                        placeholder="Write your representation or query in detail..."
-                        className="w-full rounded-md border border-[var(--color-border-gray)] bg-white px-3 py-2 text-sm text-[var(--color-dark-text)] placeholder:text-[var(--color-muted-text)] focus:border-[var(--color-primary)] focus:outline-none"
-                      />
-                    </div>
-
-                    <div className="pt-2">
-                      <Button type="button" variant="default" className="w-full sm:w-auto">
-                        <Send className="h-4 w-4" />
-                        <span>Submit Representation</span>
-                      </Button>
-                      <p className="mt-2 text-[11px] text-[var(--color-muted-text)]">
-                        Form architecture connected to `contact_messages` table schema.
-                      </p>
-                    </div>
-                  </form>
-                </CardContent>
-              </Card>
+    <div>
+      {/* Header */}
+      <section className="border-b border-[var(--color-border-gray)] bg-[var(--color-white)] py-12 sm:py-16">
+        <Container size="wide">
+          <div className="max-w-4xl space-y-4">
+            <div className="flex items-center gap-2 text-xs text-[var(--color-muted-text)]">
+              <Link href="/" className="hover:text-[var(--color-primary)]">
+                Home
+              </Link>
+              <span>/</span>
+              <span className="text-[var(--color-dark-text)] font-medium">Contact</span>
             </div>
 
-            {/* Office Info Side */}
-            <div className="md:col-span-4 space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="text-base">Office Designation</CardTitle>
-                  <CardDescription className="text-xs">
-                    State Leadership Office
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4 text-xs text-[var(--color-muted-text)] leading-relaxed">
+            <div className="space-y-2">
+              <Badge variant="subtle" className="text-xs uppercase tracking-wider">
+                Constituent Correspondence
+              </Badge>
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[var(--color-dark-text)]">
+                Contact the Office of Ratnesh Patel
+              </h1>
+              <p className="text-sm sm:text-base text-[var(--color-muted-text)] leading-relaxed max-w-2xl">
+                Citizens, community delegations, and party representatives across Bihar can submit official representations, public grievances, and communications through this secure portal.
+              </p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Main Form & Information Section */}
+      <Section variant="default">
+        <Container size="wide">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            {/* Form Column (7 cols) */}
+            <div className="lg:col-span-7 space-y-6">
+              <div className="rounded-xl border border-[var(--color-border-gray)] bg-[var(--color-white)] p-6 sm:p-8 shadow-xs">
+                <div className="border-b border-[var(--color-border-gray)] pb-4 mb-6">
+                  <h2 className="text-xl font-bold text-[var(--color-dark-text)]">
+                    Official Representation Form
+                  </h2>
+                  <p className="text-xs text-[var(--color-muted-text)] mt-1">
+                    Please provide accurate details so your matter can be categorized and reviewed appropriately by the office.
+                  </p>
+                </div>
+
+                <ContactForm />
+              </div>
+            </div>
+
+            {/* Information & Privacy Column (5 cols) */}
+            <div className="lg:col-span-5 space-y-6">
+              {/* Office Details Card */}
+              <div className="rounded-xl border border-[var(--color-border-gray)] bg-[var(--color-white)] p-6 sm:p-8 shadow-xs space-y-5">
+                <div className="flex items-center gap-3 border-b border-[var(--color-border-gray)] pb-4">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-md bg-[var(--color-primary)] text-white font-bold text-sm">
+                    RP
+                  </div>
                   <div>
-                    <span className="font-semibold text-[var(--color-dark-text)] block">
+                    <h3 className="font-bold text-base text-[var(--color-dark-text)] leading-tight">
                       Ratnesh Patel
-                    </span>
-                    <span>Senior State Vice President</span>
-                    <span className="block text-[var(--color-primary)] font-medium">
-                      Bihar, Hindustani Awam Morcha (Secular)
-                    </span>
+                    </h3>
+                    <p className="text-xs font-medium text-[var(--color-primary)]">
+                      Senior State Vice President, Bihar
+                    </p>
+                    <p className="text-[11px] text-[var(--color-muted-text)] uppercase font-semibold">
+                      Hindustani Awam Morcha (Secular)
+                    </p>
                   </div>
+                </div>
 
-                  <div className="pt-2 border-t border-[var(--color-border-gray)]">
-                    <span className="font-semibold text-[var(--color-dark-text)] block">
-                      Scope:
-                    </span>
-                    <span>State-level Public Coordination &amp; Constituent Redressal</span>
+                <div className="space-y-3 text-xs sm:text-sm text-[var(--color-muted-text)] leading-relaxed">
+                  <p>
+                    This correspondence desk is dedicated to receiving formal public representations, community development petitions, and constituent coordination requests from all districts of Bihar.
+                  </p>
+                  <p>
+                    Submissions are logged directly into our secure database and accessed solely by the office administration.
+                  </p>
+                </div>
+
+                {/* Privacy Assurance Box */}
+                <div className="rounded-lg border border-[var(--color-border-gray)] bg-[var(--color-off-white)] p-4 text-xs space-y-2">
+                  <div className="flex items-center gap-2 font-semibold text-[var(--color-dark-text)]">
+                    <ShieldAlert className="h-4 w-4 text-[var(--color-primary)]" />
+                    <span>Constituent Privacy Assurance</span>
                   </div>
-                </CardContent>
-              </Card>
+                  <p className="text-[var(--color-muted-text)] leading-relaxed">
+                    Personal contact details and representation texts submitted through this form are protected by Row Level Security (RLS) policies. Public users cannot read submitted messages.
+                  </p>
+                </div>
+
+                {/* Social Profiles */}
+                <div className="pt-2">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-[var(--color-dark-text)] block mb-2.5">
+                    Official Public Channels
+                  </span>
+                  <SocialLinks variant="default" size="md" showLabels />
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </Container>
-    </Section>
+        </Container>
+      </Section>
+    </div>
   );
 }
