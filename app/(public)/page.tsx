@@ -15,12 +15,13 @@ import {
   PhoneCall,
   ExternalLink,
   ChevronDown,
+  ShieldCheck,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 import { SocialLinks } from "@/components/shared/social-links";
 import { PoliticalTimeline } from "@/components/sections/political-timeline";
-import { HeroImageSlider } from "@/components/sections/hero-image-slider";
+import { ProfileImageRotator } from "@/components/sections/profile-image-rotator";
 import { SocialMomentsSection } from "@/components/sections/social-moments-section";
 import { profile } from "@/data/profile";
 import { politicalJourneyItems } from "@/data/political-journey";
@@ -112,94 +113,114 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Column: Hero Multi-Image Showcase (4-5 Images Slider) */}
+            {/* Right Column: Hero Profile Image Rotator (Auto-cycles through Ratnesh Patel's profile photos) */}
             <div className="lg:col-span-5 flex justify-center">
-              <HeroImageSlider />
+              <ProfileImageRotator
+                intervalMs={10000}
+                initialIndex={0}
+                randomize={true}
+                footer={
+                  <div className="space-y-1">
+                    <div className="flex items-center justify-between">
+                      <h2 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
+                        {profile.name}
+                      </h2>
+                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
+                        <ShieldCheck className="h-3 w-3" />
+                        <span>State Leadership</span>
+                      </span>
+                    </div>
+                    <p className="text-xs font-semibold text-[var(--color-primary-dark)]">
+                      {profile.designation}
+                    </p>
+                    <p className="text-[11px] text-slate-500 font-medium">
+                      Hindustani Awam Morcha (Secular), Bihar
+                    </p>
+                  </div>
+                }
+              />
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 2. LEADERSHIP IMPACT STATS BAR */}
-      <section className="border-b border-slate-200 bg-white py-8 sm:py-10">
+      {/* 2. LEADERSHIP IMPACT STATS BAR (Red Background) */}
+      <section className="bg-[var(--color-primary)] border-y border-red-700/80 py-8 sm:py-10 text-white shadow-inner">
         <Container size="wide">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
-            <div className="flex items-center gap-3.5 p-2">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)]">
+            <div className="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white/5 transition-colors">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white border border-white/20 backdrop-blur-xs shadow-xs">
                 <Calendar className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-slate-900">30+ Years</div>
-                <div className="text-xs text-slate-500 font-medium">Public Career (1995&ndash;Present)</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white">30+ Years</div>
+                <div className="text-xs text-red-100 font-medium">Public Career (1995&ndash;Present)</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-2">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)]">
+            <div className="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white/5 transition-colors">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white border border-white/20 backdrop-blur-xs shadow-xs">
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-slate-900">38 Districts</div>
-                <div className="text-xs text-slate-500 font-medium">Tirhut Division &amp; Bihar</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white">38 Districts</div>
+                <div className="text-xs text-red-100 font-medium">Tirhut Division &amp; Bihar</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-2">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)]">
+            <div className="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white/5 transition-colors">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white border border-white/20 backdrop-blur-xs shadow-xs">
                 <Building2 className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-slate-900">HAM(S)</div>
-                <div className="text-xs text-slate-500 font-medium">State Vice President, Bihar</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white">HAM(S)</div>
+                <div className="text-xs text-red-100 font-medium">State Vice President, Bihar</div>
               </div>
             </div>
 
-            <div className="flex items-center gap-3.5 p-2">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-red-50 text-[var(--color-primary)]">
+            <div className="flex items-center gap-3.5 p-2 rounded-xl hover:bg-white/5 transition-colors">
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white/15 text-white border border-white/20 backdrop-blur-xs shadow-xs">
                 <PhoneCall className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-extrabold text-slate-900">जन संवाद</div>
-                <div className="text-xs text-slate-500 font-medium">Open Constituent Redressal</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white">जन संवाद</div>
+                <div className="text-xs text-red-100 font-medium">Open Constituent Redressal</div>
               </div>
             </div>
           </div>
         </Container>
       </section>
 
-      {/* 3. ABOUT SECTION (Integrated Editorial Profile & Focus Areas) */}
+      {/* 3. ABOUT SECTION (Integrated Editorial Profile with Auto-Rotating Profile Photos) */}
       <section id="about" className="scroll-mt-20 py-16 sm:py-20 lg:py-24 bg-slate-50/60 border-b border-slate-200">
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-14 items-start">
-            {/* Left Column: Portrait & Credentials */}
+            {/* Left Column: Rotating Profile Images & Credentials */}
             <div className="lg:col-span-5">
-              <div className="sticky top-24 rounded-2xl border-2 border-white bg-white p-3 shadow-xl ring-1 ring-slate-200 space-y-4">
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100">
-                  <Image
-                    src="/images/ratnesh-patel/profile/ratnesh-patel.webp"
-                    alt="Ratnesh Patel standing in official attire"
-                    fill
-                    sizes="(max-width: 768px) 90vw, 420px"
-                    className="object-cover object-top"
-                  />
-                </div>
-
-                <div className="px-2 pb-2 space-y-2">
-                  <div className="flex items-center justify-between">
-                    <span className="font-extrabold text-base text-slate-900">
-                      Ratnesh Patel
-                    </span>
-                    <span className="text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">
-                      Since 1995
-                    </span>
-                  </div>
-                  <p className="text-xs font-semibold text-[var(--color-primary)]">
-                    Senior State Vice President, Bihar &bull; HAM(S)
-                  </p>
-                  <p className="text-xs text-slate-500 leading-relaxed">
-                    Rooted in Kudhani, Muzaffarpur with active executive leadership spanning the Tirhut division and the entire state of Bihar.
-                  </p>
-                </div>
+              <div className="sticky top-24">
+                <ProfileImageRotator
+                  intervalMs={2500}
+                  initialIndex={2}
+                  randomize={true}
+                  footer={
+                    <div className="space-y-2">
+                      <div className="flex items-center justify-between">
+                        <span className="font-extrabold text-base text-slate-900">
+                          Ratnesh Patel
+                        </span>
+                        <span className="text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">
+                          Since 1995
+                        </span>
+                      </div>
+                      <p className="text-xs font-semibold text-[var(--color-primary)]">
+                        Senior State Vice President, Bihar &bull; HAM(S)
+                      </p>
+                      <p className="text-xs text-slate-500 leading-relaxed">
+                        Rooted in Kudhani, Muzaffarpur with active executive leadership spanning the Tirhut division and the entire state of Bihar.
+                      </p>
+                    </div>
+                  }
+                />
               </div>
             </div>
 
