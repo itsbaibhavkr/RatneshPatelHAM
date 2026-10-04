@@ -119,26 +119,8 @@ export default function HomePage() {
               <ProfileImageRotator
                 intervalMs={10000}
                 initialIndex={0}
-                randomize={true}
-                footer={
-                  <div className="space-y-1">
-                    <div className="flex items-center justify-between">
-                      <h2 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
-                        {profile.name}
-                      </h2>
-                      <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
-                        <ShieldCheck className="h-3 w-3" />
-                        <span>State Leadership</span>
-                      </span>
-                    </div>
-                    <p className="text-xs font-semibold text-[var(--color-primary-dark)]">
-                      {profile.designation}
-                    </p>
-                    <p className="text-[11px] text-slate-500 font-medium">
-                      Hindustani Awam Morcha (Secular), Bihar
-                    </p>
-                  </div>
-                }
+                randomize={false}
+                footerVariant="hero"
               />
             </div>
           </div>
@@ -200,27 +182,10 @@ export default function HomePage() {
             <div className="lg:col-span-5">
               <div className="sticky top-24">
                 <ProfileImageRotator
-                  intervalMs={2500}
-                  initialIndex={2}
-                  randomize={true}
-                  footer={
-                    <div className="space-y-2">
-                      <div className="flex items-center justify-between">
-                        <span className="font-extrabold text-base text-slate-900">
-                          Ratnesh Patel
-                        </span>
-                        <span className="text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">
-                          Since 1995
-                        </span>
-                      </div>
-                      <p className="text-xs font-semibold text-[var(--color-primary)]">
-                        Senior State Vice President, Bihar &bull; HAM(S)
-                      </p>
-                      <p className="text-xs text-slate-500 leading-relaxed">
-                        Rooted in Kudhani, Muzaffarpur with active executive leadership spanning the Tirhut division and the entire state of Bihar.
-                      </p>
-                    </div>
-                  }
+                  intervalMs={6000}
+                  initialIndex={1}
+                  randomize={false}
+                  footerVariant="about"
                 />
               </div>
             </div>
