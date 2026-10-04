@@ -16,7 +16,7 @@ export function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-red-700/60 bg-[var(--color-primary)] text-white shadow-md">
+    <header className="sticky top-0 z-50 w-full border-b border-red-700/60 bg-[var(--color-primary)] text-white shadow-md">
       {/* Main Navigation Header */}
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* Brand & Identity Area */}

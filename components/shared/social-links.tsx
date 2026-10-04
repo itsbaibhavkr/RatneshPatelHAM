@@ -2,7 +2,7 @@ import * as React from "react";
 import { cn } from "@/lib/utils";
 
 export interface SocialLinksProps extends React.HTMLAttributes<HTMLDivElement> {
-  variant?: "header" | "footer" | "default" | "minimal" | "header-minimal";
+  variant?: "header" | "footer" | "default" | "minimal" | "header-minimal" | "party-red" | "official";
   size?: "sm" | "md" | "lg";
   showLabels?: boolean;
 }
@@ -12,6 +12,7 @@ export const SOCIAL_PROFILES = [
     platform: "facebook",
     label: "Facebook",
     url: "https://www.facebook.com/RatneshPatelHAM/",
+    brandClass: "bg-[#1877F2] text-white hover:opacity-90 hover:scale-110 shadow-2xs",
     icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg
         viewBox="0 0 24 24"
@@ -31,6 +32,7 @@ export const SOCIAL_PROFILES = [
     platform: "instagram",
     label: "Instagram",
     url: "https://www.instagram.com/ratneshpatelham",
+    brandClass: "bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white hover:opacity-90 hover:scale-110 shadow-2xs",
     icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg
         viewBox="0 0 24 24"
@@ -49,6 +51,7 @@ export const SOCIAL_PROFILES = [
     platform: "x",
     label: "X",
     url: "https://x.com/ratneshpatelham",
+    brandClass: "bg-black text-white hover:bg-neutral-800 hover:scale-110 shadow-2xs",
     icon: (props: React.SVGProps<SVGSVGElement>) => (
       <svg
         viewBox="0 0 24 24"
@@ -86,6 +89,10 @@ export function SocialLinks({
       "p-1.5 text-[var(--color-muted-text)] hover:text-[var(--color-primary)] transition-colors",
     "header-minimal":
       "p-1.5 text-white/85 hover:text-white transition-colors",
+    "party-red":
+      "h-10 w-10 rounded-xl bg-[var(--color-primary)] text-white hover:bg-[var(--color-primary-dark)] shadow-xs hover:shadow-md transition-all flex items-center justify-center cursor-pointer",
+    official:
+      "h-8.5 w-8.5 rounded-full flex items-center justify-center transition-all cursor-pointer shadow-2xs",
   };
 
   return (
@@ -107,14 +114,18 @@ export function SocialLinks({
             aria-label={`Ratnesh Patel on ${item.label}`}
             className={cn(
               "inline-flex items-center justify-center font-medium",
-              showLabels
-                ? "h-9 px-3 gap-2 rounded-md border border-[var(--color-border-gray)] bg-white text-xs hover:border-[var(--color-primary-border)] hover:bg-[var(--color-primary-subtle)] hover:text-[var(--color-primary)] transition-all"
+              variant === "official"
+                ? cn("h-8.5 w-8.5 rounded-full flex items-center justify-center transition-all cursor-pointer", item.brandClass)
+                : showLabels
+                ? variant === "party-red"
+                  ? "h-10 px-4 gap-2 rounded-xl bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white shadow-xs hover:shadow-md font-semibold text-xs sm:text-sm transition-all cursor-pointer"
+                  : "h-9 px-3 gap-2 rounded-md border border-[var(--color-border-gray)] bg-white text-xs hover:border-[var(--color-primary-border)] hover:bg-[var(--color-primary-subtle)] hover:text-[var(--color-primary)] transition-all"
                 : buttonStyles[variant]
             )}
             role="listitem"
           >
             <Icon className={iconSizes[size]} />
-            {showLabels && <span>{item.label}</span>}
+            {showLabels && variant !== "official" && <span>{item.label}</span>}
           </a>
         );
       })}

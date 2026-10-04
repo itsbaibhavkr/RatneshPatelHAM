@@ -42,7 +42,7 @@ export function Footer() {
               </div>
 
               <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
-                Dedicated to grassroots leadership, farmer prosperity, social justice, and constituent advocacy across all 28 districts of Bihar.
+                Dedicated to grassroots leadership, farmer prosperity, social justice, and constituent advocacy across all 38 districts of Bihar.
               </p>
 
               {/* Social Media Links */}
