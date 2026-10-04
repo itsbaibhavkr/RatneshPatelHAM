@@ -402,17 +402,20 @@ export default function ContactPage() {
 
           </div>
 
-          {/* 3. Constituent Access & Redressal Information Banner */}
-          <div className="mt-10 sm:mt-12 rounded-2xl border border-slate-200 bg-slate-50 p-6 sm:p-8 text-center sm:text-left">
-            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-white border border-slate-200 text-[var(--color-primary)] shadow-2xs">
-                <ShieldCheck className="h-6 w-6" />
+          {/* 3. Constituent Access & Redressal Information Banner (Party Red Color) */}
+          <div className="mt-10 sm:mt-12 rounded-2xl sm:rounded-3xl bg-[var(--color-primary)] text-white p-6 sm:p-8 lg:p-10 shadow-lg shadow-red-950/20 border border-red-700/80 text-center sm:text-left relative overflow-hidden">
+            {/* Subtle decorative background glow */}
+            <div className="absolute top-0 right-0 -z-0 h-48 w-48 rounded-full bg-white/10 blur-2xl pointer-events-none" />
+
+            <div className="relative z-10 flex flex-col sm:flex-row items-center sm:items-start gap-4 sm:gap-5">
+              <div className="flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-2xl bg-white text-[var(--color-primary)] shadow-md">
+                <ShieldCheck className="h-6 w-6 sm:h-7 sm:w-7" />
               </div>
-              <div className="space-y-1">
-                <h3 className="text-base sm:text-lg font-bold text-slate-900">
+              <div className="space-y-1.5">
+                <h3 className="text-base sm:text-lg lg:text-xl font-extrabold text-white tracking-tight">
                   Jan Seva &amp; Constituent Redressal Commitment &bull; जन सेवा संकल्प
                 </h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-4xl">
+                <p className="text-xs sm:text-sm text-red-100/95 leading-relaxed max-w-4xl font-normal">
                   Citizens, party workers, and delegations from across all 28 districts of Bihar are welcome to submit representations or schedule a meeting with Shri Ratnesh Patel during regular district tours and office sessions. Please reach out via phone or email for advance coordination.
                 </p>
               </div>

@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ShieldCheck } from "lucide-react";
 
 export interface ProfileImageItem {
   src: string;
@@ -157,18 +156,13 @@ export function ProfileImageRotator({
           <div className="mt-3 px-1.5 pb-1">{footer}</div>
         ) : footerVariant === "about" ? (
           <div className="mt-3 px-1.5 pb-1 h-[106px] sm:h-[112px] flex flex-col justify-between overflow-hidden">
-            <div className="flex items-center justify-between gap-2 min-h-[26px]">
+            <div className="flex items-center min-h-[26px]">
               <span
                 className="font-extrabold text-base text-slate-900 truncate"
                 title={currentItem.title || "Ratnesh Patel"}
               >
                 {currentItem.title || "Ratnesh Patel"}
               </span>
-              {currentItem.badge && (
-                <span className="shrink-0 whitespace-nowrap text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">
-                  {currentItem.badge}
-                </span>
-              )}
             </div>
             <p
               className="text-xs font-semibold text-[var(--color-primary)] truncate leading-tight"
@@ -183,19 +177,13 @@ export function ProfileImageRotator({
           </div>
         ) : footerVariant === "hero" ? (
           <div className="mt-3 px-1.5 pb-1 h-[84px] sm:h-[90px] flex flex-col justify-between overflow-hidden">
-            <div className="flex items-center justify-between gap-2 min-h-[26px]">
+            <div className="flex items-center min-h-[26px]">
               <p
                 className="text-base sm:text-lg font-bold text-slate-900 leading-tight truncate"
                 title={currentItem.title || "Ratnesh Patel"}
               >
                 {currentItem.title || "Ratnesh Patel"}
               </p>
-              {currentItem.badge && (
-                <span className="shrink-0 whitespace-nowrap inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
-                  <ShieldCheck className="h-3 w-3" />
-                  <span>{currentItem.badge}</span>
-                </span>
-              )}
             </div>
             <p
               className="text-xs font-semibold text-[var(--color-primary-dark)] truncate leading-tight"

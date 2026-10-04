@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, ShieldCheck } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export interface HeroImageSlide {
   src: string;
@@ -157,17 +157,13 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
 
         {/* Dynamic Identification Card at Bottom of Frame - Locked height to prevent layout shift */}
         <div className="mt-3 px-1.5 pb-1 h-[84px] sm:h-[90px] flex flex-col justify-between overflow-hidden">
-          <div className="flex items-center justify-between gap-2 min-h-[26px]">
+          <div className="flex items-center min-h-[26px]">
             <p
               className="text-base sm:text-lg font-bold text-slate-900 leading-tight truncate"
               title={currentSlide.title}
             >
               {currentSlide.title}
             </p>
-            <span className="shrink-0 whitespace-nowrap inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
-              <ShieldCheck className="h-3 w-3" />
-              <span>{currentSlide.badge || "State Leadership"}</span>
-            </span>
           </div>
           <p
             className="text-xs font-semibold text-[var(--color-primary-dark)] truncate leading-tight"

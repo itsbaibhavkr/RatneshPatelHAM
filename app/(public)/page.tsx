@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import {
-  ArrowRight,
   Calendar,
   MapPin,
   Users,
@@ -14,9 +13,9 @@ import {
   Sparkles,
   PhoneCall,
   ExternalLink,
-  ChevronDown,
   ShieldCheck,
   Send,
+  ArrowRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
@@ -76,12 +75,9 @@ export default function HomePage() {
                 </span>
               </div>
 
-              {/* Master Heading with clear search entity recognition */}
+              {/* Master Heading */}
               <div className="space-y-3">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
-                  <span className="block text-2xl sm:text-3xl lg:text-4xl text-[var(--color-primary)] font-bold mb-1">
-                    Ratnesh Patel &bull; रत्नेश पटेल
-                  </span>
                   जनसेवा, सामाजिक न्याय एवं{" "}
                   <span className="text-[var(--color-primary)] block sm:inline">
                     बिहार के समग्र विकास
@@ -108,29 +104,6 @@ export default function HomePage() {
                     </span>
                   </div>
                 </div>
-              </div>
-
-              {/* Action Buttons */}
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 pt-2">
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    className="bg-[var(--color-primary)] hover:bg-[var(--color-primary-dark)] text-white font-semibold shadow-sm hover:shadow-md px-6 py-3 rounded-xl gap-2 transition-all cursor-pointer"
-                  >
-                    <span>जन संवाद / Connect Desk</span>
-                    <ArrowRight className="h-4 w-4" />
-                  </Button>
-                </Link>
-                <a href="#journey">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="border-slate-300 hover:border-slate-400 text-slate-800 hover:bg-slate-50 font-semibold px-5 py-3 rounded-xl gap-1.5 transition-all cursor-pointer"
-                  >
-                    <span>Political History</span>
-                    <ChevronDown className="h-4 w-4 text-slate-500" />
-                  </Button>
-                </a>
               </div>
             </div>
 
