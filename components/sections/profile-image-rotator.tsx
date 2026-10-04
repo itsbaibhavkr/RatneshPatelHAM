@@ -11,6 +11,7 @@ export interface ProfileImageItem {
   badge?: string;
   subtitle?: string;
   description?: string;
+  objectPosition?: string;
 }
 
 export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
@@ -21,6 +22,7 @@ export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
     badge: "वरिष्ठ नेतृत्व",
     subtitle: "Senior State Vice President, Bihar • HAM(S)",
     description: "Dedicated to the welfare, social justice, and all-round development of Bihar.",
+    objectPosition: "object-top",
   },
   {
     src: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
@@ -29,6 +31,7 @@ export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
     badge: "Since 1995",
     subtitle: "Senior State Vice President, Bihar • HAM(S)",
     description: "Over 30 years of dedicated grassroots public commitment and community advocacy.",
+    objectPosition: "object-top",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel2.JPG",
@@ -37,6 +40,7 @@ export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
     badge: "Party Guidance",
     subtitle: "Founder HAM(S) & Union Minister (MSME)",
     description: "Guiding the party's grassroots mission and NDA coordination across Bihar.",
+    objectPosition: "object-[center_30%]",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel3.JPG",
@@ -45,6 +49,7 @@ export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
     badge: "Party Leadership",
     subtitle: "National President HAM(S) & Cabinet Minister, Bihar",
     description: "Advancing NDA & HAM(S) public welfare resolutions across Bihar.",
+    objectPosition: "object-top",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel1.JPG",
@@ -53,6 +58,7 @@ export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
     badge: "NDA Incharge 2024",
     subtitle: "Senior State Vice President, Bihar • HAM(S)",
     description: "Executive coordination and grassroots campaign management in Tirhut Division.",
+    objectPosition: "object-top",
   },
 ];
 
@@ -105,8 +111,9 @@ export function ProfileImageRotator({
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Decorative clean frame */}
+      {/* Decorative clean frame with strict layout stability */}
       <div className="relative rounded-2xl border-2 border-white bg-white p-3 shadow-xl overflow-hidden ring-1 ring-slate-200">
+        {/* Fixed aspect ratio container to prevent any vertical shift when loading/switching */}
         <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-slate-100">
           {images.map((img, idx) => {
             const isActive = idx === currentIndex;
@@ -121,9 +128,9 @@ export function ProfileImageRotator({
                   src={img.src}
                   alt={img.alt}
                   fill
-                  priority={idx === 0}
+                  priority={idx <= 1}
                   sizes="(max-width: 768px) 90vw, 420px"
-                  className="object-cover object-top"
+                  className={`object-cover ${img.objectPosition || "object-top"}`}
                 />
               </div>
             );
@@ -147,50 +154,60 @@ export function ProfileImageRotator({
           </div>
         </div>
 
-        {/* Dynamic / Custom Footer Card */}
+        {/* Dynamic / Custom Footer Card with LOCKED HEIGHT to prevent layout shifts across slides */}
         {footer ? (
           <div className="mt-3 px-1.5 pb-1">{footer}</div>
         ) : footerVariant === "about" ? (
-          <div className="mt-3 px-1.5 pb-1 space-y-1.5">
-            <div className="flex items-center justify-between">
-              <span className="font-extrabold text-base text-slate-900">
+          <div className="mt-3 px-1.5 pb-1 h-[106px] sm:h-[112px] flex flex-col justify-between overflow-hidden">
+            <div className="flex items-center justify-between gap-2 min-h-[26px]">
+              <span
+                className="font-extrabold text-base text-slate-900 truncate"
+                title={currentItem.title || "Ratnesh Patel"}
+              >
                 {currentItem.title || "Ratnesh Patel"}
               </span>
               {currentItem.badge && (
-                <span className="text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">
+                <span className="shrink-0 whitespace-nowrap text-[11px] font-bold text-red-700 bg-red-50 border border-red-200 px-2 py-0.5 rounded-full">
                   {currentItem.badge}
                 </span>
               )}
             </div>
-            <p className="text-xs font-semibold text-[var(--color-primary)]">
+            <p
+              className="text-xs font-semibold text-[var(--color-primary)] truncate leading-tight"
+              title={currentItem.subtitle || "Senior State Vice President, Bihar • HAM(S)"}
+            >
               {currentItem.subtitle || "Senior State Vice President, Bihar • HAM(S)"}
             </p>
-            <p className="text-xs text-slate-500 leading-relaxed line-clamp-2">
+            <p className="text-xs text-slate-500 leading-relaxed line-clamp-2 h-[34px] overflow-hidden">
               {currentItem.description ||
                 "Rooted in Kudhani, Muzaffarpur with active executive leadership spanning the Tirhut division and the entire state of Bihar."}
             </p>
           </div>
         ) : footerVariant === "hero" ? (
-          <div className="mt-3 px-1.5 pb-1 space-y-1">
-            <div className="flex items-center justify-between">
-              <h2 className="text-base sm:text-lg font-bold text-slate-900 leading-tight">
+          <div className="mt-3 px-1.5 pb-1 h-[84px] sm:h-[90px] flex flex-col justify-between overflow-hidden">
+            <div className="flex items-center justify-between gap-2 min-h-[26px]">
+              <h2
+                className="text-base sm:text-lg font-bold text-slate-900 leading-tight truncate"
+                title={currentItem.title || "Ratnesh Patel"}
+              >
                 {currentItem.title || "Ratnesh Patel"}
               </h2>
               {currentItem.badge && (
-                <span className="inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
+                <span className="shrink-0 whitespace-nowrap inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
                   <ShieldCheck className="h-3 w-3" />
                   <span>{currentItem.badge}</span>
                 </span>
               )}
             </div>
-            <p className="text-xs font-semibold text-[var(--color-primary-dark)]">
+            <p
+              className="text-xs font-semibold text-[var(--color-primary-dark)] truncate leading-tight"
+              title={currentItem.subtitle || "Senior State Vice President, Bihar"}
+            >
               {currentItem.subtitle || "Senior State Vice President, Bihar"}
             </p>
-            {currentItem.description && (
-              <p className="text-[11px] text-slate-500 font-medium line-clamp-1">
-                {currentItem.description}
-              </p>
-            )}
+            <p className="text-[11px] text-slate-500 font-medium line-clamp-1 leading-tight min-h-[16px]">
+              {currentItem.description || "\u00A0"}
+            </p>
           </div>
         ) : null}
       </div>
