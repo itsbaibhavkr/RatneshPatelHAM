@@ -399,111 +399,81 @@ export default function HomePage() {
       {/* 6. PHOTO GALLERY & PUBLIC MOMENTS (Continuous Smooth Slider) */}
       <GalleryMarqueeSection />
 
-      {/* 7. DIRECT CONSTITUENT CONNECT (जन संवाद केंद्र - High Impact Red Executive Card) */}
+      {/* 7. DIRECT CONSTITUENT CONNECT (जन संवाद केंद्र - Executive Red Banner Card) */}
       <section id="contact" className="scroll-mt-20 py-12 sm:py-16 bg-slate-50/70 border-t border-slate-200/80">
         <Container size="wide">
-          <div className="relative rounded-3xl bg-gradient-to-r from-[#ba161b] via-[#dc1e24] to-[#a31116] p-7 sm:p-9 lg:p-10 shadow-2xl shadow-red-950/25 max-w-6xl mx-auto overflow-hidden">
-            {/* Background Decorative Layer 1: Ambient Red Glow & Subtle Waves */}
+          <div className="relative rounded-2xl sm:rounded-3xl bg-gradient-to-r from-[#D0141D] via-[#B8111A] to-[#A30D15] border border-red-500/40 p-7 sm:p-9 lg:p-11 shadow-xl shadow-red-950/20 max-w-6xl mx-auto overflow-hidden">
+            {/* Tone-on-tone crimson background curves */}
             <svg
-              className="absolute bottom-0 left-0 right-0 w-full h-28 sm:h-36 pointer-events-none text-red-950/25"
+              className="absolute bottom-0 left-0 right-0 w-full h-20 sm:h-28 pointer-events-none"
               viewBox="0 0 1200 120"
               preserveAspectRatio="none"
-              fill="currentColor"
+              aria-hidden="true"
             >
-              <path d="M0,20 C180,85 360,-20 540,50 C720,120 900,15 1200,45 L1200,120 L0,120 Z" opacity="0.5" />
-              <path d="M0,50 C300,130 650,10 920,70 C1060,100 1140,55 1200,65 L1200,120 L0,120 Z" opacity="0.7" />
+              <path d="M0,45 C200,95 400,10 600,60 C800,105 1000,30 1200,50 L1200,120 L0,120 Z" fill="#88070D" fillOpacity="0.45" />
+              <path d="M0,75 C320,125 640,40 960,85 C1080,100 1140,70 1200,80 L1200,120 L0,120 Z" fill="#6E050A" fillOpacity="0.35" />
             </svg>
-
-            {/* Background Decorative Layer 2: Bihar Secretariat / Vidhan Sabha Dome Silhouette Watermark on the Right */}
-            <div className="absolute -right-6 -bottom-4 w-72 sm:w-96 h-44 sm:h-52 pointer-events-none opacity-15 overflow-hidden">
-              <svg viewBox="0 0 400 220" fill="currentColor" className="text-white w-full h-full">
-                {/* Central Grand Dome */}
-                <path d="M150,130 C150,75 180,50 200,42 C220,50 250,75 250,130 Z" />
-                <rect x="196" y="24" width="8" height="20" />
-                <circle cx="200" cy="20" r="5" />
-                <rect x="135" y="130" width="130" height="12" />
-                {/* Main Building Facade & Colonnade */}
-                <rect x="80" y="142" width="240" height="78" />
-                {/* Pillars / Columns */}
-                <rect x="95" y="152" width="6" height="58" rx="2" />
-                <rect x="110" y="152" width="6" height="58" rx="2" />
-                <rect x="125" y="152" width="6" height="58" rx="2" />
-                <rect x="140" y="152" width="6" height="58" rx="2" />
-                <rect x="155" y="152" width="6" height="58" rx="2" />
-                <rect x="170" y="152" width="6" height="58" rx="2" />
-                <rect x="224" y="152" width="6" height="58" rx="2" />
-                <rect x="239" y="152" width="6" height="58" rx="2" />
-                <rect x="254" y="152" width="6" height="58" rx="2" />
-                <rect x="269" y="152" width="6" height="58" rx="2" />
-                <rect x="284" y="152" width="6" height="58" rx="2" />
-                <rect x="299" y="152" width="6" height="58" rx="2" />
-                {/* East & West Wings */}
-                <rect x="10" y="160" width="70" height="60" />
-                <rect x="320" y="160" width="70" height="60" />
-              </svg>
-            </div>
 
             {/* Main Content Layout */}
             <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8 lg:gap-10">
               {/* Left Side: Party Logo + Headings & Text */}
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5 sm:gap-6 flex-1">
-                {/* Large Party Logo with Clean White Glow Ring */}
-                <div className="relative h-28 w-28 sm:h-32 sm:w-32 lg:h-36 lg:w-36 shrink-0 drop-shadow-xl transition-transform hover:scale-105 duration-300">
+                {/* Official Party Emblem with clean white circular border */}
+                <div className="relative h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 shrink-0 rounded-full bg-white p-1 ring-4 ring-white/90 shadow-xl drop-shadow-md transition-transform hover:scale-105 duration-300">
                   <Image
                     src="/HAMLogo.png"
                     alt="हम (से.) पार्टी - Hindustani Awam Morcha"
                     fill
-                    sizes="144px"
+                    sizes="112px"
                     priority
-                    className="object-contain rounded-full ring-4 ring-white/20 bg-white"
+                    className="object-contain rounded-full"
                   />
                 </div>
 
                 <div className="space-y-2">
-                  {/* Frosted Glass Badge */}
-                  <div className="inline-flex items-center gap-2 rounded-full bg-black/25 backdrop-blur-sm border border-white/20 px-3.5 py-1 text-white shadow-2xs">
-                    <Users className="h-3.5 w-3.5 text-white/90" />
-                    <span className="text-xs font-semibold tracking-wide">
-                      जन संवाद केंद्र &bull; Direct Outreach
-                    </span>
+                  {/* Frosted Pill Badge matching reference */}
+                  <div className="inline-flex items-center gap-2 rounded-full bg-white/20 backdrop-blur-md px-3.5 py-1 text-xs font-semibold text-white border border-white/25 shadow-xs">
+                    <Users className="h-3.5 w-3.5 text-white" />
+                    <span>जन संवाद केंद्र &bull; Direct Outreach</span>
                   </div>
 
-                  {/* Hindi & English Headings */}
-                  <div>
-                    <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tight leading-tight">
+                  {/* Hindi & English Headings matching reference */}
+                  <div className="space-y-0.5">
+                    <h2 className="text-2xl sm:text-3xl lg:text-[34px] font-extrabold text-white tracking-tight leading-tight">
                       जन संवाद केंद्र
                     </h2>
-                    <p className="text-xl sm:text-2xl font-bold text-white/95 tracking-tight -mt-0.5">
+                    <p className="text-lg sm:text-xl lg:text-2xl font-bold text-white tracking-tight">
                       Direct Connect
                     </p>
                   </div>
 
-                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed max-w-lg pt-0.5">
+                  {/* Description */}
+                  <p className="text-xs sm:text-sm text-white/90 leading-relaxed font-normal max-w-lg">
                     Citizens, party workers, and community representatives across Bihar are welcome to submit representations, district development proposals, or public concerns directly.
                   </p>
                 </div>
               </div>
 
               {/* Vertical Divider (Desktop) */}
-              <div className="hidden lg:block h-36 w-px bg-white/20 shrink-0 self-center" />
+              <div className="hidden lg:block h-28 w-px bg-white/25 shrink-0 self-center" />
 
               {/* Right Side: Submit Button + Official Social Links Below */}
               <div className="flex flex-col items-center sm:items-start lg:items-center gap-4 shrink-0 w-full sm:w-auto">
                 <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="w-full bg-white hover:bg-slate-50 text-red-700 hover:text-red-800 font-extrabold text-sm sm:text-base px-6 sm:px-7 py-3.5 sm:py-4 rounded-full shadow-lg hover:shadow-xl hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer border-0 flex items-center justify-center gap-2.5"
+                    className="w-full bg-white hover:bg-slate-50 text-[var(--color-primary)] hover:text-[var(--color-primary-dark)] font-bold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 transition-all cursor-pointer border border-white/60 flex items-center justify-center gap-2.5"
                   >
-                    <Send className="h-4 w-4 text-red-600 fill-red-600 rotate-45 -translate-y-0.5 shrink-0" />
+                    <Send className="h-4 w-4 text-[var(--color-primary)] fill-[var(--color-primary)] rotate-45 -translate-y-0.5 shrink-0" />
                     <span>Submit Representation / आवेदन भेजें</span>
-                    <ArrowRight className="h-4 w-4 text-red-600 shrink-0" />
+                    <ArrowRight className="h-4 w-4 text-[var(--color-primary)] shrink-0" />
                   </Button>
                 </Link>
 
                 {/* Divider Line with 'OFFICIAL SOCIALS' in the center */}
                 <div className="flex items-center justify-center gap-3 w-full max-w-xs pt-1">
                   <div className="h-px flex-1 bg-white/25" />
-                  <span className="text-[11px] font-bold tracking-widest text-white/85 uppercase whitespace-nowrap">
+                  <span className="text-[11px] font-bold tracking-widest text-white/80 uppercase whitespace-nowrap">
                     OFFICIAL SOCIALS
                   </span>
                   <div className="h-px flex-1 bg-white/25" />
@@ -518,7 +488,7 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     title="Ratnesh Patel on Facebook"
                     aria-label="Ratnesh Patel on Facebook"
-                    className="h-11 w-11 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-md hover:scale-110 hover:shadow-lg transition-transform cursor-pointer ring-2 ring-white/10"
+                    className="h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-[#1877F2] text-white flex items-center justify-center shadow-md hover:scale-110 hover:shadow-lg transition-transform cursor-pointer ring-2 ring-white/20"
                   >
                     <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
@@ -532,7 +502,7 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     title="Ratnesh Patel on Instagram"
                     aria-label="Ratnesh Patel on Instagram"
-                    className="h-11 w-11 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white flex items-center justify-center shadow-md hover:scale-110 hover:shadow-lg transition-transform cursor-pointer ring-2 ring-white/10"
+                    className="h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-gradient-to-tr from-[#f09433] via-[#dc2743] to-[#bc1888] text-white flex items-center justify-center shadow-md hover:scale-110 hover:shadow-lg transition-transform cursor-pointer ring-2 ring-white/20"
                   >
                     <svg className="h-5 w-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
@@ -546,7 +516,7 @@ export default function HomePage() {
                     rel="noopener noreferrer"
                     title="Ratnesh Patel on X (Twitter)"
                     aria-label="Ratnesh Patel on X"
-                    className="h-11 w-11 rounded-full bg-black text-white flex items-center justify-center shadow-md hover:scale-110 hover:shadow-lg transition-transform cursor-pointer ring-1 ring-white/30"
+                    className="h-10 w-10 sm:h-11 sm:w-11 rounded-full bg-black text-white flex items-center justify-center shadow-md hover:scale-110 hover:shadow-lg transition-transform cursor-pointer ring-1 ring-white/40"
                   >
                     <svg className="h-4.5 w-4.5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
                       <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />

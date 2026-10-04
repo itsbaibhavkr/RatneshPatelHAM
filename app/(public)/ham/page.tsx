@@ -22,32 +22,22 @@ export const metadata: Metadata = {
 export default function HamPage() {
   return (
     <div className="space-y-0">
-      {/* Header */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-50/70 py-12 sm:py-16">
-        <Container size="wide">
-          <div className="max-w-4xl space-y-4">
-            <div className="flex items-center gap-2 text-xs text-slate-500">
-              <Link href="/" className="hover:text-[var(--color-primary)] transition-colors">
-                Home
-              </Link>
-              <span>/</span>
-              <span className="text-slate-900 font-semibold">HAM (Secular)</span>
+      {/* Clean Header */}
+      <section className="border-b border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-stone-100/30 py-10 sm:py-14 text-center">
+        <Container size="narrow">
+          <div className="space-y-2.5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3.5 py-1">
+              <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+              <span className="text-xs font-bold text-[var(--color-primary-dark)]">
+                पार्टी दायित्व &bull; Party Mandate
+              </span>
             </div>
-
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1">
-                <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
-                <span className="text-xs font-bold text-[var(--color-primary-dark)]">
-                  Party Mandate &bull; Senior State Leadership
-                </span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-                Hindustani Awam Morcha (Secular)
-              </h1>
-              <p className="text-base sm:text-lg font-bold text-[var(--color-primary)]">
-                Organizational Portfolio: Senior State Vice President, Bihar
-              </p>
-            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              Hindustani Awam Morcha (Secular)
+            </h1>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              Organizational mandate, party ideology, and leadership initiatives of Ratnesh Patel as Senior State Vice President, Bihar.
+            </p>
           </div>
         </Container>
       </section>

@@ -1,6 +1,5 @@
 import * as React from "react";
 import type { Metadata } from "next";
-import Link from "next/link";
 import Image from "next/image";
 import { ShieldCheck, MapPin, Mail, Phone, Clock, MessageSquareQuote } from "lucide-react";
 import { Container } from "@/components/ui/container";
@@ -24,32 +23,22 @@ export const metadata: Metadata = {
 export default function ContactPage() {
   return (
     <div className="space-y-0">
-      {/* Header */}
-      <section className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-50/70 py-12 sm:py-16">
-        <Container size="wide">
-          <div className="max-w-4xl space-y-4">
-            <div className="flex items-center gap-2 text-xs text-slate-500">
-              <Link href="/" className="hover:text-[var(--color-primary)] transition-colors">
-                Home
-              </Link>
-              <span>/</span>
-              <span className="text-slate-900 font-semibold">जन संवाद / Contact</span>
+      {/* Clean Header */}
+      <section className="border-b border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-stone-100/30 py-10 sm:py-14 text-center">
+        <Container size="narrow">
+          <div className="space-y-2.5">
+            <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3.5 py-1">
+              <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
+              <span className="text-xs font-bold text-[var(--color-primary-dark)]">
+                जन संवाद केंद्र &bull; Constituent Outreach
+              </span>
             </div>
-
-            <div className="space-y-2">
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50 px-3 py-1">
-                <span className="h-2 w-2 rounded-full bg-[var(--color-primary)]" />
-                <span className="text-xs font-bold text-[var(--color-primary-dark)]">
-                  जन संवाद केंद्र &bull; Constituent Outreach
-                </span>
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900">
-                Connect with the Office of Ratnesh Patel
-              </h1>
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
-                Citizens, party workers, and community delegations from across all 28 districts of Bihar are welcome to submit representations, district development proposals, or public concerns directly.
-              </p>
-            </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-tight">
+              Connect with Office
+            </h1>
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl mx-auto">
+              Citizens, party workers, and community delegations from across all 28 districts of Bihar are welcome to submit representations, district development proposals, or public concerns directly.
+            </p>
           </div>
         </Container>
       </section>
@@ -115,7 +104,7 @@ export default function ContactPage() {
                     <Mail className="h-4 w-4 text-[var(--color-primary)] shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-slate-900 block font-semibold">Direct Email</strong>
-                      <span>contact@ratneshpatel.in</span>
+                      <span>ratneshpatelham@gmail.com</span>
                     </div>
                   </div>
 
