@@ -21,10 +21,10 @@ export function PngCutoutCard({ item, onPreview }: PngCutoutCardProps) {
 
   return (
     <div className="flex flex-col rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-xs hover:border-[var(--color-primary)] hover:shadow-lg transition-all duration-300 group">
-      {/* Transparent Checkerboard Image Frame */}
+      {/* Transparent Checkerboard Image Frame (Preserves full height without cropping) */}
       <div
         onClick={onPreview}
-        className="relative h-72 sm:h-80 w-full bg-transparency-grid overflow-hidden cursor-pointer flex items-center justify-center p-4 border-b border-slate-100"
+        className="relative aspect-[3/4] w-full bg-transparency-grid overflow-hidden cursor-pointer flex items-center justify-center p-4 sm:p-6 border-b border-slate-100"
         title="Click to view full size"
       >
         <div className="relative h-full w-full">
@@ -33,7 +33,7 @@ export function PngCutoutCard({ item, onPreview }: PngCutoutCardProps) {
             alt={item.alt}
             fill
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-contain transition-transform duration-500 group-hover:scale-103 drop-shadow-sm"
+            className="object-contain p-2 sm:p-3 transition-transform duration-500 group-hover:scale-103 drop-shadow-sm"
           />
         </div>
       </div>

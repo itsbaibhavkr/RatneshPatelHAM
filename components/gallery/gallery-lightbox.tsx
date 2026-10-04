@@ -59,7 +59,6 @@ export function GalleryLightbox({
 
   const imageSrc = isPng ? pngItem!.filePath : photoItem!.image;
   const imageAlt = isPng ? pngItem!.alt : photoItem!.alt || photoItem!.title;
-  const title = item.title;
 
   const handleDownload = () => {
     setDownloading(true);
@@ -71,7 +70,6 @@ export function GalleryLightbox({
       className="fixed inset-0 z-50 flex items-center justify-center bg-black/90 p-4 sm:p-6 backdrop-blur-sm"
       role="dialog"
       aria-modal="true"
-      aria-label={title}
       onClick={onClose}
     >
       {/* Top Action Bar */}
@@ -120,7 +118,7 @@ export function GalleryLightbox({
               e.stopPropagation();
               onPrev();
             }}
-            className="absolute left-3 sm:left-6 top-1/2 - translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/10 backdrop-blur-xs transition-all cursor-pointer"
+            className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/10 backdrop-blur-xs transition-all cursor-pointer"
             aria-label="Previous image"
           >
             <ChevronLeft className="h-6 w-6" />
@@ -132,7 +130,7 @@ export function GalleryLightbox({
               e.stopPropagation();
               onNext();
             }}
-            className="absolute right-3 sm:right-6 top-1/2 - translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/10 backdrop-blur-xs transition-all cursor-pointer"
+            className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 flex h-11 w-11 items-center justify-center rounded-full bg-black/50 hover:bg-black/80 text-white border border-white/10 backdrop-blur-xs transition-all cursor-pointer"
             aria-label="Next image"
           >
             <ChevronRight className="h-6 w-6" />
@@ -142,12 +140,13 @@ export function GalleryLightbox({
 
       {/* Main Image Container */}
       <div
-        className="max-w-5xl w-full flex flex-col items-center justify-center max-h-[85vh] z-10"
+        className="max-w-5xl w-full flex items-center justify-center max-h-[88vh] z-10"
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className={`relative h-[65vh] sm:h-[75vh] w-full rounded-xl overflow-hidden flex items-center justify-center ${isPng ? "bg-transparency-grid" : ""
-            }`}
+          className={`relative h-[72vh] sm:h-[82vh] w-full rounded-xl overflow-hidden flex items-center justify-center ${
+            isPng ? "bg-transparency-grid" : ""
+          }`}
         >
           <Image
             src={imageSrc}
@@ -157,11 +156,6 @@ export function GalleryLightbox({
             className="object-contain select-none"
             priority
           />
-        </div>
-
-        {/* Clean Simple Title Only */}
-        <div className="mt-3 text-center text-white/90 px-4">
-          <p className="text-sm sm:text-base font-medium">{title}</p>
         </div>
       </div>
     </div>

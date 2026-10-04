@@ -13,6 +13,7 @@ export const galleryCategories: GalleryCategory[] = [
 
 /**
  * Photographic archive containing all 18 authentic images from /public/images/Gallery/
+ * Exact widths and heights included to preserve 100% natural, uncropped aspect ratios.
  */
 export const galleryItems: GalleryItem[] = [
   {
@@ -21,6 +22,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery1.jpg",
     alt: "Ratnesh Patel at state worker convention",
     category: "party-conventions",
+    width: 2048,
+    height: 1536,
   },
   {
     id: "gallery-02",
@@ -28,6 +31,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery2.jpg",
     alt: "Senior leadership consultation",
     category: "leadership",
+    width: 2048,
+    height: 1536,
   },
   {
     id: "gallery-03",
@@ -35,6 +40,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery3.jpg",
     alt: "Rural Jan Samwad meeting",
     category: "constituent-outreach",
+    width: 2048,
+    height: 1536,
   },
   {
     id: "gallery-04",
@@ -42,6 +49,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery4.jpg",
     alt: "NDA coordination assembly",
     category: "party-conventions",
+    width: 2048,
+    height: 1536,
   },
   {
     id: "gallery-05",
@@ -49,6 +58,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery5.jpg",
     alt: "Ratnesh Patel official portrait",
     category: "leadership",
+    width: 1084,
+    height: 1440,
   },
   {
     id: "gallery-06",
@@ -56,6 +67,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery6.jpg",
     alt: "Community welfare dialogue",
     category: "constituent-outreach",
+    width: 1152,
+    height: 1688,
   },
   {
     id: "gallery-07",
@@ -63,6 +76,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery7.jpg",
     alt: "Farmer prosperity session",
     category: "public-meetings",
+    width: 960,
+    height: 958,
   },
   {
     id: "gallery-08",
@@ -70,6 +85,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery8.jpg",
     alt: "Keynote address at party conclave",
     category: "party-conventions",
+    width: 1920,
+    height: 2025,
   },
   {
     id: "gallery-09",
@@ -77,6 +94,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery9.jpg",
     alt: "Public grievance redressal camp",
     category: "constituent-outreach",
+    width: 1280,
+    height: 960,
   },
   {
     id: "gallery-10",
@@ -84,6 +103,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery10.jpg",
     alt: "Youth mobilization symposium",
     category: "public-meetings",
+    width: 1233,
+    height: 925,
   },
   {
     id: "gallery-11",
@@ -91,6 +112,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery11.jpg",
     alt: "Tirhut divisional assembly",
     category: "party-conventions",
+    width: 2048,
+    height: 1536,
   },
   {
     id: "gallery-12",
@@ -98,6 +121,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery12.jpg",
     alt: "Public delegation hearing",
     category: "public-meetings",
+    width: 1280,
+    height: 960,
   },
   {
     id: "gallery-13",
@@ -105,6 +130,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery13.jpg",
     alt: "Field inspection and developmental review",
     category: "constituent-outreach",
+    width: 1440,
+    height: 810,
   },
   {
     id: "gallery-14",
@@ -112,6 +139,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery14.jpg",
     alt: "Organizational executive meeting",
     category: "leadership",
+    width: 1080,
+    height: 808,
   },
   {
     id: "gallery-15",
@@ -119,6 +148,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery15.jpg",
     alt: "Social harmony felicitation",
     category: "public-meetings",
+    width: 1280,
+    height: 960,
   },
   {
     id: "gallery-16",
@@ -126,6 +157,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery16.jpg",
     alt: "Grand public concourse",
     category: "party-conventions",
+    width: 1280,
+    height: 576,
   },
   {
     id: "gallery-17",
@@ -133,6 +166,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery17.jpg",
     alt: "Grassroots cadre interaction",
     category: "constituent-outreach",
+    width: 960,
+    height: 640,
   },
   {
     id: "gallery-18",
@@ -140,6 +175,8 @@ export const galleryItems: GalleryItem[] = [
     image: "/images/Gallery/Gallery18.jpg",
     alt: "Strategic state leadership council",
     category: "leadership",
+    width: 1440,
+    height: 1080,
   },
 ];
 
@@ -150,7 +187,7 @@ export const galleryItems: GalleryItem[] = [
 export const downloadablePngItems: DownloadablePngItem[] = [
   {
     id: "png-01",
-    title: "Ratnesh Patel - Portrait Cutout 1",
+    title: "Ratnesh Patel — Portrait Cutout 1",
     filename: "RatneshPatel1.png",
     filePath: "/images/ratnesh-patel-png/RatneshPatel1.png",
     downloadName: "Ratnesh-Patel-Cutout-1.png",
@@ -165,7 +202,7 @@ export const downloadablePngItems: DownloadablePngItem[] = [
   },
   {
     id: "png-02",
-    title: "Ratnesh Patel - Leadership Cutout 2",
+    title: "Ratnesh Patel — Leadership Cutout 2",
     filename: "RatneshPatel2.png",
     filePath: "/images/ratnesh-patel-png/RatneshPatel2.png",
     downloadName: "Ratnesh-Patel-Cutout-2.png",
@@ -180,7 +217,7 @@ export const downloadablePngItems: DownloadablePngItem[] = [
   },
   {
     id: "png-03",
-    title: "Ratnesh Patel - Executive Cutout 3",
+    title: "Ratnesh Patel — Executive Cutout 3",
     filename: "RatneshPatel3.png",
     filePath: "/images/ratnesh-patel-png/RatneshPatel3.png",
     downloadName: "Ratnesh-Patel-Cutout-3.png",
@@ -195,7 +232,7 @@ export const downloadablePngItems: DownloadablePngItem[] = [
   },
   {
     id: "png-04",
-    title: "Ratnesh Patel - Standing Cutout 4",
+    title: "Ratnesh Patel — Standing Cutout 4",
     filename: "RatneshPatel4.png",
     filePath: "/images/ratnesh-patel-png/RatneshPatel4.png",
     downloadName: "Ratnesh-Patel-Cutout-4.png",
@@ -210,7 +247,7 @@ export const downloadablePngItems: DownloadablePngItem[] = [
   },
   {
     id: "png-05",
-    title: "Ratnesh Patel - Profile Cutout 5",
+    title: "Ratnesh Patel — Profile Cutout 5",
     filename: "RatneshPatel5.png",
     filePath: "/images/ratnesh-patel-png/RatneshPatel5.png",
     downloadName: "Ratnesh-Patel-Cutout-5.png",
