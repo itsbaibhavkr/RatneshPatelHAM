@@ -58,17 +58,17 @@ export default function HomePage() {
   return (
     <>
       {/* 1. HERO SECTION (High-Impact Modern Leadership Hero) */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/60 to-stone-100/40 border-b border-slate-200/80 pt-10 pb-16 sm:py-20 lg:py-24">
+      <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/60 to-stone-100/40 border-b border-slate-200/80 pt-4 pb-8 sm:pt-6 sm:pb-10 lg:pt-6 lg:pb-10">
         {/* Subtle decorative background glow */}
         <div className="absolute top-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-red-100/40 blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-1/3 -z-10 h-80 w-80 rounded-full bg-amber-50/50 blur-2xl pointer-events-none" />
 
         <Container size="wide">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
             {/* Left Content Column */}
-            <div className="lg:col-span-7 space-y-6 sm:space-y-7">
+            <div className="lg:col-span-7 space-y-4 sm:space-y-5">
               {/* Official Status Tag */}
-              <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50/80 px-3.5 py-1.5 shadow-2xs">
+              <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50/80 px-3.5 py-1 shadow-2xs">
                 <span className="h-2 w-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                 <span className="text-xs font-bold text-[var(--color-primary-dark)] tracking-wide">
                   वरीय उपाध्यक्ष, बिहार &bull; HAM (Secular)
@@ -76,30 +76,30 @@ export default function HomePage() {
               </div>
 
               {/* Master Heading */}
-              <div className="space-y-3">
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+              <div className="space-y-2.5 sm:space-y-3">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-[42px] font-extrabold tracking-tight text-slate-900 leading-[1.18]">
                   जनसेवा, सामाजिक न्याय एवं{" "}
                   <span className="text-[var(--color-primary)] block sm:inline">
                     बिहार के समग्र विकास
                   </span>{" "}
                   को समर्पित
                 </h1>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl pt-1">
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed font-normal max-w-2xl">
                   <strong>Ratnesh Patel</strong> brings over 30 years of dedicated political leadership &mdash; from grassroots organizational building in Muzaffarpur and Kudhani to serving as State Vice President of Hindustani Awam Morcha (Secular) and NDA Election Incharge for the 2024 Lok Sabha Elections.
                 </p>
               </div>
 
               {/* Authentic Leadership Slogan Banner */}
-              <div className="rounded-xl border border-red-200/80 bg-white/90 p-4 shadow-2xs max-w-xl">
+              <div className="rounded-xl border border-red-200/80 bg-white/90 p-3 sm:p-3.5 shadow-2xs max-w-xl">
                 <div className="flex items-start gap-3">
-                  <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[var(--color-primary-subtle)] text-[var(--color-primary)] font-bold">
-                    <Sparkles className="h-4 w-4" />
+                  <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[var(--color-primary-subtle)] text-[var(--color-primary)] font-bold">
+                    <Sparkles className="h-3.5 w-3.5" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-slate-800 italic">
+                    <p className="text-xs sm:text-sm font-semibold text-slate-800 italic">
                       &ldquo;हम का एक ही लक्ष्य एवं एक ही सपना, स्वस्थ एवं विकसित बिहार हो अपना !!&rdquo;
                     </p>
-                    <span className="text-xs text-slate-500 font-medium">
+                    <span className="text-[11px] sm:text-xs text-slate-500 font-medium">
                       - हिंदुस्तानी अवाम मोर्चा (सेक्युलर) संकल्प
                     </span>
                   </div>
@@ -114,6 +114,7 @@ export default function HomePage() {
                 initialIndex={0}
                 randomize={false}
                 footerVariant="hero"
+                className="max-w-[320px] sm:max-w-[350px] lg:max-w-[360px]"
               />
             </div>
           </div>

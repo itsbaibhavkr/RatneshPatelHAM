@@ -2,6 +2,7 @@
 
 import * as React from "react";
 import Image from "next/image";
+import { cn } from "@/lib/utils";
 
 export interface ProfileImageItem {
   src: string;
@@ -106,7 +107,7 @@ export function ProfileImageRotator({
 
   return (
     <div
-      className={`relative w-full max-w-md mx-auto ${className}`}
+      className={cn("relative w-full max-w-md mx-auto", className)}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
@@ -176,8 +177,8 @@ export function ProfileImageRotator({
             </p>
           </div>
         ) : footerVariant === "hero" ? (
-          <div className="mt-3 px-1.5 pb-1 h-[84px] sm:h-[90px] flex flex-col justify-between overflow-hidden">
-            <div className="flex items-center min-h-[26px]">
+          <div className="mt-2 px-1 pb-0.5 h-[68px] sm:h-[72px] flex flex-col justify-between overflow-hidden">
+            <div className="flex items-center min-h-[22px]">
               <p
                 className="text-base sm:text-lg font-bold text-slate-900 leading-tight truncate"
                 title={currentItem.title || "Ratnesh Patel"}
