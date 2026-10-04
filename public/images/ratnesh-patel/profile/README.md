@@ -1,4 +1,4 @@
-# Ratnesh Patel - Profile Photography
+# Ratnesh Patel -  Profile Photography
 Place verified official portraits here.
 Recommended filename: `ratnesh-patel-profile.png`
 Referenced in `data/profile.ts`:

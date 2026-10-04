@@ -1,68 +1,226 @@
-import type { GalleryCategory, GalleryItem } from "@/types/gallery";
+import type { GalleryCategory, GalleryItem, DownloadablePngItem } from "@/types/gallery";
 
 /**
- * Gallery categories for photo filtering.
+ * Filter categories for organizing gallery photographs.
  */
 export const galleryCategories: GalleryCategory[] = [
-  { id: "all", name: "All Photographs", slug: "all" },
-  { id: "public-meetings", name: "Public Meetings", slug: "public-meetings" },
+  { id: "all", name: "All", slug: "all" },
   { id: "party-conventions", name: "Party Conventions", slug: "party-conventions" },
+  { id: "public-meetings", name: "Public Meetings", slug: "public-meetings" },
   { id: "constituent-outreach", name: "Constituent Outreach", slug: "constituent-outreach" },
+  { id: "leadership", name: "State Leadership", slug: "leadership" },
 ];
 
 /**
- * Official photographic documentation archive.
- * ALL gallery images must come exclusively from /public/images/ratnesh-patel/gallery/
- *
- * Example structure:
- * {
- *   id: "gallery-001",
- *   title: "Public Meeting",
- *   image: "/images/ratnesh-patel/gallery/public-meeting-01.jpg",
- *   alt: "Ratnesh Patel at a public meeting",
- *   category: "public-meetings",
- *   caption: "Addressing constituent delegates in Bihar."
- * }
+ * Photographic archive containing all 18 authentic images from /public/images/Gallery/
  */
 export const galleryItems: GalleryItem[] = [
   {
-    id: "gallery-001",
-    title: "HAM(S) Leadership & Visionary Mission",
-    image: "/images/ratnesh-patel/hero/hero1.webp",
-    alt: "HAM(S) Party Vision with Shri Jitan Ram Manjhi and Ratnesh Patel",
+    id: "gallery-01",
+    title: "राज्य स्तरीय कार्यकर्ता सम्मेलन",
+    image: "/images/Gallery/Gallery1.jpg",
+    alt: "Ratnesh Patel at state worker convention",
     category: "party-conventions",
-    caption: "हम का एक ही लक्ष्य एवं एक ही सपना, स्वस्थ एवं विकसित बिहार हो अपना !!",
   },
   {
-    id: "gallery-002",
-    title: "Senior State Leadership Portrait",
-    image: "/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp",
-    alt: "Official portrait of Ratnesh Patel, Senior State Vice President, Bihar",
-    category: "public-meetings",
-    caption: "Ratnesh Patel, Senior State Vice President, Bihar — Hindustani Awam Morcha (Secular).",
+    id: "gallery-02",
+    title: "वरिष्ठ नेतृत्व के साथ विचार-विमर्श",
+    image: "/images/Gallery/Gallery2.jpg",
+    alt: "Senior leadership consultation",
+    category: "leadership",
   },
   {
-    id: "gallery-003",
-    title: "Statewide Fight for Bihar's Development",
-    image: "/images/ratnesh-patel/hero/hero2.webp",
-    alt: "Dr. Santosh Kumar Suman addressing leadership address",
-    category: "party-conventions",
-    caption: "हैं तैयार हम, आपकी लड़ाई लड़ने को, बिहार को विकसित बनाने को ! - डॉ. संतोष कुमार सुमन",
-  },
-  {
-    id: "gallery-004",
-    title: "Vision of Shri Jitan Ram Manjhi",
-    image: "/images/ratnesh-patel/hero/hero3.webp",
-    alt: "Shri Jitan Ram Manjhi, Founder & Patron of HAM(S)",
-    category: "party-conventions",
-    caption: "हमारा लक्ष्य: बेहतर बिहार, विकसित बिहार - जीतन राम मांझी",
-  },
-  {
-    id: "gallery-005",
-    title: "Grassroots Public Dedication",
-    image: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
-    alt: "Ratnesh Patel in official attire",
+    id: "gallery-03",
+    title: "जन संवाद एवं ग्राम पंचायत बैठक",
+    image: "/images/Gallery/Gallery3.jpg",
+    alt: "Rural Jan Samwad meeting",
     category: "constituent-outreach",
-    caption: "Standing dedicated to the welfare of the people of Bihar.",
+  },
+  {
+    id: "gallery-04",
+    title: "एनडीए संयुक्त समन्वय सभा",
+    image: "/images/Gallery/Gallery4.jpg",
+    alt: "NDA coordination assembly",
+    category: "party-conventions",
+  },
+  {
+    id: "gallery-05",
+    title: "वरिष्ठ प्रदेश नेतृत्व पोर्ट्रेट",
+    image: "/images/Gallery/Gallery5.jpg",
+    alt: "Ratnesh Patel official portrait",
+    category: "leadership",
+  },
+  {
+    id: "gallery-06",
+    title: "जनसरोकार एवं सामाजिक संवाद",
+    image: "/images/Gallery/Gallery6.jpg",
+    alt: "Community welfare dialogue",
+    category: "constituent-outreach",
+  },
+  {
+    id: "gallery-07",
+    title: "किसान कल्याण एवं संवाद सत्र",
+    image: "/images/Gallery/Gallery7.jpg",
+    alt: "Farmer prosperity session",
+    category: "public-meetings",
+  },
+  {
+    id: "gallery-08",
+    title: "पार्टी सम्मेलन संबोधन",
+    image: "/images/Gallery/Gallery8.jpg",
+    alt: "Keynote address at party conclave",
+    category: "party-conventions",
+  },
+  {
+    id: "gallery-09",
+    title: "क्षेत्रीय जनसमस्या निवारण शिविर",
+    image: "/images/Gallery/Gallery9.jpg",
+    alt: "Public grievance redressal camp",
+    category: "constituent-outreach",
+  },
+  {
+    id: "gallery-10",
+    title: "युवा संगठन एवं रोज़गार संगोष्ठी",
+    image: "/images/Gallery/Gallery10.jpg",
+    alt: "Youth mobilization symposium",
+    category: "public-meetings",
+  },
+  {
+    id: "gallery-11",
+    title: "तिरहुत प्रमंडल सम्मेलन",
+    image: "/images/Gallery/Gallery11.jpg",
+    alt: "Tirhut divisional assembly",
+    category: "party-conventions",
+  },
+  {
+    id: "gallery-12",
+    title: "सार्वजनिक प्रतिनिधिमंडल बैठक",
+    image: "/images/Gallery/Gallery12.jpg",
+    alt: "Public delegation hearing",
+    category: "public-meetings",
+  },
+  {
+    id: "gallery-13",
+    title: "विकास योजनाओं का निरीक्षण",
+    image: "/images/Gallery/Gallery13.jpg",
+    alt: "Field inspection and developmental review",
+    category: "constituent-outreach",
+  },
+  {
+    id: "gallery-14",
+    title: "संगठनात्मक बैठक एवं सदस्यता अभियान",
+    image: "/images/Gallery/Gallery14.jpg",
+    alt: "Organizational executive meeting",
+    category: "leadership",
+  },
+  {
+    id: "gallery-15",
+    title: "सामाजिक समरसता एवं अभिनंदन समारोह",
+    image: "/images/Gallery/Gallery15.jpg",
+    alt: "Social harmony felicitation",
+    category: "public-meetings",
+  },
+  {
+    id: "gallery-16",
+    title: "विशाल जनसभा एवं विजय संकल्प",
+    image: "/images/Gallery/Gallery16.jpg",
+    alt: "Grand public concourse",
+    category: "party-conventions",
+  },
+  {
+    id: "gallery-17",
+    title: "कार्यकर्ताओं के साथ आत्मीय संवाद",
+    image: "/images/Gallery/Gallery17.jpg",
+    alt: "Grassroots cadre interaction",
+    category: "constituent-outreach",
+  },
+  {
+    id: "gallery-18",
+    title: "प्रदेश स्तरीय रणनीतिक बैठक",
+    image: "/images/Gallery/Gallery18.jpg",
+    alt: "Strategic state leadership council",
+    category: "leadership",
+  },
+];
+
+/**
+ * Official transparent PNG cutouts of Ratnesh Patel.
+ * Sourced directly from /public/images/ratnesh-patel-png/
+ */
+export const downloadablePngItems: DownloadablePngItem[] = [
+  {
+    id: "png-01",
+    title: "Ratnesh Patel - Portrait Cutout 1",
+    filename: "RatneshPatel1.png",
+    filePath: "/images/ratnesh-patel-png/RatneshPatel1.png",
+    downloadName: "Ratnesh-Patel-Cutout-1.png",
+    alt: "Ratnesh Patel transparent cutout PNG 1",
+    width: 4000,
+    height: 6000,
+    fileSizeBytes: 8529165,
+    sizeFormatted: "8.1 MB",
+    description: "Transparent PNG cutout",
+    recommendedUse: "Banners & Hoardings",
+    tags: ["Cutout"],
+  },
+  {
+    id: "png-02",
+    title: "Ratnesh Patel - Leadership Cutout 2",
+    filename: "RatneshPatel2.png",
+    filePath: "/images/ratnesh-patel-png/RatneshPatel2.png",
+    downloadName: "Ratnesh-Patel-Cutout-2.png",
+    alt: "Ratnesh Patel transparent cutout PNG 2",
+    width: 4000,
+    height: 6000,
+    fileSizeBytes: 10272863,
+    sizeFormatted: "9.8 MB",
+    description: "Transparent PNG cutout",
+    recommendedUse: "Posters & Creatives",
+    tags: ["Cutout"],
+  },
+  {
+    id: "png-03",
+    title: "Ratnesh Patel - Executive Cutout 3",
+    filename: "RatneshPatel3.png",
+    filePath: "/images/ratnesh-patel-png/RatneshPatel3.png",
+    downloadName: "Ratnesh-Patel-Cutout-3.png",
+    alt: "Ratnesh Patel transparent cutout PNG 3",
+    width: 4000,
+    height: 6000,
+    fileSizeBytes: 9801868,
+    sizeFormatted: "9.3 MB",
+    description: "Transparent PNG cutout",
+    recommendedUse: "Flyers & Social Media",
+    tags: ["Cutout"],
+  },
+  {
+    id: "png-04",
+    title: "Ratnesh Patel - Standing Cutout 4",
+    filename: "RatneshPatel4.png",
+    filePath: "/images/ratnesh-patel-png/RatneshPatel4.png",
+    downloadName: "Ratnesh-Patel-Cutout-4.png",
+    alt: "Ratnesh Patel transparent cutout PNG 4",
+    width: 4000,
+    height: 6000,
+    fileSizeBytes: 10177781,
+    sizeFormatted: "9.7 MB",
+    description: "Transparent PNG cutout",
+    recommendedUse: "Stage Backdrops & Flex",
+    tags: ["Cutout"],
+  },
+  {
+    id: "png-05",
+    title: "Ratnesh Patel - Profile Cutout 5",
+    filename: "RatneshPatel5.png",
+    filePath: "/images/ratnesh-patel-png/RatneshPatel5.png",
+    downloadName: "Ratnesh-Patel-Cutout-5.png",
+    alt: "Ratnesh Patel transparent cutout PNG 5",
+    width: 1013,
+    height: 1600,
+    fileSizeBytes: 1725086,
+    sizeFormatted: "1.6 MB",
+    description: "Transparent PNG cutout",
+    recommendedUse: "Digital Graphics & Mobile",
+    tags: ["Cutout"],
   },
 ];

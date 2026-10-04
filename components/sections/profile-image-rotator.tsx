@@ -11,23 +11,23 @@ export interface ProfileImageItem {
 export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel1.JPG",
-    alt: "Ratnesh Patel - Senior State Vice President, Bihar",
+    alt: "Ratnesh Patel -  Senior State Vice President, Bihar",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel2.JPG",
-    alt: "Ratnesh Patel - Grassroots Leadership",
+    alt: "Ratnesh Patel -  Grassroots Leadership",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel3.JPG",
-    alt: "Ratnesh Patel - Public Representative",
+    alt: "Ratnesh Patel -  Public Representative",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel4.JPG",
-    alt: "Ratnesh Patel - State Vice President, HAM(S)",
+    alt: "Ratnesh Patel -  State Vice President, HAM(S)",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel5.JPG",
-    alt: "Ratnesh Patel - Senior Leadership Portrait",
+    alt: "Ratnesh Patel -  Senior Leadership Portrait",
   },
   {
     src: "/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp",

@@ -106,7 +106,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Bottom Copyright Strip - Centered */}
+          {/* Bottom Copyright Strip -  Centered */}
           <div className="mt-12 pt-6 border-t border-slate-800 text-center text-xs text-slate-400">
             <p>
               &copy; {currentYear} Ratnesh Patel &bull; Senior State Vice President, Bihar. All rights reserved.

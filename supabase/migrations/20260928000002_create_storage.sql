@@ -3,12 +3,12 @@
 -- Project: RatneshPatelHAM
 -- Purpose: Setup Supabase Storage bucket 'website-assets' and access control policies
 -- Folder Structure:
---   - branding/    (Logos, party symbols, official stamps)
---   - profile/     (High-res portraits and official headshots)
---   - gallery/     (Event, meeting, and conclave albums)
---   - public-work/ (Civic initiative documentation and photos)
---   - videos/      (Video thumbnails and media clips)
---   - site/        (Favicons, OG banners, background assets)
+--   -  branding/    (Logos, party symbols, official stamps)
+--   -  profile/     (High-res portraits and official headshots)
+--   -  gallery/     (Event, meeting, and conclave albums)
+--   -  public-work/ (Civic initiative documentation and photos)
+--   -  videos/      (Video thumbnails and media clips)
+--   -  site/        (Favicons, OG banners, background assets)
 -- ==============================================================================
 
 -- 1. Create or update website-assets public storage bucket
@@ -17,7 +17,7 @@ VALUES (
   'website-assets',
   'website-assets',
   true,
-  26214400, -- 25MB max file size
+  26214400, - - 25MB max file size
   ARRAY[
     'image/jpeg',
     'image/png',

@@ -537,7 +537,7 @@ INSERT INTO public.site_settings (
   'Ratnesh Patel | Senior State Vice President, Bihar | Hindustani Awam Morcha (Secular)',
   'Official personal profile and public communication portal of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).',
   'Official personal profile portal of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). Not the official party website.',
-  'Ratnesh Patel - Senior State Vice President, Bihar',
+  'Ratnesh Patel -  Senior State Vice President, Bihar',
   'Official public communication portal and documentation archive of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).'
 )
 ON CONFLICT (id) DO UPDATE SET

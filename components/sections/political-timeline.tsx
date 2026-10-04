@@ -31,7 +31,7 @@ export function PoliticalTimeline({ items, className }: PoliticalTimelineProps) 
               )}
             >
               {/* Central Spine Node (Desktop: Exactly on center line; Mobile: Left at 20px) */}
-              <div className="absolute left-5 -translate-x-1/2 lg:left-1/2 lg:-translate-x-1/2 top-1 sm:top-2 z-20 flex items-center justify-center">
+              <div className="absolute left-5 - translate-x-1/2 lg:left-1/2 lg:-translate-x-1/2 top-1 sm:top-2 z-20 flex items-center justify-center">
                 <div
                   className={cn(
                     "flex h-9 w-9 sm:h-11 sm:w-11 items-center justify-center rounded-full border-2 bg-white shadow-md transition-transform duration-300 group-hover:scale-110",

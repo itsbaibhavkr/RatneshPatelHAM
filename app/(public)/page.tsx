@@ -43,8 +43,8 @@ export default function HomePage() {
       {/* 1. HERO SECTION (High-Impact Modern Leadership Hero) */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/60 to-stone-100/40 border-b border-slate-200/80 pt-10 pb-16 sm:py-20 lg:py-24">
         {/* Subtle decorative background glow */}
-        <div className="absolute top-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-red-100/40 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 -z-10 h-80 w-80 rounded-full bg-amber-50/50 blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 - z-10 h-96 w-96 rounded-full bg-red-100/40 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 - z-10 h-80 w-80 rounded-full bg-amber-50/50 blur-2xl pointer-events-none" />
 
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -68,7 +68,7 @@ export default function HomePage() {
                   को समर्पित
                 </h1>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl pt-1">
-                  <strong>Ratnesh Patel</strong> brings over 30 years of dedicated political leadership - from grassroots organizational building in Muzaffarpur to serving as State Vice President of Hindustani Awam Morcha (Secular) and NDA Election Incharge for the 2024 Lok Sabha Elections.
+                  <strong>Ratnesh Patel</strong> brings over 30 years of dedicated political leadership -  from grassroots organizational building in Muzaffarpur to serving as State Vice President of Hindustani Awam Morcha (Secular) and NDA Election Incharge for the 2024 Lok Sabha Elections.
                 </p>
               </div>
 
@@ -83,7 +83,7 @@ export default function HomePage() {
                       &ldquo;हम का एक ही लक्ष्य एवं एक ही सपना, स्वस्थ एवं विकसित बिहार हो अपना !!&rdquo;
                     </p>
                     <span className="text-xs text-slate-500 font-medium">
-                      — हिंदुस्तानी अवाम मोर्चा (सेक्युलर) संकल्प
+                      - हिंदुस्तानी अवाम मोर्चा (सेक्युलर) संकल्प
                     </span>
                   </div>
                 </div>

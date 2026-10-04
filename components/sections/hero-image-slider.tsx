@@ -15,7 +15,7 @@ export interface HeroImageSlide {
 const DEFAULT_HERO_SLIDES: HeroImageSlide[] = [
   {
     src: "/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp",
-    alt: "Ratnesh Patel - Senior State Vice President, Bihar",
+    alt: "Ratnesh Patel -  Senior State Vice President, Bihar",
     title: "Ratnesh Patel",
     badge: "State Leadership",
     subtitle: "Senior State Vice President, Bihar",
@@ -92,9 +92,8 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
             return (
               <div
                 key={slide.src}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
               >
                 <Image
                   src={slide.src}
@@ -120,7 +119,7 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
             type="button"
             onClick={prevSlide}
             aria-label="Previous photo"
-            className="absolute left-2.5 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-xs transition-all shadow-md hover:scale-105 cursor-pointer"
+            className="absolute left-2.5 top-1/2 - translate-y-1/2 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-xs transition-all shadow-md hover:scale-105 cursor-pointer"
           >
             <ChevronLeft className="h-4 w-4" />
           </button>
@@ -128,7 +127,7 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
             type="button"
             onClick={nextSlide}
             aria-label="Next photo"
-            className="absolute right-2.5 top-1/2 -translate-y-1/2 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-xs transition-all shadow-md hover:scale-105 cursor-pointer"
+            className="absolute right-2.5 top-1/2 - translate-y-1/2 z-20 flex h-8 w-8 items-center justify-center rounded-full bg-slate-900/60 hover:bg-slate-900/90 text-white backdrop-blur-xs transition-all shadow-md hover:scale-105 cursor-pointer"
           >
             <ChevronRight className="h-4 w-4" />
           </button>
@@ -141,11 +140,10 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
                 type="button"
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2 rounded-full transition-all cursor-pointer ${
-                  idx === currentIndex
+                className={`h-2 rounded-full transition-all cursor-pointer ${idx === currentIndex
                     ? "w-6 bg-[var(--color-primary)]"
                     : "w-2 bg-white/70 hover:bg-white"
-                }`}
+                  }`}
               />
             ))}
           </div>

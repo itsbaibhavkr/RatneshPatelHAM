@@ -4,16 +4,16 @@
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
     </filter>
   </defs>
-  <!-- Flag Base (Deep Red) -->
+  <!-- Flag Base (Deep Red) - ->
   <rect width="320" height="200" rx="6" fill="#B5121B" filter="url(#flagShadow)"/>
   
-  <!-- White Center Band / Diamond -->
+  <!-- White Center Band / Diamond - ->
   <polygon points="160,30 260,100 160,170 60,100" fill="#FFFFFF"/>
   
-  <!-- Center Emblem -->
+  <!-- Center Emblem - ->
   <circle cx="160" cy="100" r="32" fill="#B5121B"/>
-  <text x="160" y="106" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">HAM</text>
+  <text x="160" y="106" font-family="system-ui, - apple-system, sans-serif" font-size="16" font-weight="900" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">HAM</text>
   
-  <!-- Border -->
+  <!-- Border - ->
   <rect x="1" y="1" width="318" height="198" rx="5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-opacity="0.2"/>
 </svg>

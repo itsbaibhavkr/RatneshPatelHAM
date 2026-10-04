@@ -51,7 +51,8 @@
   --radius-xl: 0.75rem;
 
   /* Container Max Widths */
-  --container-max-w: 80rem; /* 1280px */
+  --container-max-w: 80rem;
+  /* 1280px */
 }
 
 @theme {

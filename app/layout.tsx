@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     url: siteUrl,
-    siteName: "Ratnesh Patel - Official Portal",
+    siteName: "Ratnesh Patel -  Official Portal",
     title:
       "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
     description:
@@ -59,9 +59,9 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      "max-video-preview": -1,
+      "max-video-preview": - 1,
       "max-image-preview": "large",
-      "max-snippet": -1,
+      "max-snippet": - 1,
     },
   },
 };

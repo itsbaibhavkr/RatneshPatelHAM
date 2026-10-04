@@ -1,6 +1,6 @@
 # Supabase Database Architecture & Security Layer
 **Project:** RatneshPatelHAM  
-**Subject:** Ratnesh Patel — Senior State Vice President, Bihar | Hindustani Awam Morcha (Secular)
+**Subject:** Ratnesh Patel - Senior State Vice President, Bihar | Hindustani Awam Morcha (Secular)
 
 This directory contains the complete database schema, security layer (Row Level Security), storage bucket configuration, and initial seed data for the official personal website of Ratnesh Patel.
 
@@ -44,12 +44,12 @@ ALTER TABLE public.<table_name> ENABLE ROW LEVEL SECURITY;
 A public storage bucket named `website-assets` is created and configured with a 25MB file size limit and strict MIME-type validation.
 
 ### Directory Organization:
-- `branding/` — Official emblems, party references, transparent logos
-- `profile/` — Official portrait and high-resolution headshots of Ratnesh Patel
-- `gallery/` — Meeting, event, and convention photo archives
-- `public-work/` — Constituent outreach and civic initiative photography
-- `videos/` — Video preview stills and media assets
-- `site/` — OpenGraph banners, favicons, header illustrations
+- `branding/` - Official emblems, party references, transparent logos
+- `profile/` - Official portrait and high-resolution headshots of Ratnesh Patel
+- `gallery/` - Meeting, event, and convention photo archives
+- `public-work/` - Constituent outreach and civic initiative photography
+- `videos/` - Video preview stills and media assets
+- `site/` - OpenGraph banners, favicons, header illustrations
 
 ### Storage Policies:
 - Public: `SELECT` (view/download assets)

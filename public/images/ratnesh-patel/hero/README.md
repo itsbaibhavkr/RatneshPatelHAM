@@ -1,4 +1,4 @@
-# Ratnesh Patel - Hero Photography
+# Ratnesh Patel -  Hero Photography
 Place verified hero/banner imagery here.
 Recommended filename: `ratnesh-patel-hero.png`
 Referenced in `data/profile.ts`:

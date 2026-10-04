@@ -62,7 +62,7 @@ export default function HamPage() {
                 <div className="flex items-center gap-4">
                   <div className="relative h-16 w-16 overflow-hidden rounded-xl border border-slate-200 shadow-2xs shrink-0 bg-slate-50 p-1">
                     <Image
-                      src="/images/ham/logo/ham-logo.svg"
+                      src="/images/ham/logo/ham-logo.png"
                       alt="Hindustani Awam Morcha (Secular) Official Emblem"
                       fill
                       className="object-contain p-1"

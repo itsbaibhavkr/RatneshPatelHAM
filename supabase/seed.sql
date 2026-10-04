@@ -25,10 +25,10 @@ INSERT INTO public.profiles (
   'Senior State Vice President, Bihar',
   'Hindustani Awam Morcha (Secular)',
   'Senior State Vice President of Hindustani Awam Morcha (Secular) representing organizational leadership and constituent coordination across the State of Bihar.',
-  NULL, -- To be populated with supplied photography
-  NULL, -- To be populated with supplied photography
-  NULL, -- Official contact email
-  NULL  -- Official contact phone
+  NULL, - - To be populated with supplied photography
+  NULL, - - To be populated with supplied photography
+  NULL, - - Official contact email
+  NULL  - - Official contact phone
 );
 
 -- 2. SEED SOCIAL LINKS
@@ -92,6 +92,6 @@ INSERT INTO public.site_settings (
   NULL,
   NULL,
   'Official personal profile portal of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). Not the official party website.',
-  'Ratnesh Patel - Senior State Vice President, Bihar',
+  'Ratnesh Patel -  Senior State Vice President, Bihar',
   'Official public communication portal and documentation archive of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).'
 );
