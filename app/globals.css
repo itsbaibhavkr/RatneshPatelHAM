@@ -56,3 +56,60 @@ body {
   background-size: 16px 16px;
   background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
 }
+
+/* Continuous smooth right-to-left marquee animation */
+@keyframes marquee-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-100% - var(--marquee-gap, 1.25rem)), 0, 0);
+  }
+}
+
+.marquee-container {
+  container-type: inline-size;
+}
+
+.marquee-fade-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 2.5%, black 97.5%, transparent 100%);
+}
+
+.animate-marquee {
+  display: flex;
+  flex-shrink: 0;
+  will-change: transform;
+  animation: marquee-scroll var(--marquee-duration, 55s) linear infinite;
+}
+
+.marquee-container:hover .animate-marquee,
+.marquee-container:focus-within .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation-play-state: paused !important;
+  }
+}
+
+/* Responsive card sizing: exactly 3 cards on desktop, 2 on tablet, 1 on mobile */
+.gallery-slider-card {
+  width: min(calc(100cqw - 24px), 320px);
+  flex-shrink: 0;
+}
+
+@container (min-width: 640px) {
+  .gallery-slider-card {
+    width: calc((100cqw - var(--marquee-gap, 1.25rem)) / 2);
+    max-width: none;
+  }
+}
+
+@container (min-width: 1024px) {
+  .gallery-slider-card {
+    width: calc((100cqw - (var(--marquee-gap, 1.25rem) * 2)) / 3);
+    max-width: none;
+  }
+}

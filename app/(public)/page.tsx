@@ -22,7 +22,7 @@ import { Container } from "@/components/ui/container";
 import { SocialLinks } from "@/components/shared/social-links";
 import { PoliticalTimeline } from "@/components/sections/political-timeline";
 import { ProfileImageRotator } from "@/components/sections/profile-image-rotator";
-import { SocialMomentsSection } from "@/components/sections/social-moments-section";
+import { GalleryMarqueeSection } from "@/components/sections/gallery-marquee-section";
 import { profile } from "@/data/profile";
 import { politicalJourneyItems } from "@/data/political-journey";
 
@@ -163,7 +163,7 @@ export default function HomePage() {
                 <MapPin className="h-6 w-6" />
               </div>
               <div>
-                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white">38 Districts</div>
+                <div className="text-xl sm:text-2xl lg:text-3xl font-extrabold text-white">28 Districts</div>
                 <div className="text-xs text-red-100 font-medium">Tirhut Division &amp; Bihar</div>
               </div>
             </div>
@@ -395,8 +395,8 @@ export default function HomePage() {
         </Container>
       </section>
 
-      {/* 6. SOCIAL MEDIA & PUBLIC MOMENTS (Live FB & Instagram Feeds) */}
-      <SocialMomentsSection />
+      {/* 6. PHOTO GALLERY & PUBLIC MOMENTS (Continuous Smooth Slider) */}
+      <GalleryMarqueeSection />
 
       {/* 7. DIRECT CONSTITUENT CONNECT (जन संवाद केंद्र) */}
       <section id="contact" className="scroll-mt-20 py-16 sm:py-20 bg-slate-50/60">

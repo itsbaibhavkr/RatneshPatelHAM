@@ -47,7 +47,7 @@ export default function ContactPage() {
                 Connect with the Office of Ratnesh Patel
               </h1>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-2xl">
-                Citizens, party workers, and community delegations from across all 38 districts of Bihar are welcome to submit representations, district development proposals, or public concerns directly.
+                Citizens, party workers, and community delegations from across all 28 districts of Bihar are welcome to submit representations, district development proposals, or public concerns directly.
               </p>
             </div>
           </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                     <MapPin className="h-4 w-4 text-[var(--color-primary)] shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-slate-900 block font-semibold">Office Location</strong>
-                      <span>Patna, Bihar &bull; Statewide Outreach Across 38 Districts</span>
+                      <span>Patna, Bihar &bull; Statewide Outreach Across 28 Districts</span>
                     </div>
                   </div>
 
