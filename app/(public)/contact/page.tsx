@@ -70,7 +70,7 @@ export default function ContactPage() {
                 <div className="flex items-center gap-3.5 border-b border-slate-100 pb-5">
                   <div className="relative h-14 w-14 overflow-hidden rounded-full border-2 border-[var(--color-primary)] shadow-xs bg-slate-100 shrink-0">
                     <Image
-                      src="/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp"
+                      src="/images/ratnesh-patel/profile/ratnesh-patel.webp"
                       alt="Ratnesh Patel"
                       fill
                       sizes="56px"

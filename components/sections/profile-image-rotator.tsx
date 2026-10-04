@@ -15,27 +15,19 @@ export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel2.JPG",
-    alt: "Ratnesh Patel -  Grassroots Leadership",
+    alt: "Ratnesh Patel -  With Sri Jitan Ram Manjhi ji",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel3.JPG",
-    alt: "Ratnesh Patel -  Public Representative",
+    alt: "Ratnesh Patel -  With Sri Dr. Santosh Kr Suman ji",
   },
   {
     src: "/images/ratnesh-patel/profile/RatneshPatel4.JPG",
     alt: "Ratnesh Patel -  State Vice President, HAM(S)",
   },
   {
-    src: "/images/ratnesh-patel/profile/RatneshPatel5.JPG",
-    alt: "Ratnesh Patel -  Senior Leadership Portrait",
-  },
-  {
-    src: "/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp",
-    alt: "Official portrait of Ratnesh Patel",
-  },
-  {
     src: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
-    alt: "Ratnesh Patel standing in official attire",
+    alt: "Official portrait of Ratnesh Patel",
   },
 ];
 

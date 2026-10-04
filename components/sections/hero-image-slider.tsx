@@ -14,7 +14,7 @@ export interface HeroImageSlide {
 
 const DEFAULT_HERO_SLIDES: HeroImageSlide[] = [
   {
-    src: "/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp",
+    src: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
     alt: "Ratnesh Patel -  Senior State Vice President, Bihar",
     title: "Ratnesh Patel",
     badge: "State Leadership",
@@ -141,8 +141,8 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
                 className={`h-2 rounded-full transition-all cursor-pointer ${idx === currentIndex
-                    ? "w-6 bg-[var(--color-primary)]"
-                    : "w-2 bg-white/70 hover:bg-white"
+                  ? "w-6 bg-[var(--color-primary)]"
+                  : "w-2 bg-white/70 hover:bg-white"
                   }`}
               />
             ))}

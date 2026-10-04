@@ -10,7 +10,7 @@ export const profile: Profile = {
   party: "Hindustani Awam Morcha (Secular)",
   biography:
     "Senior State Vice President of Hindustani Awam Morcha (Secular). A dedicated grassroots leader championing social justice, farmer welfare, youth empowerment, and constituent advocacy across all 28 districts of Bihar.",
-  profile_image: "/images/ratnesh-patel/profile/ratnesh-patel-portrait.webp",
+  profile_image: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
   hero_image: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
   public_email: "ratneshpatelham@gmail.com",
   public_phone: null,
