@@ -28,13 +28,30 @@ import { profile } from "@/data/profile";
 import { politicalJourneyItems } from "@/data/political-journey";
 
 export const metadata: Metadata = {
-  title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
+  title: {
+    absolute:
+      "Ratnesh Patel | Senior State Vice President, Bihar | Hindustani Awam Morcha (Secular)",
+  },
   description:
-    "Official leadership website of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). 30+ years of grassroots service, farmer welfare, and social justice.",
+    "Official leadership website of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). 30+ years of dedicated grassroots public service, farmer welfare, NDA leadership, and constituent advocacy across Bihar.",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "Ratnesh Patel | Senior State Vice President, Bihar | HAM (Secular)",
+    title:
+      "Ratnesh Patel | Senior State Vice President, Bihar | Hindustani Awam Morcha (Secular)",
     description:
-      "Official leadership website of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+      "Official leadership website of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). 30+ years of grassroots service, farmer welfare, and social justice.",
+    url: "/",
+    type: "profile",
+    images: [
+      {
+        url: "/images/ratnesh-patel/profile/RatneshPatel4.JPG",
+        width: 1600,
+        height: 2400,
+        alt: "Ratnesh Patel - Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular)",
+      },
+    ],
   },
 };
 
@@ -44,8 +61,8 @@ export default function HomePage() {
       {/* 1. HERO SECTION (High-Impact Modern Leadership Hero) */}
       <section className="relative overflow-hidden bg-gradient-to-b from-white via-slate-50/60 to-stone-100/40 border-b border-slate-200/80 pt-10 pb-16 sm:py-20 lg:py-24">
         {/* Subtle decorative background glow */}
-        <div className="absolute top-0 right-1/4 - z-10 h-96 w-96 rounded-full bg-red-100/40 blur-3xl pointer-events-none" />
-        <div className="absolute bottom-0 left-1/3 - z-10 h-80 w-80 rounded-full bg-amber-50/50 blur-2xl pointer-events-none" />
+        <div className="absolute top-0 right-1/4 -z-10 h-96 w-96 rounded-full bg-red-100/40 blur-3xl pointer-events-none" />
+        <div className="absolute bottom-0 left-1/3 -z-10 h-80 w-80 rounded-full bg-amber-50/50 blur-2xl pointer-events-none" />
 
         <Container size="wide">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
@@ -55,13 +72,16 @@ export default function HomePage() {
               <div className="inline-flex items-center gap-2 rounded-full border border-red-200 bg-red-50/80 px-3.5 py-1.5 shadow-2xs">
                 <span className="h-2 w-2 rounded-full bg-[var(--color-primary)] animate-pulse" />
                 <span className="text-xs font-bold text-[var(--color-primary-dark)] tracking-wide">
-                  वरिष्ठ प्रदेश उपाध्यक्ष, बिहार &bull; HAM (Secular)
+                  वरीय उपाध्यक्ष, बिहार &bull; HAM (Secular)
                 </span>
               </div>
 
-              {/* Master Heading */}
+              {/* Master Heading with clear search entity recognition */}
               <div className="space-y-3">
                 <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight text-slate-900 leading-[1.18]">
+                  <span className="block text-2xl sm:text-3xl lg:text-4xl text-[var(--color-primary)] font-bold mb-1">
+                    Ratnesh Patel &bull; रत्नेश पटेल
+                  </span>
                   जनसेवा, सामाजिक न्याय एवं{" "}
                   <span className="text-[var(--color-primary)] block sm:inline">
                     बिहार के समग्र विकास
@@ -69,7 +89,7 @@ export default function HomePage() {
                   को समर्पित
                 </h1>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed font-normal max-w-2xl pt-1">
-                  <strong>Ratnesh Patel</strong> brings over 30 years of dedicated political leadership -  from grassroots organizational building in Muzaffarpur to serving as State Vice President of Hindustani Awam Morcha (Secular) and NDA Election Incharge for the 2024 Lok Sabha Elections.
+                  <strong>Ratnesh Patel</strong> brings over 30 years of dedicated political leadership &mdash; from grassroots organizational building in Muzaffarpur and Kudhani to serving as State Vice President of Hindustani Awam Morcha (Secular) and NDA Election Incharge for the 2024 Lok Sabha Elections.
                 </p>
               </div>
 

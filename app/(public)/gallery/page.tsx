@@ -5,20 +5,43 @@ import { Section } from "@/components/ui/section";
 import { GalleryView } from "@/components/gallery/gallery-view";
 import { galleryItems, downloadablePngItems } from "@/data/gallery";
 
+import { BreadcrumbJsonLd, GalleryPageJsonLd } from "@/components/seo/json-ld";
+
 export const metadata: Metadata = {
-  title: "Gallery & Official PNGs | Ratnesh Patel",
+  title: "Photo Gallery & Official Media Archive",
   description:
-    "Official photographs and transparent PNG cutouts of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+    "Official photographic archive and high-resolution transparent PNG cutouts of Ratnesh Patel, Senior State Vice President of Hindustani Awam Morcha (Secular), Bihar.",
+  alternates: {
+    canonical: "/gallery",
+  },
   openGraph: {
-    title: "Gallery & Official PNGs | Ratnesh Patel",
+    title: "Photo Gallery & Official Media Archive | Ratnesh Patel",
     description:
-      "Official photographs and transparent PNG cutouts of Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular).",
+      "Explore official photographs from party conventions, constituent outreach, and public leadership across Bihar.",
+    url: "/gallery",
+    type: "website",
+    images: [
+      {
+        url: "/images/Gallery/Gallery1.jpg",
+        width: 2048,
+        height: 1536,
+        alt: "Ratnesh Patel - State Worker Convention",
+      },
+    ],
   },
 };
 
 export default function GalleryPage() {
   return (
     <div className="space-y-0">
+      {/* Search Engine Schema */}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Photo Gallery", url: "/gallery" },
+        ]}
+      />
+      <GalleryPageJsonLd />
       {/* Clean Header */}
       <section className="border-b border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-stone-100/30 py-10 sm:py-14 text-center">
         <Container size="narrow">

@@ -19,14 +19,29 @@ import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { SOCIAL_PROFILES } from "@/components/shared/social-links";
 
+import { BreadcrumbJsonLd, ContactPageJsonLd } from "@/components/seo/json-ld";
+
 export const metadata: Metadata = {
-  title: "Connect with Office | Ratnesh Patel",
+  title: "Connect with Office | Public Desk & Representations",
   description:
-    "Official contact details of Ratnesh Patel, Senior State Vice President, Bihar, and Hindustani Awam Morcha (Secular) party headquarters.",
+    "Official contact portal for Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). Phone: +91 95042 11461, Email: ratneshpatelham@gmail.com, Office: Surya Bhawan, Kudhani, Muzaffarpur, Bihar.",
+  alternates: {
+    canonical: "/contact",
+  },
   openGraph: {
-    title: "Connect with Office | Ratnesh Patel",
+    title: "Connect with Office | Public Desk & Representations | Ratnesh Patel",
     description:
-      "Official contact details of Ratnesh Patel, Senior State Vice President, Bihar, and Hindustani Awam Morcha (Secular) party headquarters.",
+      "Official contact portal for Ratnesh Patel, Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular). Phone: +91 95042 11461, Email: ratneshpatelham@gmail.com, Office: Surya Bhawan, Kudhani, Muzaffarpur, Bihar.",
+    url: "/contact",
+    type: "website",
+    images: [
+      {
+        url: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
+        width: 1200,
+        height: 1800,
+        alt: "Ratnesh Patel - Senior State Vice President, Bihar",
+      },
+    ],
   },
 };
 
@@ -36,6 +51,14 @@ export default function ContactPage() {
 
   return (
     <div className="space-y-0">
+      {/* Search Engine Schemas */}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "Connect with Office", url: "/contact" },
+        ]}
+      />
+      <ContactPageJsonLd />
       {/* 1. Clean Subhero Header (Consistent with Gallery & Ham subheros) */}
       <section className="border-b border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-stone-100/30 py-10 sm:py-14 text-center">
         <Container size="narrow">
@@ -77,7 +100,7 @@ export default function ContactPage() {
                     <div className="relative h-16 w-16 sm:h-20 sm:w-20 shrink-0 overflow-hidden rounded-full border-2 border-[var(--color-primary)] shadow-sm bg-slate-100">
                       <Image
                         src="/images/ratnesh-patel/profile/ratnesh-patel.webp"
-                        alt="Ratnesh Patel"
+                        alt="Ratnesh Patel - Senior State Vice President, Bihar, Hindustani Awam Morcha (Secular)"
                         fill
                         sizes="(max-width: 640px) 64px, 80px"
                         className="object-cover object-top"

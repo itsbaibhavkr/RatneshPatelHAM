@@ -19,7 +19,7 @@ export const RATNESH_PATEL_PROFILE_IMAGES: ProfileImageItem[] = [
     src: "/images/ratnesh-patel/profile/RatneshPatel4.JPG",
     alt: "Ratnesh Patel - Pranam & Jan Seva Sankalp",
     title: "Ratnesh Patel",
-    badge: "वरिष्ठ नेतृत्व",
+    badge: "वरीय नेतृत्व",
     subtitle: "Senior State Vice President, Bihar • HAM(S)",
     description: "Dedicated to the welfare, social justice, and all-round development of Bihar.",
     objectPosition: "object-top",
@@ -120,9 +120,8 @@ export function ProfileImageRotator({
             return (
               <div
                 key={img.src}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
               >
                 <Image
                   src={img.src}
@@ -144,11 +143,10 @@ export function ProfileImageRotator({
                 type="button"
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`View photo ${idx + 1}`}
-                className={`h-1.5 rounded-full transition-all cursor-pointer ${
-                  idx === currentIndex
+                className={`h-1.5 rounded-full transition-all cursor-pointer ${idx === currentIndex
                     ? "w-5 bg-[var(--color-primary)]"
                     : "w-1.5 bg-white/75 hover:bg-white"
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -186,12 +184,12 @@ export function ProfileImageRotator({
         ) : footerVariant === "hero" ? (
           <div className="mt-3 px-1.5 pb-1 h-[84px] sm:h-[90px] flex flex-col justify-between overflow-hidden">
             <div className="flex items-center justify-between gap-2 min-h-[26px]">
-              <h2
+              <p
                 className="text-base sm:text-lg font-bold text-slate-900 leading-tight truncate"
                 title={currentItem.title || "Ratnesh Patel"}
               >
                 {currentItem.title || "Ratnesh Patel"}
-              </h2>
+              </p>
               {currentItem.badge && (
                 <span className="shrink-0 whitespace-nowrap inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
                   <ShieldCheck className="h-3 w-3" />

@@ -3,20 +3,43 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Container } from "@/components/ui/container";
 
+import { BreadcrumbJsonLd } from "@/components/seo/json-ld";
+
 export const metadata: Metadata = {
-  title: "Hindustani Awam Morcha (Secular) | Party & Leadership",
+  title: "Hindustani Awam Morcha (Secular) | Party Leadership & Vision",
   description:
-    "Official overview and leadership of Hindustani Awam Morcha (Secular), founded by former Chief Minister Shri Jitan Ram Manjhi and led by National President Dr. Santosh Kumar Suman.",
+    "Official overview and leadership of Hindustani Awam Morcha (Secular) in Bihar. Founded by former CM Shri Jitan Ram Manjhi (Union Minister MSME) and led by National President Dr. Santosh Kumar Suman (Cabinet Minister, Bihar).",
+  alternates: {
+    canonical: "/ham",
+  },
   openGraph: {
-    title: "Hindustani Awam Morcha (Secular) | Party & Leadership",
+    title: "Hindustani Awam Morcha (Secular) | Party Leadership & Vision | Ratnesh Patel",
     description:
-      "Official overview and leadership of Hindustani Awam Morcha (Secular), founded by former Chief Minister Shri Jitan Ram Manjhi and led by National President Dr. Santosh Kumar Suman.",
+      "Official overview and leadership of Hindustani Awam Morcha (Secular) in Bihar. Founded by former CM Shri Jitan Ram Manjhi and led by National President Dr. Santosh Kumar Suman.",
+    url: "/ham",
+    type: "website",
+    images: [
+      {
+        url: "/images/ham/Hindustani%20Awam%20Morcha%20(Secular).png",
+        width: 1200,
+        height: 1200,
+        alt: "Hindustani Awam Morcha (Secular) Official Party Emblem",
+      },
+    ],
   },
 };
 
 export default function HamPage() {
   return (
     <div className="space-y-0">
+      {/* Search Engine Breadcrumb Schema */}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Home", url: "/" },
+          { name: "HAM(S) Party", url: "/ham" },
+        ]}
+      />
+
       {/* Clean Header */}
       <section className="border-b border-slate-200 bg-gradient-to-b from-white via-slate-50/50 to-stone-100/30 py-10 sm:py-14 text-center">
         <Container size="narrow">
@@ -47,7 +70,7 @@ export default function HamPage() {
                 <div className="relative w-full max-w-[280px] sm:max-w-[320px] aspect-square drop-shadow-md">
                   <Image
                     src="/images/ham/Hindustani Awam Morcha (Secular).png"
-                    alt="Hindustani Awam Morcha (Secular) Emblem"
+                    alt="Hindustani Awam Morcha (Secular) Official Party Emblem"
                     fill
                     sizes="(max-width: 768px) 280px, 320px"
                     priority
@@ -87,7 +110,7 @@ export default function HamPage() {
                   <div className="relative w-full aspect-[5/3] rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs bg-slate-50">
                     <Image
                       src="/images/ham/Jitan-Ram-Manjhi.png"
-                      alt="Shri Jitan Ram Manjhi"
+                      alt="Shri Jitan Ram Manjhi - Founder Hindustani Awam Morcha (Secular) & Union Minister (MSME)"
                       fill
                       sizes="(max-width: 768px) 100vw, 450px"
                       className="object-cover"
@@ -139,7 +162,7 @@ export default function HamPage() {
                   <div className="relative w-full aspect-[5/3] rounded-2xl overflow-hidden border border-slate-200/80 shadow-xs bg-slate-50">
                     <Image
                       src="/images/ham/Santosh-Suman.png"
-                      alt="Dr. Santosh Kumar Suman"
+                      alt="Dr. Santosh Kumar Suman - National President HAM(S) & Cabinet Minister, Bihar"
                       fill
                       sizes="(max-width: 768px) 100vw, 450px"
                       className="object-cover"

@@ -18,7 +18,7 @@ export const DEFAULT_HERO_SLIDES: HeroImageSlide[] = [
     src: "/images/ratnesh-patel/profile/RatneshPatel4.JPG",
     alt: "Ratnesh Patel - Pranam & Jan Seva Sankalp",
     title: "Ratnesh Patel",
-    badge: "वरिष्ठ नेतृत्व",
+    badge: "वरीय नेतृत्व",
     subtitle: "Senior State Vice President, Bihar",
     objectPosition: "object-top",
   },
@@ -98,9 +98,8 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
             return (
               <div
                 key={slide.src}
-                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-                  isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${isActive ? "opacity-100 z-10" : "opacity-0 z-0 pointer-events-none"
+                  }`}
               >
                 <Image
                   src={slide.src}
@@ -147,11 +146,10 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
                 type="button"
                 onClick={() => setCurrentIndex(idx)}
                 aria-label={`Go to slide ${idx + 1}`}
-                className={`h-2 rounded-full transition-all cursor-pointer ${
-                  idx === currentIndex
+                className={`h-2 rounded-full transition-all cursor-pointer ${idx === currentIndex
                     ? "w-6 bg-[var(--color-primary)]"
                     : "w-2 bg-white/70 hover:bg-white"
-                }`}
+                  }`}
               />
             ))}
           </div>
@@ -160,12 +158,12 @@ export function HeroImageSlider({ slides = DEFAULT_HERO_SLIDES }: HeroImageSlide
         {/* Dynamic Identification Card at Bottom of Frame - Locked height to prevent layout shift */}
         <div className="mt-3 px-1.5 pb-1 h-[84px] sm:h-[90px] flex flex-col justify-between overflow-hidden">
           <div className="flex items-center justify-between gap-2 min-h-[26px]">
-            <h2
+            <p
               className="text-base sm:text-lg font-bold text-slate-900 leading-tight truncate"
               title={currentSlide.title}
             >
               {currentSlide.title}
-            </h2>
+            </p>
             <span className="shrink-0 whitespace-nowrap inline-flex items-center gap-1 text-[11px] font-bold text-white bg-[var(--color-primary)] px-2 py-0.5 rounded shadow-2xs">
               <ShieldCheck className="h-3 w-3" />
               <span>{currentSlide.badge || "State Leadership"}</span>

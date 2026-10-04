@@ -59,18 +59,61 @@ export function Footer() {
               <h4 className="font-bold text-xs uppercase tracking-wider text-white border-b border-slate-800 pb-2.5">
                 Quick Navigation
               </h4>
-              <ul className="space-y-2.5 text-xs sm:text-sm">
-                {MAIN_NAV_ITEMS.map((item) => (
-                  <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
-                    >
-                      <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
-                      <span>{item.label}</span>
-                    </Link>
-                  </li>
-                ))}
+              <ul className="space-y-2 text-xs sm:text-sm">
+                <li>
+                  <Link
+                    href="/"
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    <span>Home &bull; मुख्य पृष्ठ</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#about"
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    <span>About Ratnesh Patel &bull; व्यक्तित्व</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/#journey"
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    <span>Political Journey (1995&ndash;Present)</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/ham"
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    <span>HAM(S) Party &amp; Leadership</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/gallery"
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    <span>Photo Gallery &amp; Media Archive</span>
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/contact"
+                    className="text-slate-400 hover:text-white transition-colors inline-flex items-center gap-2"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-red-500" />
+                    <span>Connect with Office &bull; जन संवाद</span>
+                  </Link>
+                </li>
               </ul>
             </div>
 

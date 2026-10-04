@@ -25,7 +25,7 @@ export const socialPosts: SocialPost[] = [
     platform: "facebook",
     author: {
       name: "Ratnesh Patel",
-      role: "वरिष्ठ प्रदेश उपाध्यक्ष, बिहार • HAM(S)",
+      role: "वरीय उपाध्यक्ष, बिहार • HAM(S)",
       handle: "@RatneshPatelHAM",
       avatar: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
       verified: true,
@@ -66,7 +66,7 @@ export const socialPosts: SocialPost[] = [
     platform: "facebook",
     author: {
       name: "Ratnesh Patel",
-      role: "वरिष्ठ प्रदेश उपाध्यक्ष, बिहार • HAM(S)",
+      role: "वरीय उपाध्यक्ष, बिहार • HAM(S)",
       handle: "@RatneshPatelHAM",
       avatar: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
       verified: true,
@@ -107,7 +107,7 @@ export const socialPosts: SocialPost[] = [
     platform: "facebook",
     author: {
       name: "Ratnesh Patel",
-      role: "वरिष्ठ प्रदेश उपाध्यक्ष, बिहार • HAM(S)",
+      role: "वरीय उपाध्यक्ष, बिहार • HAM(S)",
       handle: "@RatneshPatelHAM",
       avatar: "/images/ratnesh-patel/profile/ratnesh-patel.webp",
       verified: true,

@@ -27,7 +27,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: "gallery-02",
-    title: "वरिष्ठ नेतृत्व के साथ विचार-विमर्श",
+    title: "वरीय नेतृत्व के साथ विचार-विमर्श",
     image: "/images/Gallery/Gallery2.jpg",
     alt: "Senior leadership consultation",
     category: "leadership",
@@ -54,7 +54,7 @@ export const galleryItems: GalleryItem[] = [
   },
   {
     id: "gallery-05",
-    title: "वरिष्ठ प्रदेश नेतृत्व पोर्ट्रेट",
+    title: "वरीय प्रदेश नेतृत्व पोर्ट्रेट",
     image: "/images/Gallery/Gallery5.jpg",
     alt: "Ratnesh Patel official portrait",
     category: "leadership",
